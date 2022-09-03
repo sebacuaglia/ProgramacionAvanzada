@@ -3,7 +3,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table (name="tipo_proyecto") 
+//@Table (name="tipo_proyecto") 
 
 public class TipoProyecto implements Comparable, Serializable{
     @Id @GeneratedValue(strategy=javax.persistence.GenerationType.AUTO)
