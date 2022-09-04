@@ -8,6 +8,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -20,8 +22,10 @@ public class Marca {
     
     private String nombre; 
     
+    @OneToOne
     private Pais pais;
     
+    @OneToMany
     private List<Modelo> listModelo;
 
     public long getId() {
