@@ -39,7 +39,7 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnuTipoProyecto = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         mnuMarca = new javax.swing.JMenuItem();
-        mnuModelo = new javax.swing.JMenuItem();
+        mnuMarca1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ejemplo");
@@ -85,13 +85,13 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         });
         mnConfiguracion.add(mnuMarca);
 
-        mnuModelo.setText("Marca");
-        mnuModelo.addActionListener(new java.awt.event.ActionListener() {
+        mnuMarca1.setText("Marca");
+        mnuMarca1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuModeloActionPerformed(evt);
+                mnuMarca1ActionPerformed(evt);
             }
         });
-        mnConfiguracion.add(mnuModelo);
+        mnConfiguracion.add(mnuMarca1);
 
         jmenu.add(mnConfiguracion);
 
@@ -131,9 +131,9 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         this.gestorVista.abrirMarca(getEscritorio());
     }//GEN-LAST:event_mnuMarcaActionPerformed
 
-    private void mnuModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuModeloActionPerformed
+    private void mnuMarca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMarca1ActionPerformed
         this.gestorVista.abrirModelo(getEscritorio());
-    }//GEN-LAST:event_mnuModeloActionPerformed
+    }//GEN-LAST:event_mnuMarca1ActionPerformed
 
 public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -149,7 +149,7 @@ public static void main(String args[]) {
     private javax.swing.JMenuBar jmenu;
     private javax.swing.JMenu mnConfiguracion;
     private javax.swing.JMenuItem mnuMarca;
-    private javax.swing.JMenuItem mnuModelo;
+    private javax.swing.JMenuItem mnuMarca1;
     private javax.swing.JMenuItem mnuProyecto;
     private javax.swing.JMenuItem mnuTipoProyecto;
     // End of variables declaration//GEN-END:variables

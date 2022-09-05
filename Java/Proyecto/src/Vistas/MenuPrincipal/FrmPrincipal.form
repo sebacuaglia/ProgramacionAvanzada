@@ -55,12 +55,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuMarcaActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuModelo">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuMarca1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Marca"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuModeloActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuMarca1ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
