@@ -31,6 +31,7 @@ public class HibernateUtil  {
             conf.addAnnotatedClass(Modelos.GestionProyecto.TipoProyecto.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.ItemProyecto.class);
             
+            //proyecto
             conf.addAnnotatedClass(Modelos.GestionProyecto.Marca.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.Pais.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.Modelo.class);
