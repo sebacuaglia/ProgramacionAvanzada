@@ -121,7 +121,7 @@ public class GestorVistaModelo extends GestorVista {
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
     }
-        public void openFormulario(DefaultComboBoxModel model, JDesktopPane pantalla) {
+    public void openFormulario(DefaultComboBoxModel model, JDesktopPane pantalla) {
          this.setEscritorio(pantalla);
         this.setModelCombo(model);
          this.setOpcABM(2);
