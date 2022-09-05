@@ -45,7 +45,7 @@ public class Modelo {
 
     @Override
     public String toString() {
-        return "Modelo{" + "id=" + id + ", nombre=" + nombre + '}';
+        return  nombre;
     }
     
     
