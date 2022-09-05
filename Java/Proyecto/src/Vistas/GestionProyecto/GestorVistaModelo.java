@@ -4,8 +4,9 @@
  */
 package Vistas.GestionProyecto;
 
-import Modelos.GestionProyecto.GestorModelo;
+import Modelos.GestionProyecto.GestorMarca;
 import Modelos.GestionProyecto.GestorTipoProyecto;
+import Modelos.GestionProyecto.Marca;
 import Modelos.GestionProyecto.Modelo;
 import Modelos.GestionProyecto.TipoProyecto;
 import Vistas.GestorVista;
@@ -19,41 +20,41 @@ import javax.swing.JOptionPane;
  * @author sebac
  */
 public class GestorVistaModelo extends GestorVista {
-    private FrmModelo form;  
-    private GestorModelo gestor;                  
+    private FrmMarca form;  
+    private GestorMarca gestor;                  
  
  //Definicion de getter y setter de variables, objetos y gestores 
     
-    public Modelo getModel() {
+    public Marca getModel() {
         return this.getGestor().getModel();
     }
 
     public void setModel(JComboBox cmb) {
-        this.setModel((Modelo) cmb.getSelectedItem());
+        this.setModel((Marca) cmb.getSelectedItem());
     }
 
-    private void setModel(Modelo model) {
+    private void setModel(Marca model) {
         this.getGestor().setModel(model);
     }
 
-    public GestorModelo getGestor() {
+    public GestorMarca getGestor() {
         if (gestor == null) {
-           synchronized (GestorModelo.class) {
-                gestor = new GestorModelo();
+           synchronized (GestorMarca.class) {
+                gestor = new GestorMarca();
            }
         }
         return gestor;
     }
 
-    public void setGestor(GestorModelo gestor) {
+    public void setGestor(GestorMarca gestor) {
         this.gestor = gestor;
     }
 
-    public FrmModelo getForm() {
+    public FrmMarca getForm() {
         return form;
     }
 
-    public void setForm(FrmModelo form) {
+    public void setForm(FrmMarca form) {
         this.form = form;
     }
   
@@ -116,7 +117,7 @@ public class GestorVistaModelo extends GestorVista {
     @Override
     public void openFormulario(JDesktopPane pantalla) {
         this.setEscritorio(pantalla);
-        this.setForm(new FrmModelo(this));
+        this.setForm(new FrmMarca(this));
         this.setTitulo(this.getForm().getTitle());
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
@@ -125,7 +126,7 @@ public class GestorVistaModelo extends GestorVista {
          this.setEscritorio(pantalla);
         this.setModelCombo(model);
          this.setOpcABM(2);
-        this.setForm(new FrmModelo(this));
+        this.setForm(new FrmMarca(this));
         this.setTitulo(this.getForm().getTitle());
          this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);

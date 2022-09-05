@@ -22,12 +22,12 @@ public class Marca {
     
     private String nombre; 
     
-    @OneToOne
+    /*@OneToOne
     private Pais pais;
     
     @OneToMany
     private List<Modelo> listModelo;
-
+*/
     public long getId() {
         return id;
     }
@@ -44,7 +44,7 @@ public class Marca {
         this.nombre = nombre;
     }
 
-    public Pais getPais() {
+    /*public Pais getPais() {
         return pais;
     }
 
@@ -69,7 +69,16 @@ public class Marca {
         this.pais = pais;
         this.listModelo = listModelo;
     }
+*/
+    
+    public Marca() {
+    }
 
+    public Marca(long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    
     @Override
     public String toString() {
         return nombre ;

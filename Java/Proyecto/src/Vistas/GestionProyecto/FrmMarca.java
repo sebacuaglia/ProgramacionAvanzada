@@ -1,31 +1,28 @@
 package Vistas.GestionProyecto;
-
 import Vistas.FrmGenerica;
-import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class FrmMarca extends FrmGenerica {
-
-    private GestorVistaMarca gestorVista;
+    private GestorVistaModelo gestorVista;
     private int YES_NO_OPTION;
 
-    public GestorVistaMarca getGestorVista() {
+    public GestorVistaModelo getGestorVista() {
         return gestorVista;
     }
-
-    public void setGestorVista(GestorVistaMarca gestorVista) {
+    
+    public void setGestorVista(GestorVistaModelo gestorVista) {
         this.gestorVista = gestorVista;
     }
 
 // Definicion de getter y setter de los componentes visuales del formulario
-    public JTextField getTxtDenominacion() {
-        return txtMarca;
+    public JTextField getTxtModelo() {
+        return txtModelo;
     }
 
-    public void setTxtDenominacion(JTextField txtDenominacion) {
-        this.txtMarca = txtDenominacion;
+    public void setTxtModelo(JTextField txtDenominacion) {
+        this.txtModelo = txtDenominacion;
     }
-
+    
     public JTextField getTxtCodigo() {
         return txtCodigo;
     }
@@ -34,45 +31,14 @@ public class FrmMarca extends FrmGenerica {
         this.txtCodigo = txtCodigo;
     }
 
-    public JComboBox getCmbDenominacion() {
-        return cmbMarca;
-    }
-
-    public void setCmbDenominacion(JComboBox cmbDenominacion) {
-        this.cmbMarca = cmbDenominacion;
-    }
-
-    public JComboBox getCmbTipoProyecto() {
-        return cmbPais;
-    }
-
-    public void setCmbTipoProyecto(JComboBox cmbTipoProyecto) {
-        this.cmbPais = cmbTipoProyecto;
-    }
-
-    public JTable getTbl() {
-        return tbl;
-    }
-
-    public void setTbl(JTable tbl) {
-        this.tbl = tbl;
-    }
-
-    public JTextField getTxtItemDenominacion() {
-        return txtItemDenominacion;
-    }
-
-    public void setTxtItemDenominacion(JTextField txtItemDenominacion) {
-        this.txtItemDenominacion = txtItemDenominacion;
-    }
-
 // Constructores del formulario 
-    public FrmMarca(GestorVistaProyecto gestorVista) {
-        try {
-            initComponents();
-        } catch (Exception e) {
-
+    public FrmMarca(GestorVistaModelo gestorVista) {
+        try{
+           initComponents();
         }
+        catch(Exception e){
+            
+        }  
         this.setGestorVista(gestorVista);
         this.onViewOpened();
     }
@@ -80,39 +46,40 @@ public class FrmMarca extends FrmGenerica {
     public FrmMarca() {
         initComponents();
     }
-
-    // Metodos que gestionan los botones de la barra comando 
+    
+      // Metodos que gestionan los botones de la barra comando 
     public void viewOpenedBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-
+        
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
     }
 
-    public void viewNuevoEditarBotones() {
+    public void viewNuevoEditarBotones(){
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(true);
         btnEliminar.setEnabled(false);
-
+        
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
     }
-
+  
     public void viewEliminarBotones() {
         this.viewOpenedBotones();
     }
-
+  
     public void viewGuardarBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-
+        
+        
         btnCancelar.setEnabled(false);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
@@ -123,22 +90,22 @@ public class FrmMarca extends FrmGenerica {
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-
+        
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
-
-    }
-
+        
+    } 
+    
     public void viewBuscar() {
-        btnNuevo.setEnabled(true);
+        btnNuevo.setEnabled(true); 
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-
+     
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
     }
-
+    
     @Override
     public void onViewOpened() {
         this.viewOpenedBotones();
@@ -146,40 +113,36 @@ public class FrmMarca extends FrmGenerica {
         this.viewCamposEnabled(false);
         this.viewDenominacionVisible(true);
         this.cargarCombos();
-        this.getGestorVista().initializeTabla(tbl);
         this.isExtra();
-
-    }
+     }
 
     @Override
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
-        txtMarca.setEnabled(tipo);
-        this.cmbPais.setEnabled(tipo);
-
+        txtModelo.setEnabled(tipo);
     }
 
-    private void viewDenominacionVisible(Boolean tipo) {
-        txtMarca.setVisible(tipo);
-        cmbMarca.setVisible(!tipo);
+    private void viewDenominacionVisible(Boolean tipo){
+        txtModelo.setVisible(tipo);
+        cmbModelo.setVisible(!tipo);
     }
 
-    private void viewBasic() {
+    private void viewBasic(){
         this.viewNuevoEditarBotones();
         this.viewCamposEnabled(true);
         this.viewDenominacionVisible(true);
     }
 
     @Override
-    public void viewNuevoEnter() {
+    public void viewNuevoEnter( ) {
         this.viewBasic();
         this.viewNueva();
     }
 
     @Override
-    public void viewEditarEnter() {
+    public void viewEditarEnter( ) {
         this.viewBasic();
-        txtMarca.grabFocus();
+        txtModelo.grabFocus();
         this.getGestorVista().setModoEditar();
     }
 
@@ -201,7 +164,7 @@ public class FrmMarca extends FrmGenerica {
         this.cargarComboModel();
         this.viewDenominacionVisible(false);
         txtCodigo.setEnabled(false);
-        cmbMarca.grabFocus();
+        cmbModelo.grabFocus();
     }
 
     @Override
@@ -226,95 +189,76 @@ public class FrmMarca extends FrmGenerica {
         this.viewBuscarBotones();
     }
 
-    private void viewNueva() {
+    private void viewNueva(){
         this.clearView();
         this.getGestorVista().newModel();
         this.viewDenominacionVisible(true);
-        txtMarca.grabFocus();
-    }
-
-    @Override
-    public void cargarCombos() {
-        this.gestorVista.setModelTipoProyecto(cmbPais);
+        txtModelo.grabFocus();
     }
 
     @Override
     public void clearView() {
-        txtMarca.setText("");
+        txtModelo.setText("");
         txtCodigo.setText("");
-        this.cmbPais.setSelectedItem("");
-        this.getGestorVista().initializeTabla(tbl);
-    }
-
-    void clearItemView() {
-        this.txtItemDenominacion.setText("");
     }
 
     @Override
-    public void grabFocus() {
-        txtMarca.grabFocus();
+    public void grabFocus(){
+        txtModelo.grabFocus();
     }
 
-    public void cargarComboModel() {
-        this.gestorVista.setModelProyecto(cmbMarca);
+    public void cargarComboModel(){
+        this.gestorVista.setModelProyecto(cmbModelo);
     }
 
-    @Override
+   @Override
     public void cancelarView() {
         this.getGestorVista().cancelarView();
         this.onViewOpened();
         this.clearView();
     }
 
-    public void extraView() {
-        btnBuscar.setEnabled(false);
-        this.viewNuevoEnter();
-    }
-
     @Override
     public void deleteView() {
-        this.getGestorVista().deleteView();
+         this.getGestorVista().deleteView();
     }
 
     @Override
-    public void saveView() {
+    public void saveView(){
         this.getGestorVista().saveView();
     }
 
     @Override
-    public void setView() {
-        this.getGestorVista().getView();
+    public void setView(){
+       this.getGestorVista().getView();
+    }  
+ public void extraView() {
+        btnBuscar.setEnabled(false);
+             this.viewNuevoEnter();
     }
-
-    private void isExtra() {
+ private void isExtra() {
         if (this.getGestorVista().isExtra()) {
             this.extraView();
         }
     }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cmbMarca = new javax.swing.JComboBox();
+        cmbModelo = new javax.swing.JComboBox();
         btnBuscar = new javax.swing.JButton();
-        txtMarca = new javax.swing.JTextField();
+        txtModelo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscarCodigo = new javax.swing.JButton();
-        cmbPais = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        btnAggModelo = new javax.swing.JButton();
-        txtpais = new javax.swing.JTextField();
-        cmbPais1 = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -323,11 +267,14 @@ public class FrmMarca extends FrmGenerica {
         jPanel3 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbl = new javax.swing.JTable();
         btnImprimir = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
-        setTitle("Marca");
+        jButton2.setText("jButton2");
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setTitle(" Marca");
         setToolTipText("Marca");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
@@ -337,24 +284,19 @@ public class FrmMarca extends FrmGenerica {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel1.setText("Modelo");
+        jLabel1.setText("Nombre Marca");
         jLabel1.setRequestFocusEnabled(false);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 120, 80, 20);
+        jLabel1.setBounds(20, 80, 160, 20);
 
-        cmbMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        cmbMarca.addItemListener(new java.awt.event.ItemListener() {
+        cmbModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        cmbModelo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbMarcaItemStateChanged(evt);
+                cmbModeloItemStateChanged(evt);
             }
         });
-        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMarcaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmbMarca);
-        cmbMarca.setBounds(110, 50, 460, 25);
+        jPanel1.add(cmbModelo);
+        cmbModelo.setBounds(20, 100, 460, 25);
 
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -372,12 +314,12 @@ public class FrmMarca extends FrmGenerica {
             }
         });
         jPanel1.add(btnBuscar);
-        btnBuscar.setBounds(570, 40, 30, 40);
+        btnBuscar.setBounds(490, 90, 30, 40);
 
-        txtMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtMarca.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtMarca);
-        txtMarca.setBounds(110, 50, 460, 25);
+        txtModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtModelo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtModelo);
+        txtModelo.setBounds(20, 100, 460, 25);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setText("Código");
@@ -398,7 +340,7 @@ public class FrmMarca extends FrmGenerica {
             }
         });
         jPanel1.add(txtCodigo);
-        txtCodigo.setBounds(110, 20, 90, 25);
+        txtCodigo.setBounds(20, 40, 90, 25);
 
         btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -416,64 +358,7 @@ public class FrmMarca extends FrmGenerica {
             }
         });
         jPanel1.add(btnBuscarCodigo);
-        btnBuscarCodigo.setBounds(200, 20, 30, 30);
-
-        cmbPais.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        cmbPais.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbPaisItemStateChanged(evt);
-            }
-        });
-        cmbPais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPaisActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmbPais);
-        cmbPais.setBounds(110, 120, 180, 30);
-
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel2.setText(" Marca");
-        jLabel2.setRequestFocusEnabled(false);
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(17, 50, 90, 20);
-
-        btnAggModelo.setText("Agregar Modelo");
-        btnAggModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAggModeloActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAggModelo);
-        btnAggModelo.setBounds(300, 80, 270, 30);
-
-        txtpais.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtpais.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtpais);
-        txtpais.setBounds(110, 80, 180, 30);
-
-        cmbPais1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        cmbPais1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbPais1ItemStateChanged(evt);
-            }
-        });
-        cmbPais1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPais1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmbPais1);
-        cmbPais1.setBounds(110, 80, 180, 30);
-
-        jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel4.setText("Pais");
-        jLabel4.setRequestFocusEnabled(false);
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 80, 80, 20);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 610, 190);
+        btnBuscarCodigo.setBounds(120, 40, 30, 30);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -545,8 +430,8 @@ public class FrmMarca extends FrmGenerica {
         jPanel2.add(btnEditar);
         btnEditar.setBounds(90, 10, 75, 23);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 320, 340, 40);
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(20, 230, 340, 40);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel3.setLayout(null);
@@ -585,10 +470,24 @@ public class FrmMarca extends FrmGenerica {
         jPanel3.add(btnCancelar);
         btnCancelar.setBounds(10, 10, 75, 23);
 
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(440, 320, 180, 40);
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(510, 230, 180, 40);
 
-        tbl.setModel(new javax.swing.table.DefaultTableModel(
+        btnImprimir.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PrinterChica.png"))); // NOI18N
+        btnImprimir.setText("ÑÑÑÑ");
+        btnImprimir.setToolTipText("Impreme el documento");
+        btnImprimir.setBorderPainted(false);
+        btnImprimir.setContentAreaFilled(false);
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnImprimir);
+        btnImprimir.setBounds(380, 230, 100, 40);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -599,52 +498,47 @@ public class FrmMarca extends FrmGenerica {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tbl.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        jScrollPane2.setViewportView(tbl);
+        jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(10, 220, 610, 70);
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(20, -170, 680, 140);
 
-        btnImprimir.setText("I");
-        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnImprimir);
-        btnImprimir.setBounds(360, 330, 22, 22);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 20, 720, 320);
 
         getAccessibleContext().setAccessibleName("Carg");
 
-        setBounds(150, 0, 653, 410);
+        setBounds(150, 0, 754, 384);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbMarcaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMarcaItemStateChanged
-        if (this.getGestorVista().isEmpty(cmbMarca)) {
+    private void cmbModeloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbModeloItemStateChanged
+        if (this.getGestorVista().isEmpty(cmbModelo)) {
             this.viewBuscarPrincipalEnter();
-        } else {
-            this.getGestorVista().setModel(cmbMarca);
+        }
+        else  {
+            this.getGestorVista().setModel(cmbModelo);
             this.viewActualizar();
             this.viewDenominacionVisible(false);
         }
-}//GEN-LAST:event_cmbMarcaItemStateChanged
+}//GEN-LAST:event_cmbModeloItemStateChanged
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         this.viewBuscarComboEnter();
 }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if (evt.getKeyCode()==10) {
             this.viewBuscarComboEnter();
         }
 }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if (evt.getKeyCode()==10) {
             if (this.gestorVista.getModelXCodigo(txtCodigo.getText())) {
                 this.viewActualizar();
-            } else {
-                JOptionPane.showMessageDialog(null, "Código no existe");
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Código no existe");
             }
         }
 }//GEN-LAST:event_txtCodigoKeyPressed
@@ -658,7 +552,7 @@ public class FrmMarca extends FrmGenerica {
 }//GEN-LAST:event_btnBuscarCodigoActionPerformed
 
     private void btnBuscarCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if(evt.getKeyCode()==10) {
             this.viewBuscarCodigoEnter();
         }
 }//GEN-LAST:event_btnBuscarCodigoKeyPressed
@@ -668,8 +562,8 @@ public class FrmMarca extends FrmGenerica {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNuevoKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.viewNuevoEnter();
+       if (evt.getKeyCode()==10)
+          this.viewNuevoEnter();
     }//GEN-LAST:event_btnNuevoKeyPressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -677,8 +571,8 @@ public class FrmMarca extends FrmGenerica {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditarKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.viewEditarEnter();
+        if (evt.getKeyCode()==10)
+        this.viewEditarEnter();
     }//GEN-LAST:event_btnEditarKeyPressed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -686,62 +580,56 @@ public class FrmMarca extends FrmGenerica {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.saveView();
+        if (evt.getKeyCode()==10)
+        this.saveView();
     }//GEN-LAST:event_btnGuardarKeyPressed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0)
-            this.deleteView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
+           this.deleteView();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyPressed
-        if (evt.getKeyCode() == 10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0) {
-                this.deleteView();
-            }
+        if(evt.getKeyCode()==10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
+            this.deleteView();
         }
     }//GEN-LAST:event_btnEliminarKeyPressed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         int n = 0;
-        if (this.getGestorVista().isNuevo() || this.getGestorVista().isOnlyRead()) {
-            this.dispose();
-        } else {
-            n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
-        }
-        if (n == 1) {
+        if (this.getGestorVista().isNuevo() || this.getGestorVista().isOnlyRead())
+        this.dispose();
+        else
+        n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
+        if  (n == 1 ){
             this.cancelarView();
-            this.dispose();
-        }
+            this.dispose();}
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalirKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if(evt.getKeyCode()==10) {
             int n = 0;
-            if (this.getGestorVista().isNuevo()) {
-                this.dispose();
-            } else {
-                n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
-            }
-            if (n == 1) {
+            if (this.getGestorVista().isNuevo())
+                 this.dispose();
+            else
+            n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
+            if  (n == 1 ){
                 this.cancelarView();
-                this.dispose();
-            }
+                this.dispose();}
         }
 
     }//GEN-LAST:event_btnSalirKeyPressed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0)
-            this.cancelarView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
+        this.cancelarView();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCancelarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCancelarKeyPressed
-        if (evt.getKeyCode() == 10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0) {
-                this.cancelarView();
-            }
+        if(evt.getKeyCode()==10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
+            this.cancelarView();
         }
     }//GEN-LAST:event_btnCancelarKeyPressed
 
@@ -749,33 +637,8 @@ public class FrmMarca extends FrmGenerica {
         this.gestorVista.imprimir();
     }//GEN-LAST:event_btnImprimirActionPerformed
 
-    private void btnAggModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggModeloActionPerformed
-        this.getGestorVista().openFormularioModelo((DefaultComboBoxModel) tbl.getModel());
-    }//GEN-LAST:event_btnAggModeloActionPerformed
-
-    private void cmbPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPaisActionPerformed
-
-    private void cmbPaisItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbPaisItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPaisItemStateChanged
-
-    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbMarcaActionPerformed
-
-    private void cmbPais1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbPais1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPais1ItemStateChanged
-
-    private void cmbPais1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPais1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPais1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAggModelo;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscarCodigo;
     public javax.swing.JButton btnCancelar;
@@ -785,21 +648,20 @@ public class FrmMarca extends FrmGenerica {
     private javax.swing.JButton btnImprimir;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox cmbMarca;
-    private javax.swing.JComboBox cmbPais;
-    private javax.swing.JComboBox cmbPais1;
+    private javax.swing.JComboBox cmbModelo;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tbl;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtpais;
+    private javax.swing.JTextField txtModelo;
     // End of variables declaration//GEN-END:variables
 
+    
+    
+    
 }
