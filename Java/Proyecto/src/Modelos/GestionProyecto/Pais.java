@@ -4,6 +4,7 @@
  */
 package Modelos.GestionProyecto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +16,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Pais {
-    @Id @GeneratedValue(strategy=javax.persistence.GenerationType.AUTO)
+    @Id @GeneratedValue(strategy=javax.persistence.GenerationType.SEQUENCE)
+    @Column(columnDefinition = "SERIAL")
     private long id;
   
     private String codigopais; 
@@ -48,7 +50,7 @@ public class Pais {
 
     @Override
     public String toString() {
-        return "Pais{" + "id=" + id + ", codigopais=" + codigopais + ", nombrepais=" + nombrepais + '}';
+        return nombrepais;
     }
 
     public Pais() {
