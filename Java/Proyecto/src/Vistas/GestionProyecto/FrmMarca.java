@@ -3,14 +3,14 @@ import Vistas.FrmGenerica;
 import javax.swing.*;
 
 public class FrmMarca extends FrmGenerica {
-    private GestorVistaModelo gestorVista;
+    private GestorVistaMarca gestorVista;
     private int YES_NO_OPTION;
 
-    public GestorVistaModelo getGestorVista() {
+    public GestorVistaMarca getGestorVista() {
         return gestorVista;
     }
     
-    public void setGestorVista(GestorVistaModelo gestorVista) {
+    public void setGestorVista(GestorVistaMarca gestorVista) {
         this.gestorVista = gestorVista;
     }
 
@@ -32,7 +32,7 @@ public class FrmMarca extends FrmGenerica {
     }
 
 // Constructores del formulario 
-    public FrmMarca(GestorVistaModelo gestorVista) {
+    public FrmMarca(GestorVistaMarca gestorVista) {
         try{
            initComponents();
         }
@@ -124,7 +124,7 @@ public class FrmMarca extends FrmGenerica {
 
     private void viewDenominacionVisible(Boolean tipo){
         txtModelo.setVisible(tipo);
-        cmbModelo.setVisible(!tipo);
+        cmbMarca.setVisible(!tipo);
     }
 
     private void viewBasic(){
@@ -164,7 +164,7 @@ public class FrmMarca extends FrmGenerica {
         this.cargarComboModel();
         this.viewDenominacionVisible(false);
         txtCodigo.setEnabled(false);
-        cmbModelo.grabFocus();
+        cmbMarca.grabFocus();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class FrmMarca extends FrmGenerica {
     }
 
     public void cargarComboModel(){
-        this.gestorVista.setModelProyecto(cmbModelo);
+        this.gestorVista.setModelProyecto(cmbMarca);
     }
 
    @Override
@@ -253,7 +253,7 @@ public class FrmMarca extends FrmGenerica {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cmbModelo = new javax.swing.JComboBox();
+        cmbMarca = new javax.swing.JComboBox();
         btnBuscar = new javax.swing.JButton();
         txtModelo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -289,14 +289,19 @@ public class FrmMarca extends FrmGenerica {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(20, 80, 160, 20);
 
-        cmbModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        cmbModelo.addItemListener(new java.awt.event.ItemListener() {
+        cmbMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        cmbMarca.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbModeloItemStateChanged(evt);
+                cmbMarcaItemStateChanged(evt);
             }
         });
-        jPanel1.add(cmbModelo);
-        cmbModelo.setBounds(20, 100, 460, 25);
+        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMarcaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbMarca);
+        cmbMarca.setBounds(20, 100, 460, 25);
 
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -511,16 +516,16 @@ public class FrmMarca extends FrmGenerica {
         setBounds(150, 0, 754, 384);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbModeloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbModeloItemStateChanged
-        if (this.getGestorVista().isEmpty(cmbModelo)) {
+    private void cmbMarcaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMarcaItemStateChanged
+        if (this.getGestorVista().isEmpty(cmbMarca)) {
             this.viewBuscarPrincipalEnter();
         }
         else  {
-            this.getGestorVista().setModel(cmbModelo);
+            this.getGestorVista().setModel(cmbMarca);
             this.viewActualizar();
             this.viewDenominacionVisible(false);
         }
-}//GEN-LAST:event_cmbModeloItemStateChanged
+}//GEN-LAST:event_cmbMarcaItemStateChanged
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         this.viewBuscarComboEnter();
@@ -637,6 +642,10 @@ public class FrmMarca extends FrmGenerica {
         this.gestorVista.imprimir();
     }//GEN-LAST:event_btnImprimirActionPerformed
 
+    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbMarcaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -648,7 +657,7 @@ public class FrmMarca extends FrmGenerica {
     private javax.swing.JButton btnImprimir;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox cmbModelo;
+    private javax.swing.JComboBox cmbMarca;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

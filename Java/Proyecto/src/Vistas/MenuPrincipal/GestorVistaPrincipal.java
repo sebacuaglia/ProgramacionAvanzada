@@ -1,5 +1,5 @@
 package Vistas.MenuPrincipal;
-import Vistas.GestionProyecto.GestorVistaModelo;
+import Vistas.GestionProyecto.GestorVistaMarca;
 import Vistas.GestorVista;
 import Vistas.GestionProyecto.GestorVistaProyecto;
 import Vistas.GestionProyecto.GestorVistaTipoProyecto;
@@ -31,7 +31,7 @@ public class GestorVistaPrincipal extends GestorVista{
     }
     
     public void abrirModelo(JDesktopPane escritorio ) {
-        GestorVistaModelo gestor= new GestorVistaModelo();
+        GestorVistaMarca gestor= new GestorVistaMarca();
         gestor.openFormulario(escritorio);
     }
 }

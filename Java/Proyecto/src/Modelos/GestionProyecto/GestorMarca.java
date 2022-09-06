@@ -61,7 +61,7 @@ public class GestorMarca extends GestorHibernate{
     
    // busquedas, iteradores y otras 
     public List <Marca> listar(){   
-        return this.listarClase(Modelo.class,"nombre");
+        return this.listarClase(Marca.class,"nombre");
     }
        
     public DefaultComboBoxModel getComboModel() {      
