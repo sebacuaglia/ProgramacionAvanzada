@@ -2,7 +2,7 @@ package Modelos.GestionProyecto;
 import javax.persistence.*;
 
 @Entity
-@Table (name="item_proyecto") 
+//@Table (name="item_proyecto") 
 
 public class ItemProyecto implements Comparable{
     @Id @GeneratedValue(strategy=javax.persistence.GenerationType.AUTO)

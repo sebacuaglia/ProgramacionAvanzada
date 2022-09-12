@@ -14,14 +14,14 @@ public class HibernateUtil  {
            try{
                 conf.setProperty("hibernate.connection.driver_class","org.postgresql.Driver");
                 conf.setProperty("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");                 
-                conf.setProperty("hibernate.connection.url","jdbc:postgresql://localhost:5433/pp");
+                conf.setProperty("hibernate.connection.url","jdbc:postgresql://localhost:5432/PA");
             }
             catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Error de Base de Datos Nº 2001");
             }
             
             conf.setProperty("hibernate.connection.username","postgres");
-            conf.setProperty("hibernate.connection.password","inside");
+            conf.setProperty("hibernate.connection.password","7322");
 
             conf.setProperty("hibernate.connection.pool_size","10");                          
             conf.setProperty("hibernate.hbm2ddl.auto","update");
@@ -30,6 +30,11 @@ public class HibernateUtil  {
             conf.addAnnotatedClass(Modelos.GestionProyecto.Proyecto.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.TipoProyecto.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.ItemProyecto.class);
+            
+            //clases del proyecto
+            conf.addAnnotatedClass(Modelos.GestionProyecto.Pais.class);
+            conf.addAnnotatedClass(Modelos.GestionProyecto.Modelo.class);
+            conf.addAnnotatedClass(Modelos.GestionProyecto.Marca.class);
            
             try {
                     sessionFactory = conf.buildSessionFactory();

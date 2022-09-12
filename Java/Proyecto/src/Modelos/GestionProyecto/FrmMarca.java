@@ -2,15 +2,15 @@ package Modelos.GestionProyecto;
 import Vistas.FrmGenerica;
 import javax.swing.*;
 
-public class FrmTipoProyecto2 extends FrmGenerica {
-    private GestorVistaTipoProyecto2 gestorVista;
+public class FrmMarca extends FrmGenerica {
+    private GestorVistaMarca gestorVista;
     private int YES_NO_OPTION;
 
-    public GestorVistaTipoProyecto2 getGestorVista() {
+    public GestorVistaMarca getGestorVista() {
         return gestorVista;
     }
     
-    public void setGestorVista(GestorVistaTipoProyecto2 gestorVista) {
+    public void setGestorVista(GestorVistaMarca gestorVista) {
         this.gestorVista = gestorVista;
     }
 
@@ -23,28 +23,20 @@ public class FrmTipoProyecto2 extends FrmGenerica {
     }
 
     public JTextField getTxtBusquedaDenominacion() {
-        return txtBusquedaDenominacion;
+        return txtBusquedaNombre;
     }
 
     public void setTxtBusquedaDenominacion(JTextField txtBusquedaDenominacion) {
-        this.txtBusquedaDenominacion = txtBusquedaDenominacion;
+        this.txtBusquedaNombre = txtBusquedaDenominacion;
     }
 
 // Definicion de getter y setter de los componentes visuales del formulario
-    public JTextField getTxtDenominacion() {
-        return txtDenominacion;
+    public JTextField getTxtNombre() {
+        return txtNombre;
     }
 
-    public JTextArea getTxtObservaciones() {
-        return txtObservaciones;
-    }
-
-    public void setTxtObservaciones(JTextArea txtObservaciones) {
-        this.txtObservaciones = txtObservaciones;
-    }
-
-    public void setTxtDenominacion(JTextField txtDenominacion) {
-        this.txtDenominacion = txtDenominacion;
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
     }
     
     public JTextField getTxtCodigo() {
@@ -55,8 +47,26 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         this.txtCodigo = txtCodigo;
     }
 
+    public JComboBox<String> getCmbPais() {
+        return cmbPais;
+    }
+
+    public void setCmbPais(JComboBox<String> cmbPais) {
+        this.cmbPais = cmbPais;
+    }
+
+    public JTextField getTxtPais() {
+        return txtPais;
+    }
+
+    public void setTxtPais(JTextField txtPais) {
+        this.txtPais = txtPais;
+    }
+    
+    
+
 // Constructores del formulario 
-    public FrmTipoProyecto2(GestorVistaTipoProyecto2 gestorVista) {
+    public FrmMarca(GestorVistaMarca gestorVista) {
         try{
            initComponents();
            }
@@ -67,7 +77,7 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         this.onViewOpened();
     }
 
-    public FrmTipoProyecto2() {
+    public FrmMarca() {
         initComponents();
     }
     
@@ -119,6 +129,10 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         btnCancelar.setEnabled(true);
         
     } 
+    private void viewDenominacionVisible(Boolean tipo){
+        txtPais.setVisible(!tipo);
+        cmbPais.setVisible(tipo);
+    }
     
     public void viewBuscar() {
         btnNuevo.setEnabled(true); 
@@ -136,15 +150,22 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         this.viewOpenedBotones();
         this.viewCamposEnabled(false);
         this.cargarCombos();
-         this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
+        this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
         this.isExtra();
      }
+    
+    @Override
+    public void cargarCombos() {
+        this.gestorVista.setModelPais(cmbPais);
+    }
 
     @Override
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
-        txtDenominacion.setEnabled(tipo);
-        txtObservaciones.setEnabled(tipo);
+        txtNombre.setEnabled(tipo);
+        cmbPais.setEnabled(tipo);
+        txtPais.setEnabled(false);
+        
     }
 
     private void viewBasic(){
@@ -161,7 +182,7 @@ public class FrmTipoProyecto2 extends FrmGenerica {
     @Override
     public void viewEditarEnter( ) {
         this.viewBasic();
-        txtDenominacion.grabFocus();
+        txtNombre.grabFocus();
         this.getGestorVista().setModoEditar();
     }
 
@@ -206,19 +227,19 @@ public class FrmTipoProyecto2 extends FrmGenerica {
     private void viewNueva(){
         this.clearView();
         this.getGestorVista().newModel();
-        txtDenominacion.grabFocus();
+        txtNombre.grabFocus();
     }
 
     @Override
     public void clearView() {
-        txtDenominacion.setText("");
+        txtNombre.setText("");
         txtCodigo.setText("");
-        txtObservaciones.setText("");
+        txtPais.setText("");
     }
 
     @Override
     public void grabFocus(){
-        txtDenominacion.grabFocus();
+        txtNombre.grabFocus();
     }
 
    @Override
@@ -253,7 +274,9 @@ public class FrmTipoProyecto2 extends FrmGenerica {
             this.extraView();
         }
     }
-       
+      
+    
+    //llenado de tablas
     public void setBusqueda() {
         this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
         this.getGestorVista().setBusqueda();
@@ -270,13 +293,11 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        txtDenominacion = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscarCodigo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtObservaciones = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -285,16 +306,19 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jPanel3 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        cmbPais = new javax.swing.JComboBox<>();
+        txtPais = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
         btnBuscar1 = new javax.swing.JButton();
         btnImprimir1 = new javax.swing.JButton();
-        txtBusquedaDenominacion = new javax.swing.JTextField();
+        txtBusquedaNombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Tipo Proyecto");
-        setToolTipText("Tipo Proyecto");
+        setTitle("Marca");
+        setToolTipText("Marca");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
         getContentPane().setLayout(null);
@@ -303,10 +327,10 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel1.setText("Denominación");
+        jLabel1.setText("Nombre");
         jLabel1.setRequestFocusEnabled(false);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 60, 90, 20);
+        jLabel1.setBounds(20, 70, 90, 20);
 
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -324,12 +348,12 @@ public class FrmTipoProyecto2 extends FrmGenerica {
             }
         });
         jPanel1.add(btnBuscar);
-        btnBuscar.setBounds(480, 80, 40, 30);
+        btnBuscar.setBounds(480, 90, 40, 30);
 
-        txtDenominacion.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtDenominacion.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtDenominacion);
-        txtDenominacion.setBounds(20, 80, 460, 25);
+        txtNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtNombre);
+        txtNombre.setBounds(20, 90, 460, 25);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setText("Código");
@@ -372,16 +396,9 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         btnBuscarCodigo.setBounds(110, 40, 30, 30);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel2.setText("Observaciones");
+        jLabel2.setText("Pais");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 110, 120, 19);
-
-        txtObservaciones.setColumns(20);
-        txtObservaciones.setRows(5);
-        jScrollPane1.setViewportView(txtObservaciones);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 130, 460, 40);
+        jLabel2.setBounds(20, 120, 120, 19);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -496,6 +513,16 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(500, 380, 180, 40);
 
+        cmbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
+        jPanel1.add(cmbPais);
+        cmbPais.setBounds(20, 140, 310, 30);
+
+        txtPais.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtPais.setForeground(new java.awt.Color(187, 187, 198));
+        txtPais.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtPais);
+        txtPais.setBounds(20, 140, 310, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(390, 10, 740, 440);
 
@@ -521,7 +548,7 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jScrollPane2.setViewportView(tblDatos);
 
         jPanel4.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 70, 340, 300);
+        jScrollPane2.setBounds(20, 90, 340, 280);
 
         btnBuscar1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -539,7 +566,7 @@ public class FrmTipoProyecto2 extends FrmGenerica {
             }
         });
         jPanel4.add(btnBuscar1);
-        btnBuscar1.setBounds(280, 30, 80, 30);
+        btnBuscar1.setBounds(260, 50, 80, 30);
 
         btnImprimir1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         btnImprimir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PrinterChica.png"))); // NOI18N
@@ -555,10 +582,15 @@ public class FrmTipoProyecto2 extends FrmGenerica {
         jPanel4.add(btnImprimir1);
         btnImprimir1.setBounds(250, 380, 110, 40);
 
-        txtBusquedaDenominacion.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtBusquedaDenominacion.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel4.add(txtBusquedaDenominacion);
-        txtBusquedaDenominacion.setBounds(20, 30, 240, 25);
+        txtBusquedaNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtBusquedaNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel4.add(txtBusquedaNombre);
+        txtBusquedaNombre.setBounds(20, 50, 240, 25);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Marcas");
+        jPanel4.add(jLabel4);
+        jLabel4.setBounds(20, 20, 190, 20);
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 10, 380, 430);
@@ -711,20 +743,21 @@ public class FrmTipoProyecto2 extends FrmGenerica {
     private javax.swing.JButton btnImprimir1;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cmbPais;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtBusquedaDenominacion;
+    private javax.swing.JTextField txtBusquedaNombre;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtDenominacion;
-    private javax.swing.JTextArea txtObservaciones;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPais;
     // End of variables declaration//GEN-END:variables
 
 }

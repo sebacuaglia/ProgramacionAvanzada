@@ -4,7 +4,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table (name="proyecto") 
+//@Table (name="proyecto") 
 
 public class Proyecto implements Comparable{
     @Id @GeneratedValue(strategy=javax.persistence.GenerationType.AUTO)

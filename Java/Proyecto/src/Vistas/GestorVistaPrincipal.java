@@ -25,5 +25,16 @@ public class GestorVistaPrincipal extends GestorVista{
         GestorVistaTipoProyecto2 gestor= new GestorVistaTipoProyecto2();
         gestor.openFormulario(escritorio); 
     }
+    
+    public  void abrirMarca(JDesktopPane escritorio) {
+        GestorVistaMarca gestor= new GestorVistaMarca();
+        gestor.openFormulario(escritorio); 
+    }
+    
+    public  void abrirModelo(JDesktopPane escritorio) {
+        GestorVistaModelo gestor= new GestorVistaModelo();
+        gestor.openFormulario(escritorio); 
+    }
+    
 
 }
