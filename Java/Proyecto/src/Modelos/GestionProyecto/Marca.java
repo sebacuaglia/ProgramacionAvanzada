@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,7 +28,7 @@ public class Marca {
 
     private String nombre;
 
-    @OneToOne(targetEntity = Pais.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Pais.class,  fetch = FetchType.LAZY)
     private Pais pais;
 
     public long getId() {

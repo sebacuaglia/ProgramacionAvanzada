@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,7 +27,7 @@ public class Modelo {
 
     private String nombre;
 
-    @OneToOne(targetEntity = Marca.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Marca.class, fetch = FetchType.LAZY)
     private Marca marca;
 
     public long getId() {
