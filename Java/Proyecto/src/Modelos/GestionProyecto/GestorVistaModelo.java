@@ -83,6 +83,11 @@ public class GestorVistaModelo extends GestorVista {
             this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
 //           this..setItems(this.getForm().getTbl());
         }
+        if (this.getOpcABM()==2) {
+            this.getModelCombo().addElement(this.getModel());
+            this.getModelCombo().setSelectedItem(this.getModel());
+            this.getForm().dispose(); 
+        }
 
     }
 
@@ -184,6 +189,20 @@ public class GestorVistaModelo extends GestorVista {
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
         this.setOpcABM(2);
+    }
+    
+    public void openFormulario(DefaultComboBoxModel model, JDesktopPane pantalla, JComboBox<String> marca, Marca marcaSelect) {
+        this.setEscritorio(pantalla);
+        this.setModelCombo(model);
+        this.setOpcABM(2);
+        this.setForm(new FrmModelo(this));
+        this.setTitulo(this.getForm().getTitle());
+        this.getEscritorio().add(this.getForm());
+        this.getForm().setVisible(true);
+        this.setOpcABM(2);
+        this.getForm().setCmbMarca(marca);
+        this.getForm().getCmbMarca().setSelectedItem(marcaSelect);
+        
     }
 
     public void initializeTablaBusqueda(JTable tbl) {

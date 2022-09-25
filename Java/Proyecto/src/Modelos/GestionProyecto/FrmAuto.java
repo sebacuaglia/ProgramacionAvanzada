@@ -4,48 +4,48 @@ import Vistas.FrmGenerica;
 import javax.swing.*;
 
 public class FrmAuto extends FrmGenerica {
-    
+
     private GestorVistaMarca gestorVistaMarca;
     private GestorVistaModelo gestorVistaModelo;
     private GestorVistaAuto gestorVistaAuto;
     private int YES_NO_OPTION;
-    
+
     public GestorVistaAuto getGestorVistaAuto() {
         return gestorVistaAuto;
     }
-    
+
     public void setGestorVistaAuto(GestorVistaAuto gestorVistaAuto) {
         this.gestorVistaAuto = gestorVistaAuto;
     }
-    
+
     public GestorVistaMarca getGestorVistaMarca() {
         return gestorVistaMarca;
     }
-    
+
     public void setGestorVistaMarca(GestorVistaMarca gestorVistaMarca) {
         this.gestorVistaMarca = gestorVistaMarca;
     }
-    
+
     public GestorVistaModelo getGestorVistaModelo() {
         return gestorVistaModelo;
     }
-    
+
     public void setGestorVistaModelo(GestorVistaModelo gestorVistaModelo) {
         this.gestorVistaModelo = gestorVistaModelo;
     }
-    
+
     public JTable getTblDatos() {
         return tblDatos;
     }
-    
+
     public void setTblDatos(JTable tblDatos) {
         this.tblDatos = tblDatos;
     }
-    
+
     public JTextField getTxtBusquedaDenominacion() {
         return txtBusquedaNombre;
     }
-    
+
     public void setTxtBusquedaDenominacion(JTextField txtBusquedaDenominacion) {
         this.txtBusquedaNombre = txtBusquedaDenominacion;
     }
@@ -54,87 +54,87 @@ public class FrmAuto extends FrmGenerica {
     public JTextField getTxtCodigo() {
         return txtCodigo;
     }
-    
+
     public void setTxtCodigo(JTextField txtCodigo) {
         this.txtCodigo = txtCodigo;
     }
-    
+
     public JComboBox<String> getCmbMarca() {
         return cmbMarca;
     }
-    
+
     public void setCmbMarca(JComboBox<String> cmbMarca) {
         this.cmbMarca = cmbMarca;
     }
-    
+
     public JComboBox<String> getCmbModelo() {
         return cmbModelo;
     }
-    
+
     public void setCmbModelo(JComboBox<String> cmbModelo) {
         this.cmbModelo = cmbModelo;
     }
-    
+
     public JTextField getTxtPais() {
         return txtMarca;
     }
-    
+
     public void setTxtPais(JTextField txtPais) {
         this.txtMarca = txtPais;
     }
-    
+
     public JCheckBox getCheckBoxUsado() {
         return checkBoxUsado;
     }
-    
+
     public void setCheckBoxUsado(JCheckBox checkBoxUsado) {
         this.checkBoxUsado = checkBoxUsado;
     }
-    
+
     public JTextField getTxtAnio() {
         return txtAnio;
     }
-    
+
     public void setTxtAnio(JTextField txtAnio) {
         this.txtAnio = txtAnio;
     }
-    
+
     public JTextField getTxtColor() {
         return txtColor;
     }
-    
+
     public void setTxtColor(JTextField txtColor) {
         this.txtColor = txtColor;
     }
-    
+
     public JTextField getTxtMarca() {
         return txtMarca;
     }
-    
+
     public void setTxtMarca(JTextField txtMarca) {
         this.txtMarca = txtMarca;
     }
-    
+
     public JTextField getTxtMatricula() {
         return txtMatricula;
     }
-    
+
     public void setTxtMatricula(JTextField txtMatricula) {
         this.txtMatricula = txtMatricula;
     }
-    
+
     public JTextField getTxtModelo() {
         return txtModelo;
     }
-    
+
     public void setTxtModelo(JTextField txtModelo) {
         this.txtModelo = txtModelo;
     }
-    
+
     public JTextField getTxtPrecio() {
         return txtPrecio;
     }
-    
+
     public void setTxtPrecio(JTextField txtPrecio) {
         this.txtPrecio = txtPrecio;
     }
@@ -144,28 +144,28 @@ public class FrmAuto extends FrmGenerica {
         try {
             initComponents();
         } catch (Exception e) {
-            
+
         }
         this.setGestorVistaAuto(gestorVista);
         this.onViewOpened();
     }
-    
+
     public FrmAuto(GestorVistaAuto gestorVistaAuto, GestorVistaMarca gestorVistaMarca, GestorVistaModelo gestorVistaModelo) {
         try {
             initComponents();
         } catch (Exception e) {
-            
+
         }
         this.setGestorVistaAuto(gestorVistaAuto);
         this.setGestorVistaMarca(gestorVistaMarca);
         this.setGestorVistaModelo(gestorVistaModelo);
         this.onViewOpened();
     }
-    
+
     public FrmAuto() {
         initComponents();
         this.onViewOpened();
-        
+
     }
 
     // Metodos que gestionan los botones de la barra comando 
@@ -174,63 +174,63 @@ public class FrmAuto extends FrmGenerica {
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-        
+
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
     }
-    
+
     public void viewNuevoEditarBotones() {
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(true);
         btnEliminar.setEnabled(false);
-        
+
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
     }
-    
+
     public void viewEliminarBotones() {
         this.viewOpenedBotones();
     }
-    
+
     public void viewGuardarBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-        
+
         btnCancelar.setEnabled(false);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
     }
-    
+
     public void viewBuscarBotones() {
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-        
+
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
-        
+
     }
-    
+
     private void viewDenominacionVisible(Boolean tipo) {
         txtMarca.setVisible(!tipo);
         cmbMarca.setVisible(tipo);
     }
-    
+
     public void viewBuscar() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-        
+
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
     }
-    
+
     @Override
     public void onViewOpened() {
         this.viewOpenedBotones();
@@ -243,15 +243,15 @@ public class FrmAuto extends FrmGenerica {
         checkBoxUsado.setSelected(false);
         txtMatricula.setEnabled(checkBoxUsado.isSelected());
         txtAnio.setEnabled(checkBoxUsado.isSelected());
-        
+
     }
-    
+
     @Override
     public void cargarCombos() {
         this.gestorVistaAuto.setModelMarca(cmbMarca);
-        
+
     }
-    
+
     @Override
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
@@ -265,50 +265,50 @@ public class FrmAuto extends FrmGenerica {
         txtMatricula.setEnabled(checkBoxUsado.isSelected());
         txtAnio.setEnabled(checkBoxUsado.isSelected());
     }
-    
+
     private void viewBasic() {
         this.viewNuevoEditarBotones();
         this.viewCamposEnabled(true);
     }
-    
+
     @Override
     public void viewNuevoEnter() {
         this.viewBasic();
         this.viewNueva();
     }
-    
+
     @Override
     public void viewEditarEnter() {
         this.viewBasic();
-        
+
         cmbMarca.grabFocus();
         this.getGestorVistaAuto().setModoEditar();
     }
-    
+
     private void viewBuscarPrincipalEnter() {
         this.viewCamposEnabled(false);
         this.clearView();
         this.viewBuscar();
     }
-    
+
     private void viewBuscarCodigoEnter() {
         this.viewBuscarPrincipalEnter();
         txtCodigo.setEnabled(true);
         txtCodigo.grabFocus();
     }
-    
+
     private void viewBuscarComboEnter() {
         this.viewBuscarPrincipalEnter();
         txtCodigo.setEnabled(false);
     }
-    
+
     @Override
     public void viewGuardar() {
         this.viewGuardarBotones();
         this.viewGuardarBotones();
         this.viewCamposEnabled(false);
     }
-    
+
     @Override
     public void viewEliminar() {
         this.viewEliminarBotones();
@@ -316,7 +316,7 @@ public class FrmAuto extends FrmGenerica {
         this.viewCamposEnabled(false);
         this.clearView();
     }
-    
+
     public void viewActualizar() {
         this.setView();
         this.viewCamposEnabled(false);
@@ -324,7 +324,7 @@ public class FrmAuto extends FrmGenerica {
         txtAnio.setEnabled(false);
         this.viewBuscarBotones();
     }
-    
+
     private void viewNueva() {
         this.clearView();
         this.getGestorVistaAuto().newModel();
@@ -334,7 +334,7 @@ public class FrmAuto extends FrmGenerica {
         //txtNombre.grabFocus();
         cmbMarca.grabFocus();
     }
-    
+
     @Override
     public void clearView() {
         txtCodigo.setText("");
@@ -347,39 +347,39 @@ public class FrmAuto extends FrmGenerica {
         txtMatricula.setText("");
         txtAnio.setText("");
     }
-    
+
     @Override
     public void grabFocus() {
         cmbMarca.grabFocus();
     }
-    
+
     @Override
     public void cancelarView() {
         this.getGestorVistaAuto().cancelarView();
         this.onViewOpened();
         this.clearView();
     }
-    
+
     @Override
     public void deleteView() {
         this.getGestorVistaAuto().deleteView();
     }
-    
+
     @Override
     public void saveView() {
         this.getGestorVistaAuto().saveView();
     }
-    
+
     @Override
     public void setView() {
         this.getGestorVistaAuto().getView();
     }
-    
+
     public void extraView() {
         //btnBuscar.setEnabled(false);
         this.viewNuevoEnter();
     }
-    
+
     private void isExtra() {
         if (this.getGestorVistaAuto().isExtra()) {
             this.extraView();
@@ -428,6 +428,8 @@ public class FrmAuto extends FrmGenerica {
         jLabel8 = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        btnAgregarMarca = new javax.swing.JButton();
+        btnAgregarModelo = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -626,13 +628,13 @@ public class FrmAuto extends FrmGenerica {
             }
         });
         jPanel1.add(cmbMarca);
-        cmbMarca.setBounds(20, 110, 310, 30);
+        cmbMarca.setBounds(20, 110, 230, 30);
 
         txtMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtMarca.setForeground(new java.awt.Color(187, 187, 198));
         txtMarca.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtMarca);
-        txtMarca.setBounds(20, 110, 310, 30);
+        txtMarca.setBounds(20, 110, 230, 30);
 
         txtMatricula.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtMatricula.setForeground(new java.awt.Color(187, 187, 198));
@@ -683,13 +685,13 @@ public class FrmAuto extends FrmGenerica {
             }
         });
         jPanel1.add(cmbModelo);
-        cmbModelo.setBounds(350, 110, 310, 30);
+        cmbModelo.setBounds(350, 110, 230, 30);
 
         txtModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtModelo.setForeground(new java.awt.Color(187, 187, 198));
         txtModelo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtModelo);
-        txtModelo.setBounds(350, 110, 310, 30);
+        txtModelo.setBounds(350, 110, 230, 30);
 
         txtColor.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtColor.setForeground(new java.awt.Color(187, 187, 198));
@@ -712,6 +714,24 @@ public class FrmAuto extends FrmGenerica {
         jLabel9.setText("Precio");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(350, 150, 120, 19);
+
+        btnAgregarMarca.setText("Agregar");
+        btnAgregarMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarMarcaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregarMarca);
+        btnAgregarMarca.setBounds(250, 110, 80, 30);
+
+        btnAgregarModelo.setText("Agregar");
+        btnAgregarModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarModeloActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregarModelo);
+        btnAgregarModelo.setBounds(580, 110, 80, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(390, 10, 740, 440);
@@ -934,7 +954,7 @@ public class FrmAuto extends FrmGenerica {
             txtMatricula.setEnabled(checkBoxUsado.isSelected());
             txtAnio.setEnabled(checkBoxUsado.isSelected());
         }
-        
+
 
     }//GEN-LAST:event_checkBoxUsadoMouseClicked
 
@@ -947,11 +967,22 @@ public class FrmAuto extends FrmGenerica {
     }//GEN-LAST:event_cmbMarcaMouseClicked
 
     private void cmbMarcaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cmbMarcaPropertyChange
-        
+
     }//GEN-LAST:event_cmbMarcaPropertyChange
+
+    private void btnAgregarModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarModeloActionPerformed
+        this.getGestorVistaAuto().openFormularioModelo((DefaultComboBoxModel) cmbModelo.getModel(), cmbMarca);
+    }//GEN-LAST:event_btnAgregarModeloActionPerformed
+
+    private void btnAgregarMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMarcaActionPerformed
+        this.getGestorVistaAuto().openFormularioMarca((DefaultComboBoxModel) cmbMarca.getModel());
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarMarcaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarMarca;
+    private javax.swing.JButton btnAgregarModelo;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscarCodigo;
     public javax.swing.JButton btnCancelar;

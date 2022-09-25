@@ -29,6 +29,8 @@ public class GestorVistaAuto extends GestorVista {
     private GestorVistaMarca gestorMarca = new GestorVistaMarca();
     private GestorVistaModelo gestorModelo = new GestorVistaModelo();
 
+    private int bandera;
+
     public FrmAuto getForm() {
         return form;
     }
@@ -72,7 +74,9 @@ public class GestorVistaAuto extends GestorVista {
     }
 
     public void setModelModelo(JComboBox cmb) {
-        cmb.setModel(getComboModelModelo((Marca) this.getForm().getCmbMarca().getModel().getSelectedItem()));
+        if (bandera != 1) {
+            cmb.setModel(getComboModelModelo((Marca) this.getForm().getCmbMarca().getModel().getSelectedItem()));
+        }
     }
 
     public DefaultComboBoxModel getComboModelMarca() {
@@ -80,7 +84,9 @@ public class GestorVistaAuto extends GestorVista {
     }
 
     public DefaultComboBoxModel getComboModelModelo(Marca marca) {
+
         return this.getGestorModelo().getComboModelModelo(marca);
+
     }
 
     @Override
@@ -99,6 +105,11 @@ public class GestorVistaAuto extends GestorVista {
         if (this.getOpcABM() == 0) {
             this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
 //            this..setItems(this.getForm().getTbl());
+        }
+        if (this.getOpcABM() == 2) {
+            this.getModelCombo().addElement(this.getModel());
+            this.getModelCombo().setSelectedItem(this.getModel());
+            this.getForm().dispose();
         }
 
     }
@@ -243,6 +254,23 @@ public class GestorVistaAuto extends GestorVista {
         this.setOpcABM(2);
     }
 
+    void openFormularioMarca(DefaultComboBoxModel model) {
+        bandera = 1;
+        GestorVistaMarca gestorVistaMarca = new GestorVistaMarca();
+        gestorVistaMarca.openFormulario(model, this.getEscritorio());
+
+    }
+
+    void openFormularioModelo(DefaultComboBoxModel model) {
+        GestorVistaModelo gestorVistaModelo = new GestorVistaModelo();
+        gestorVistaModelo.openFormulario(model, this.getEscritorio());
+    }
+    
+    void openFormularioModelo(DefaultComboBoxModel model, JComboBox<String> marca) {
+        GestorVistaModelo gestorVistaModelo = new GestorVistaModelo();
+        gestorVistaModelo.openFormulario(model, this.getEscritorio(), marca, (Marca) marca.getSelectedItem());
+    }
+
     public void initializeTablaBusqueda(JTable tbl) {
         String[] titulo = {"", "Cód.", "Marca", "Modelo", "Color", "Precio", "Usado", "Patente", "Año"};
         String[] ancho = {"0", "43", "100", "100", "100", "100", "100", "100", "100"};
@@ -281,7 +309,7 @@ public class GestorVistaAuto extends GestorVista {
         while (it2.hasNext()) {
             auxModel = (Auto) it2.next();
             Object[] fila = {auxModel, auxModel.getCodigo(), auxModel.getModelo().getMarca().getNombre(), auxModel.getModelo().getNombre(),
-                                auxModel.getColor(), auxModel.getPrecio(), auxModel.isUsado(), auxModel.getMatricula(), auxModel.getAnio()};
+                auxModel.getColor(), auxModel.getPrecio(), auxModel.isUsado(), auxModel.getMatricula(), auxModel.getAnio()};
             auxModelTabla.addRow(fila);
         }
         return auxModelTabla;
@@ -289,7 +317,7 @@ public class GestorVistaAuto extends GestorVista {
 
     public List<Auto> listar(String text, int ord) {
         Criteria crit = getSession().createCriteria(Auto.class);
-        crit.add(Restrictions.eq("habilitado",true));
+        crit.add(Restrictions.eq("habilitado", true));
         return crit.list();
     }
 
@@ -325,16 +353,16 @@ public class GestorVistaAuto extends GestorVista {
         //this.getForm().getCmbPais().setSelectedItem(this.getModel().getPais());
         this.getForm().getCmbMarca().setSelectedItem(this.getModel().getModelo().getMarca());
         this.getForm().getCmbModelo().setSelectedItem(this.getModel().getModelo());
-        
+
         this.getForm().getTxtColor().setText(this.getModel().getColor());
         this.getForm().getTxtPrecio().setText(this.getModel().getPrecio());
-        
+
         if (this.getModel().isUsado()) {
             this.getForm().getCheckBoxUsado().setSelected(this.getModel().isUsado());
             this.getForm().getTxtMatricula().setText(this.getModel().getMatricula());
             this.getForm().getTxtAnio().setText(this.getModel().getAnio());
         }
-        
+
     }
 
     public DefaultComboBoxModel getComboModelAuto() {

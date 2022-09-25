@@ -56,6 +56,8 @@ public class FrmModelo extends FrmGenerica {
     }
     
     
+    
+    
 
 // Constructores del formulario 
     public FrmModelo(GestorVistaModelo gestorVista) {
