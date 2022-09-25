@@ -235,6 +235,7 @@ public class FrmMarca extends FrmGenerica {
         txtNombre.setText("");
         txtCodigo.setText("");
         txtPais.setText("");
+        cmbPais.setSelectedIndex(0);
     }
 
     @Override

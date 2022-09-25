@@ -24,7 +24,7 @@ public class HibernateUtil  {
             conf.setProperty("hibernate.connection.password","7322");
 
             conf.setProperty("hibernate.connection.pool_size","10");                          
-            conf.setProperty("hibernate.hbm2ddl.auto","create");
+            conf.setProperty("hibernate.hbm2ddl.auto","update");
 
             conf.addPackage("Modelos.GestionProyecto");
             conf.addAnnotatedClass(Modelos.GestionProyecto.Proyecto.class);
@@ -35,6 +35,8 @@ public class HibernateUtil  {
             conf.addAnnotatedClass(Modelos.GestionProyecto.Pais.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.Modelo.class);
             conf.addAnnotatedClass(Modelos.GestionProyecto.Marca.class);
+            
+            conf.addAnnotatedClass(Modelos.GestionProyecto.Auto.class);
            
             try {
                     sessionFactory = conf.buildSessionFactory();

@@ -36,5 +36,10 @@ public class GestorVistaPrincipal extends GestorVista{
         gestor.openFormulario(escritorio); 
     }
     
+    public  void abrirAuto(JDesktopPane escritorio) {
+        GestorVistaAuto gestor= new GestorVistaAuto();
+        gestor.openFormulario(escritorio); 
+    }
+    
 
 }

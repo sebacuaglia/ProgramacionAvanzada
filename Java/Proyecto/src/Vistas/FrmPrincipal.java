@@ -40,6 +40,7 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnuTipoeoyecto2 = new javax.swing.JMenuItem();
         mnuMarca = new javax.swing.JMenuItem();
         mnuModelo = new javax.swing.JMenuItem();
+        mnuAuto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ejemplo");
@@ -94,6 +95,15 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         });
         mnConfiguracion.add(mnuModelo);
 
+        mnuAuto.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        mnuAuto.setText("Auto");
+        mnuAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAutoActionPerformed(evt);
+            }
+        });
+        mnConfiguracion.add(mnuAuto);
+
         jmenu.add(mnConfiguracion);
 
         setJMenuBar(jmenu);
@@ -132,6 +142,10 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         this.gestorVista.abrirModelo(getEscritorio());
     }//GEN-LAST:event_mnuModeloActionPerformed
 
+    private void mnuAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAutoActionPerformed
+        this.gestorVista.abrirAuto(getEscritorio());
+    }//GEN-LAST:event_mnuAutoActionPerformed
+
 public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -144,6 +158,7 @@ public static void main(String args[]) {
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jmenu;
     private javax.swing.JMenu mnConfiguracion;
+    private javax.swing.JMenuItem mnuAuto;
     private javax.swing.JMenuItem mnuMarca;
     private javax.swing.JMenuItem mnuModelo;
     private javax.swing.JMenuItem mnuProyecto;

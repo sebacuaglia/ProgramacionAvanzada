@@ -1,5 +1,8 @@
 package Hibernate;
 import GUtilr.Util;
+import static Hibernate.HibernateUtil.getSession;
+import Modelos.GestionProyecto.Marca;
+import Modelos.GestionProyecto.Modelo;
 import java.awt.Component;
 import java.util.*;
 import javax.swing.JOptionPane;
