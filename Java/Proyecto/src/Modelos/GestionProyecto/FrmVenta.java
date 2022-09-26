@@ -420,11 +420,8 @@ public class FrmVenta extends FrmGenerica {
         btnCancelar = new javax.swing.JButton();
         cmbMarca = new javax.swing.JComboBox<>();
         txtMarca = new javax.swing.JTextField();
-        txtMatricula = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         txtAnio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        checkBoxUsado = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         cmbModelo = new javax.swing.JComboBox<>();
         txtModelo = new javax.swing.JTextField();
@@ -434,6 +431,12 @@ public class FrmVenta extends FrmGenerica {
         jLabel9 = new javax.swing.JLabel();
         btnAgregarMarca = new javax.swing.JButton();
         btnAgregarModelo = new javax.swing.JButton();
+        cmbModelo1 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        cmbModelo2 = new javax.swing.JComboBox<>();
+        txtModelo1 = new javax.swing.JTextField();
+        cmbFormaPago = new javax.swing.JComboBox<>();
+        txtFormaPago = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -453,10 +456,10 @@ public class FrmVenta extends FrmGenerica {
         jPanel1.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel3.setText("Código");
+        jLabel3.setText("Patente");
         jLabel3.setRequestFocusEnabled(false);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 20, 90, 19);
+        jLabel3.setBounds(20, 20, 90, 17);
 
         txtCodigo.setBackground(new java.awt.Color(204, 255, 204));
         txtCodigo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
@@ -472,7 +475,7 @@ public class FrmVenta extends FrmGenerica {
             }
         });
         jPanel1.add(txtCodigo);
-        txtCodigo.setBounds(20, 40, 90, 25);
+        txtCodigo.setBounds(20, 40, 90, 23);
 
         btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
@@ -493,9 +496,9 @@ public class FrmVenta extends FrmGenerica {
         btnBuscarCodigo.setBounds(110, 40, 30, 30);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel2.setText("Marca");
+        jLabel2.setText("Cliente");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 90, 120, 19);
+        jLabel2.setBounds(20, 90, 120, 17);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -586,7 +589,7 @@ public class FrmVenta extends FrmGenerica {
             }
         });
         jPanel3.add(btnSalir);
-        btnSalir.setBounds(100, 10, 75, 21);
+        btnSalir.setBounds(100, 10, 75, 23);
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -640,47 +643,21 @@ public class FrmVenta extends FrmGenerica {
         jPanel1.add(txtMarca);
         txtMarca.setBounds(20, 110, 230, 30);
 
-        txtMatricula.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtMatricula.setForeground(new java.awt.Color(187, 187, 198));
-        txtMatricula.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtMatricula);
-        txtMatricula.setBounds(20, 270, 310, 30);
-
-        jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel5.setText("Matricula");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 250, 120, 19);
-
         txtAnio.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtAnio.setForeground(new java.awt.Color(187, 187, 198));
         txtAnio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtAnio);
-        txtAnio.setBounds(350, 270, 310, 30);
+        txtAnio.setBounds(160, 40, 80, 20);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel6.setText("Año");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(350, 250, 120, 19);
-
-        checkBoxUsado.setText("Usado?");
-        checkBoxUsado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        checkBoxUsado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                checkBoxUsadoMouseClicked(evt);
-            }
-        });
-        checkBoxUsado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBoxUsadoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(checkBoxUsado);
-        checkBoxUsado.setBounds(20, 220, 61, 20);
+        jLabel6.setBounds(160, 20, 50, 17);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel7.setText("Modelo");
+        jLabel7.setText("Forma de Pago");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(350, 90, 120, 19);
+        jLabel7.setBounds(20, 280, 120, 17);
 
         cmbModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
         cmbModelo.addActionListener(new java.awt.event.ActionListener() {
@@ -701,23 +678,23 @@ public class FrmVenta extends FrmGenerica {
         txtColor.setForeground(new java.awt.Color(187, 187, 198));
         txtColor.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtColor);
-        txtColor.setBounds(20, 170, 310, 30);
+        txtColor.setBounds(20, 230, 310, 30);
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel8.setText("Color");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 150, 120, 19);
+        jLabel8.setBounds(20, 210, 120, 17);
 
         txtPrecio.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtPrecio.setForeground(new java.awt.Color(187, 187, 198));
         txtPrecio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtPrecio);
-        txtPrecio.setBounds(350, 170, 310, 30);
+        txtPrecio.setBounds(20, 170, 310, 30);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel9.setText("Precio");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(350, 150, 120, 19);
+        jLabel9.setBounds(20, 150, 120, 17);
 
         btnAgregarMarca.setText("Agregar");
         btnAgregarMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -737,8 +714,48 @@ public class FrmVenta extends FrmGenerica {
         jPanel1.add(btnAgregarModelo);
         btnAgregarModelo.setBounds(580, 110, 80, 30);
 
+        cmbModelo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
+        cmbModelo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbModelo1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbModelo1);
+        cmbModelo1.setBounds(350, 110, 230, 30);
+
+        jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel10.setText("Vendedor");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(350, 90, 120, 17);
+
+        cmbModelo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
+        cmbModelo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbModelo2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbModelo2);
+        cmbModelo2.setBounds(350, 110, 230, 30);
+
+        txtModelo1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtModelo1.setForeground(new java.awt.Color(187, 187, 198));
+        txtModelo1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtModelo1);
+        txtModelo1.setBounds(350, 110, 230, 30);
+
+        jPanel1.add(cmbFormaPago);
+        cmbFormaPago.setBounds(20, 300, 310, 30);
+
+        txtFormaPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFormaPagoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtFormaPago);
+        txtFormaPago.setBounds(20, 300, 310, 30);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(390, 10, 740, 440);
+        jPanel1.setBounds(370, 10, 730, 430);
 
         jPanel4.setLayout(null);
 
@@ -799,10 +816,10 @@ public class FrmVenta extends FrmGenerica {
         txtBusquedaNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtBusquedaNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel4.add(txtBusquedaNombre);
-        txtBusquedaNombre.setBounds(20, 50, 240, 25);
+        txtBusquedaNombre.setBounds(20, 50, 240, 23);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Lista de Autos disponibles");
+        jLabel4.setText("Autos disponibles");
         jPanel4.add(jLabel4);
         jLabel4.setBounds(20, 20, 190, 20);
 
@@ -944,23 +961,9 @@ public class FrmVenta extends FrmGenerica {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbMarcaActionPerformed
 
-    private void checkBoxUsadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxUsadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkBoxUsadoActionPerformed
-
     private void cmbModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbModeloActionPerformed
-
-    private void checkBoxUsadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxUsadoMouseClicked
-        // si check = true se habilita el resto de campos else se deshabilitan
-        if (checkBoxUsado.isEnabled()) {
-            txtMatricula.setEnabled(checkBoxUsado.isSelected());
-            txtAnio.setEnabled(checkBoxUsado.isSelected());
-        }
-
-
-    }//GEN-LAST:event_checkBoxUsadoMouseClicked
 
     private void cmbMarcaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMarcaItemStateChanged
         this.gestorVistaAuto.setModelModelo(cmbModelo);
@@ -982,6 +985,18 @@ public class FrmVenta extends FrmGenerica {
         this.getGestorVistaAuto().openFormularioMarca((DefaultComboBoxModel) cmbMarca.getModel());
     }//GEN-LAST:event_btnAgregarMarcaActionPerformed
 
+    private void cmbModelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModelo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbModelo1ActionPerformed
+
+    private void cmbModelo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModelo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbModelo2ActionPerformed
+
+    private void txtFormaPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFormaPagoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFormaPagoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarMarca;
@@ -995,13 +1010,15 @@ public class FrmVenta extends FrmGenerica {
     private javax.swing.JButton btnImprimir1;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
-    private javax.swing.JCheckBox checkBoxUsado;
+    private javax.swing.JComboBox<String> cmbFormaPago;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JComboBox<String> cmbModelo;
+    private javax.swing.JComboBox<String> cmbModelo1;
+    private javax.swing.JComboBox<String> cmbModelo2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1016,9 +1033,10 @@ public class FrmVenta extends FrmGenerica {
     private javax.swing.JTextField txtBusquedaNombre;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtFormaPago;
     private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtMatricula;
     private javax.swing.JTextField txtModelo;
+    private javax.swing.JTextField txtModelo1;
     private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables
 
