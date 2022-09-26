@@ -131,6 +131,10 @@ public class GestorVistaMarca extends GestorVista {
                 break;
 
             case 2:
+                this.guardarObjeto();
+                break;
+            
+            case 3:
                 this.eliminar();
                 break;
 

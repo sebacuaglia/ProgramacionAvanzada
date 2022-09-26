@@ -249,6 +249,7 @@ public class FrmAuto extends FrmGenerica {
     @Override
     public void cargarCombos() {
         this.gestorVistaAuto.setModelMarca(cmbMarca);
+        cmbMarca.setSelectedItem("");
 
     }
 
@@ -256,7 +257,9 @@ public class FrmAuto extends FrmGenerica {
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
         cmbMarca.setEnabled(tipo);
+        btnAgregarMarca.setEnabled(tipo);
         txtMarca.setEnabled(false);
+        btnAgregarModelo.setEnabled(tipo);
         cmbModelo.setEnabled(tipo);
         txtModelo.setEnabled(false);
         txtColor.setEnabled(tipo);
@@ -305,8 +308,9 @@ public class FrmAuto extends FrmGenerica {
     @Override
     public void viewGuardar() {
         this.viewGuardarBotones();
-        this.viewGuardarBotones();
         this.viewCamposEnabled(false);
+        txtMatricula.setEnabled(false);
+        txtAnio.setEnabled(false);
     }
 
     @Override
@@ -976,7 +980,6 @@ public class FrmAuto extends FrmGenerica {
 
     private void btnAgregarMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMarcaActionPerformed
         this.getGestorVistaAuto().openFormularioMarca((DefaultComboBoxModel) cmbMarca.getModel());
-// TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarMarcaActionPerformed
 
 

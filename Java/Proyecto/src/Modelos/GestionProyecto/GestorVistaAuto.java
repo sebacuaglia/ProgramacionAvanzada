@@ -29,8 +29,6 @@ public class GestorVistaAuto extends GestorVista {
     private GestorVistaMarca gestorMarca = new GestorVistaMarca();
     private GestorVistaModelo gestorModelo = new GestorVistaModelo();
 
-    private int bandera;
-
     public FrmAuto getForm() {
         return form;
     }
@@ -74,9 +72,7 @@ public class GestorVistaAuto extends GestorVista {
     }
 
     public void setModelModelo(JComboBox cmb) {
-        if (bandera != 1) {
-            cmb.setModel(getComboModelModelo((Marca) this.getForm().getCmbMarca().getModel().getSelectedItem()));
-        }
+        cmb.setModel(getComboModelModelo((Marca) this.getForm().getCmbMarca().getModel().getSelectedItem()));
     }
 
     public DefaultComboBoxModel getComboModelMarca() {
@@ -226,7 +222,7 @@ public class GestorVistaAuto extends GestorVista {
 
     public int getUltimoCodigo() {
         try {
-            Marca auxModel = (Marca) this.listarUltimo(Marca.class).get(0);
+            Auto auxModel = (Auto) this.listarUltimo(Auto.class).get(0);
             return auxModel.getCodigo();
         } catch (Exception e) {
             return 0;
@@ -255,7 +251,6 @@ public class GestorVistaAuto extends GestorVista {
     }
 
     void openFormularioMarca(DefaultComboBoxModel model) {
-        bandera = 1;
         GestorVistaMarca gestorVistaMarca = new GestorVistaMarca();
         gestorVistaMarca.openFormulario(model, this.getEscritorio());
 
@@ -265,10 +260,10 @@ public class GestorVistaAuto extends GestorVista {
         GestorVistaModelo gestorVistaModelo = new GestorVistaModelo();
         gestorVistaModelo.openFormulario(model, this.getEscritorio());
     }
-    
+
     void openFormularioModelo(DefaultComboBoxModel model, JComboBox<String> marca) {
         GestorVistaModelo gestorVistaModelo = new GestorVistaModelo();
-        gestorVistaModelo.openFormulario(model, this.getEscritorio(), marca, (Marca) marca.getSelectedItem());
+        gestorVistaModelo.openFormulario(model, this.getEscritorio(), (Marca) marca.getSelectedItem());
     }
 
     public void initializeTablaBusqueda(JTable tbl) {

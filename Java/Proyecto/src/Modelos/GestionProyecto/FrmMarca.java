@@ -55,13 +55,13 @@ public class FrmMarca extends FrmGenerica {
         this.cmbPais = cmbPais;
     }
 
-    public JTextField getTxtPais() {
-        return txtPais;
-    }
+    //public JTextField getTxtPais() {
+        //return txtPais;
+    //}
 
-    public void setTxtPais(JTextField txtPais) {
-        this.txtPais = txtPais;
-    }
+    //public void setTxtPais(JTextField txtPais) {
+        //this.txtPais = txtPais;
+    //}
     
     
 
@@ -130,7 +130,7 @@ public class FrmMarca extends FrmGenerica {
         
     } 
     private void viewDenominacionVisible(Boolean tipo){
-        txtPais.setVisible(!tipo);
+        //txtPais.setVisible(!tipo);
         cmbPais.setVisible(tipo);
     }
     
@@ -164,7 +164,7 @@ public class FrmMarca extends FrmGenerica {
         txtCodigo.setEnabled(false);
         txtNombre.setEnabled(tipo);
         cmbPais.setEnabled(tipo);
-        txtPais.setEnabled(false);
+        //txtPais.setEnabled(false);
         
     }
 
@@ -234,7 +234,7 @@ public class FrmMarca extends FrmGenerica {
     public void clearView() {
         txtNombre.setText("");
         txtCodigo.setText("");
-        txtPais.setText("");
+        //txtPais.setText("");
         cmbPais.setSelectedIndex(0);
     }
 
@@ -308,7 +308,6 @@ public class FrmMarca extends FrmGenerica {
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         cmbPais = new javax.swing.JComboBox<>();
-        txtPais = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -517,12 +516,6 @@ public class FrmMarca extends FrmGenerica {
         cmbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
         jPanel1.add(cmbPais);
         cmbPais.setBounds(20, 140, 310, 30);
-
-        txtPais.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtPais.setForeground(new java.awt.Color(187, 187, 198));
-        txtPais.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtPais);
-        txtPais.setBounds(20, 140, 310, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(390, 10, 740, 440);
@@ -758,7 +751,6 @@ public class FrmMarca extends FrmGenerica {
     private javax.swing.JTextField txtBusquedaNombre;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtPais;
     // End of variables declaration//GEN-END:variables
 
 }

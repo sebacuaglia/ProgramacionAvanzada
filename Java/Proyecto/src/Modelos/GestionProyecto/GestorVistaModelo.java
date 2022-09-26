@@ -27,7 +27,18 @@ public class GestorVistaModelo extends GestorVista {
     private FrmModelo form;
     private Modelo model;
     private GestorVistaMarca gestorMarca = new GestorVistaMarca();
+    
+    private Marca marcaSelected;
 
+    public Marca getMarcaSelected() {
+        return marcaSelected;
+    }
+
+    public void setMarcaSelected(Marca marcaSelected) {
+        this.marcaSelected = marcaSelected;
+    }
+
+    
     public FrmModelo getForm() {
         return form;
     }
@@ -131,6 +142,10 @@ public class GestorVistaModelo extends GestorVista {
                 break;
 
             case 2:
+                this.guardarObjeto();
+                break;
+            
+            case 3:
                 this.eliminar();
                 break;
 
@@ -191,7 +206,9 @@ public class GestorVistaModelo extends GestorVista {
         this.setOpcABM(2);
     }
     
-    public void openFormulario(DefaultComboBoxModel model, JDesktopPane pantalla, JComboBox<String> marca, Marca marcaSelect) {
+    public void openFormulario(DefaultComboBoxModel model, JDesktopPane pantalla, Marca marcaSelect) {
+        this.setMarcaSelected(marcaSelect);
+        
         this.setEscritorio(pantalla);
         this.setModelCombo(model);
         this.setOpcABM(2);
@@ -200,9 +217,13 @@ public class GestorVistaModelo extends GestorVista {
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
         this.setOpcABM(2);
-        this.getForm().setCmbMarca(marca);
-        this.getForm().getCmbMarca().setSelectedItem(marcaSelect);
         
+    }
+    
+    void openFormularioMarca(DefaultComboBoxModel model) {
+        GestorVistaMarca gestorVistaMarca = new GestorVistaMarca();
+        gestorVistaMarca.openFormulario(model, this.getEscritorio());
+
     }
 
     public void initializeTablaBusqueda(JTable tbl) {
