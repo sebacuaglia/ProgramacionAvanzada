@@ -154,6 +154,7 @@ public class FrmModelo extends FrmGenerica {
         txtCodigo.setEnabled(false);
         txtNombre.setEnabled(tipo);
         cmbMarca.setEnabled(tipo);
+        btnAgregarMarca.setEnabled(tipo);
     }
 
     private void viewBasic(){
@@ -298,7 +299,7 @@ public class FrmModelo extends FrmGenerica {
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         cmbMarca = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnAgregarMarca = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -508,14 +509,14 @@ public class FrmModelo extends FrmGenerica {
         jPanel1.add(cmbMarca);
         cmbMarca.setBounds(20, 140, 310, 30);
 
-        jButton1.setText("Agregar Marca");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarMarca.setText("Agregar Marca");
+        btnAgregarMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarMarcaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(350, 140, 110, 30);
+        jPanel1.add(btnAgregarMarca);
+        btnAgregarMarca.setBounds(350, 140, 110, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(390, 10, 740, 440);
@@ -725,12 +726,13 @@ public class FrmModelo extends FrmGenerica {
              this.getGestorVista().setDatos();
     }//GEN-LAST:event_tblDatosMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMarcaActionPerformed
          this.getGestorVista().openFormularioMarca((DefaultComboBoxModel) cmbMarca.getModel());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarMarcaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarMarca;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscarCodigo;
@@ -742,7 +744,6 @@ public class FrmModelo extends FrmGenerica {
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbMarca;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
