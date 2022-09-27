@@ -22,7 +22,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bodoni MT" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Proyecto"/>
+                <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuProyectoActionPerformed"/>
@@ -33,21 +33,10 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bodoni MT" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tipo Proyecto"/>
+                <Property name="text" type="java.lang.String" value="Personal"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuTipoProyectoActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuTipoeoyecto2">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bodoni MT" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tipo Proyecto 2"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuTipoeoyecto2ActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuMarca">

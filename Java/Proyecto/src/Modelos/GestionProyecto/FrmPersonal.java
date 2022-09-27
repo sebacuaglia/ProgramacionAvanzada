@@ -1,37 +1,20 @@
 package Modelos.GestionProyecto;
-
 import Vistas.FrmGenerica;
+import com.toedter.calendar.JDateChooser;
+import java.util.Set;
 import javax.swing.*;
 
-public class FrmAuto extends FrmGenerica {
-
-    private GestorVistaMarca gestorVistaMarca;
-    private GestorVistaModelo gestorVistaModelo;
-    private GestorVistaAuto gestorVistaAuto;
+public class FrmPersonal extends FrmGenerica {
+    private GestorVistaPersonal gestorVista;
     private int YES_NO_OPTION;
+    Object getTxtRazon;
 
-    public GestorVistaAuto getGestorVistaAuto() {
-        return gestorVistaAuto;
+    public GestorVistaPersonal getGestorVista() {
+        return gestorVista;
     }
-
-    public void setGestorVistaAuto(GestorVistaAuto gestorVistaAuto) {
-        this.gestorVistaAuto = gestorVistaAuto;
-    }
-
-    public GestorVistaMarca getGestorVistaMarca() {
-        return gestorVistaMarca;
-    }
-
-    public void setGestorVistaMarca(GestorVistaMarca gestorVistaMarca) {
-        this.gestorVistaMarca = gestorVistaMarca;
-    }
-
-    public GestorVistaModelo getGestorVistaModelo() {
-        return gestorVistaModelo;
-    }
-
-    public void setGestorVistaModelo(GestorVistaModelo gestorVistaModelo) {
-        this.gestorVistaModelo = gestorVistaModelo;
+    
+    public void setGestorVista(GestorVistaPersonal gestorVista) {
+        this.gestorVista = gestorVista;
     }
 
     public JTable getTblDatos() {
@@ -51,6 +34,14 @@ public class FrmAuto extends FrmGenerica {
     }
 
 // Definicion de getter y setter de los componentes visuales del formulario
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+    
     public JTextField getTxtCodigo() {
         return txtCodigo;
     }
@@ -58,165 +49,119 @@ public class FrmAuto extends FrmGenerica {
     public void setTxtCodigo(JTextField txtCodigo) {
         this.txtCodigo = txtCodigo;
     }
+/*
+    public JComboBox<String> getCmbPais() {
+        return cmbPais;
+    }
+    
 
-    public JComboBox<String> getCmbMarca() {
-        return cmbMarca;
+    public void setCmbPais(JComboBox<String> cmbPais) {
+        this.cmbPais = cmbPais;
+    }
+    */
+
+    public JTextField getTxtApellido() {
+        return txtApellido;
     }
 
-    public void setCmbMarca(JComboBox<String> cmbMarca) {
-        this.cmbMarca = cmbMarca;
-    }
-
-    public JComboBox<String> getCmbModelo() {
-        return cmbModelo;
-    }
-
-    public void setCmbModelo(JComboBox<String> cmbModelo) {
-        this.cmbModelo = cmbModelo;
-    }
-
-    public JTextField getTxtPais() {
-        return txtMarca;
-    }
-
-    public void setTxtPais(JTextField txtPais) {
-        this.txtMarca = txtPais;
-    }
-
-    public JCheckBox getCheckBoxUsado() {
-        return checkBoxUsado;
-    }
-
-    public void setCheckBoxUsado(JCheckBox checkBoxUsado) {
-        this.checkBoxUsado = checkBoxUsado;
-    }
-
-    public JTextField getTxtAnio() {
-        return txtAnio;
-    }
-
-    public void setTxtAnio(JTextField txtAnio) {
-        this.txtAnio = txtAnio;
-    }
-
-    public JTextField getTxtColor() {
-        return txtColor;
-    }
-
-    public void setTxtColor(JTextField txtColor) {
-        this.txtColor = txtColor;
-    }
-
-    public JTextField getTxtMarca() {
-        return txtMarca;
-    }
-
-    public void setTxtMarca(JTextField txtMarca) {
-        this.txtMarca = txtMarca;
-    }
-
-    public JTextField getTxtMatricula() {
-        return txtMatricula;
-    }
-
-    public void setTxtMatricula(JTextField txtMatricula) {
-        this.txtMatricula = txtMatricula;
-    }
-
-    public JTextField getTxtModelo() {
-        return txtModelo;
-    }
-
-    public void setTxtModelo(JTextField txtModelo) {
-        this.txtModelo = txtModelo;
-    }
-
-    public JTextField getTxtPrecio() {
-        return txtPrecio;
-    }
-
-    public void setTxtPrecio(JTextField txtPrecio) {
-        this.txtPrecio = txtPrecio;
-    }
-
-    public JTextField getTxtCosto() {
-        return txtCosto;
-    }
-
-    public void setTxtCosto(JTextField txtCosto) {
-        this.txtCosto = txtCosto;
+        public void setTxtApellido(JTextField txtApellido) {
+        this.txtApellido = txtApellido;
     }
         
-    public JTextField getTxtKilometraje() {
-        return txtKilometraje;
+    public JTextField getTxtEmail() {
+        return txtEmail;
     }
 
-    public void setTxtKilometraje(JTextField txtKilometraje) {
-        this.txtKilometraje = txtKilometraje;
+        public void setTxtEmail(JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+    
+    public JTextField getTxtDireccion() {
+        return txtDireccion;
     }
 
+        public void setTxtDireccion(JTextField txtDireccion) {
+        this.txtApellido = txtDireccion;
+    }
+        
+  
+
+        
+       public JDateChooser getTxtFechaNacimiento() {
+        return txtFecha;
+    }
+
+        public void setTxtFechaNacimiento(JDateChooser txtFecha) {
+        this.txtFecha = txtFecha;
+    }
+        
+    public JTextField getTxtDni() {
+        return txtDni;
+    }
+
+        public void setTxtDni(JTextField txtDni) {
+        this.txtDni = txtDni;
+    }
+        
+        
+    public JTextField getTxtTelefono() {
+        return txtTelefono;
+    }
+
+    public void setTxtTelefono(JTextField txtTelefono) {
+        this.txtTelefono = txtTelefono;
+    }
+    
 
 // Constructores del formulario 
-    public FrmAuto(GestorVistaAuto gestorVista) {
-        try {
-            initComponents();
-        } catch (Exception e) {
-
-        }
-        this.setGestorVistaAuto(gestorVista);
+    public FrmPersonal(GestorVistaPersonal gestorVista) {
+        try{
+           initComponents();
+           }
+        catch(Exception e){
+            
+        }  
+        this.setGestorVista(gestorVista);
         this.onViewOpened();
     }
 
-    public FrmAuto(GestorVistaAuto gestorVistaAuto, GestorVistaMarca gestorVistaMarca, GestorVistaModelo gestorVistaModelo) {
-        try {
-            initComponents();
-        } catch (Exception e) {
-
-        }
-        this.setGestorVistaAuto(gestorVistaAuto);
-        this.setGestorVistaMarca(gestorVistaMarca);
-        this.setGestorVistaModelo(gestorVistaModelo);
-        this.onViewOpened();
-    }
-
-    public FrmAuto() {
+    public FrmPersonal() {
         initComponents();
-        this.onViewOpened();
-
     }
-
-    // Metodos que gestionan los botones de la barra comando 
+    
+      // Metodos que gestionan los botones de la barra comando 
     public void viewOpenedBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-
+        
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
     }
 
-    public void viewNuevoEditarBotones() {
+    public void viewNuevoEditarBotones(){
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(true);
         btnEliminar.setEnabled(false);
-
+        
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
     }
-
+  
     public void viewEliminarBotones() {
         this.viewOpenedBotones();
     }
-
+  
     public void viewGuardarBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-
+        
+        
         btnCancelar.setEnabled(false);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
@@ -227,86 +172,74 @@ public class FrmAuto extends FrmGenerica {
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-
+        
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
-
+        
+    } 
+    
+    /*
+    private void viewDenominacionVisible(Boolean tipo){
+        txtPais.setVisible(!tipo);
+        cmbPais.setVisible(tipo);
     }
-
-    private void viewDenominacionVisible(Boolean tipo) {
-        txtMarca.setVisible(!tipo);
-        cmbMarca.setVisible(tipo);
-    }
-
+    */
+    
     public void viewBuscar() {
-        btnNuevo.setEnabled(true);
+        btnNuevo.setEnabled(true); 
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-
+     
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
     }
-
+    
     @Override
     public void onViewOpened() {
         this.viewOpenedBotones();
         this.viewOpenedBotones();
         this.viewCamposEnabled(false);
         this.cargarCombos();
-        this.getGestorVistaAuto().initializeTablaBusqueda(this.getTblDatos());
+        this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
         this.isExtra();
-        checkBoxUsado.setEnabled(false);
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
-        txtKilometraje.setEnabled(checkBoxUsado.isSelected());
-        
-
-    }
-
+     }
+    
+    /*
     @Override
     public void cargarCombos() {
-        this.gestorVistaAuto.setModelMarca(cmbMarca);
-        cmbMarca.setSelectedItem("");
-
+        this.gestorVista.setModelPais(cmbPais);
     }
+    */
 
     @Override
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
-        cmbMarca.setEnabled(tipo);
-        btnAgregarMarca.setEnabled(tipo);
-        txtMarca.setEnabled(false);
-        btnAgregarModelo.setEnabled(tipo);
-        cmbModelo.setEnabled(tipo);
-        txtModelo.setEnabled(false);
-        txtColor.setEnabled(tipo);
-        txtPrecio.setEnabled(tipo);
-        txtCosto.setEnabled(tipo);
-        checkBoxUsado.setEnabled(tipo);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
-        txtKilometraje.setEnabled(checkBoxUsado.isSelected());
+        txtNombre.setEnabled(tipo);
+        txtApellido.setEnabled(tipo);
+        txtEmail.setEnabled(tipo);
+        txtDireccion.setEnabled(tipo);
+        txtDni.setEnabled(tipo);
+        txtFecha.setEnabled(tipo);
+        txtTelefono.setEnabled(tipo);
     }
 
-    private void viewBasic() {
+    private void viewBasic(){
         this.viewNuevoEditarBotones();
         this.viewCamposEnabled(true);
     }
 
     @Override
-    public void viewNuevoEnter() {
+    public void viewNuevoEnter( ) {
         this.viewBasic();
         this.viewNueva();
     }
 
     @Override
-    public void viewEditarEnter() {
+    public void viewEditarEnter( ) {
         this.viewBasic();
-
-        cmbMarca.grabFocus();
-        this.getGestorVistaAuto().setModoEditar();
+        txtNombre.grabFocus();
+        this.getGestorVista().setModoEditar();
     }
 
     private void viewBuscarPrincipalEnter() {
@@ -329,10 +262,8 @@ public class FrmAuto extends FrmGenerica {
     @Override
     public void viewGuardar() {
         this.viewGuardarBotones();
+        this.viewGuardarBotones();
         this.viewCamposEnabled(false);
-        txtMatricula.setEnabled(false);
-        txtAnio.setEnabled(false);
-        txtKilometraje.setEnabled(false);
     }
 
     @Override
@@ -346,96 +277,91 @@ public class FrmAuto extends FrmGenerica {
     public void viewActualizar() {
         this.setView();
         this.viewCamposEnabled(false);
-        txtMatricula.setEnabled(false);
-        txtAnio.setEnabled(false);
-        txtKilometraje.setEnabled(false);
         this.viewBuscarBotones();
     }
 
-    private void viewNueva() {
+    private void viewNueva(){
         this.clearView();
-        this.getGestorVistaAuto().newModel();
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
-        txtKilometraje.setEnabled(checkBoxUsado.isSelected());
-        //txtNombre.grabFocus();
-        cmbMarca.grabFocus();
+        this.getGestorVista().newModel();
+        txtNombre.grabFocus();
     }
 
     @Override
     public void clearView() {
+        txtNombre.setText("");
         txtCodigo.setText("");
-        txtMarca.setText("");
-        cmbMarca.setSelectedItem(null);
-        cmbModelo.setSelectedItem(null);
-        txtColor.setText("");
-        txtPrecio.setText("");
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setText("");
-        txtAnio.setText("");
-        txtKilometraje.setText("");
-        txtCosto.setText("");
+        txtApellido.setText("");
+        txtEmail.setText("");
+        txtDireccion.setText("");
+        txtDni.setText("");
+        txtFecha.setDateFormatString("");
+        txtTelefono.setText("");
+        
+       
+        
     }
 
     @Override
-    public void grabFocus() {
-        cmbMarca.grabFocus();
+    public void grabFocus(){
+        txtNombre.grabFocus();
     }
 
-    @Override
+   @Override
     public void cancelarView() {
-        this.getGestorVistaAuto().cancelarView();
+        this.getGestorVista().cancelarView();
         this.onViewOpened();
         this.clearView();
     }
 
     @Override
     public void deleteView() {
-        this.getGestorVistaAuto().deleteView();
+         this.getGestorVista().deleteView();
     }
 
     @Override
-    public void saveView() {
-        this.getGestorVistaAuto().saveView();
+    public void saveView(){
+        this.getGestorVista().saveView();
     }
 
     @Override
-    public void setView() {
-        this.getGestorVistaAuto().getView();
-    }
+    public void setView(){
+       this.getGestorVista().getView();
+    }  
 
     public void extraView() {
-        //btnBuscar.setEnabled(false);
+        btnBuscar.setEnabled(false);
         this.viewNuevoEnter();
     }
-
+ 
     private void isExtra() {
-        if (this.getGestorVistaAuto().isExtra()) {
+        if (this.getGestorVista().isExtra()) {
             this.extraView();
         }
     }
-
+      
+    
     //llenado de tablas
     public void setBusqueda() {
-        this.getGestorVistaAuto().initializeTablaBusqueda(this.getTblDatos());
-        this.getGestorVistaAuto().setBusqueda();
+        this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
+        this.getGestorVista().setBusqueda();
     }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscarCodigo = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -444,26 +370,19 @@ public class FrmAuto extends FrmGenerica {
         jPanel3 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        cmbMarca = new javax.swing.JComboBox<>();
-        txtMarca = new javax.swing.JTextField();
-        txtMatricula = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtAnio = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        checkBoxUsado = new javax.swing.JCheckBox();
+        txtEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        cmbModelo = new javax.swing.JComboBox<>();
-        txtModelo = new javax.swing.JTextField();
-        txtColor = new javax.swing.JTextField();
+        txtDni = new javax.swing.JTextField();
+        txtFecha = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
-        txtPrecio = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        btnAgregarMarca = new javax.swing.JButton();
-        btnAgregarModelo = new javax.swing.JButton();
-        txtCosto = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtKilometraje = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -473,14 +392,38 @@ public class FrmAuto extends FrmGenerica {
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Auto");
-        setToolTipText("Auto");
+        setTitle("Personal");
+        setToolTipText("Clinte");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
         getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 0, 12), new java.awt.Color(0, 102, 204))); // NOI18N
         jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel1.setText("Nombre");
+        jLabel1.setRequestFocusEnabled(false);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 70, 90, 20);
+
+        btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
+        btnBuscar.setToolTipText("Buscar Tipo Servicio por denominación");
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setContentAreaFilled(false);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnBuscarKeyPressed(evt);
+            }
+        });
+        jPanel1.add(btnBuscar);
+        btnBuscar.setBounds(480, 90, 40, 30);
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setText("Código");
@@ -493,6 +436,11 @@ public class FrmAuto extends FrmGenerica {
         txtCodigo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtCodigo.setToolTipText("Ingrese Código");
         txtCodigo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
         txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCodigoKeyPressed(evt);
@@ -521,11 +469,6 @@ public class FrmAuto extends FrmGenerica {
         });
         jPanel1.add(btnBuscarCodigo);
         btnBuscarCodigo.setBounds(110, 40, 30, 30);
-
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel2.setText("Marca");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 90, 120, 17);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -640,157 +583,101 @@ public class FrmAuto extends FrmGenerica {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(500, 380, 180, 40);
 
-        cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
-        cmbMarca.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbMarcaItemStateChanged(evt);
-            }
-        });
-        cmbMarca.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cmbMarcaMouseClicked(evt);
-            }
-        });
-        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMarcaActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        cmbMarca.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                cmbMarcaPropertyChange(evt);
-            }
-        });
-        jPanel1.add(cmbMarca);
-        cmbMarca.setBounds(20, 110, 230, 30);
-
-        txtMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtMarca.setForeground(new java.awt.Color(187, 187, 198));
-        txtMarca.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtMarca);
-        txtMarca.setBounds(20, 110, 230, 30);
-
-        txtMatricula.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtMatricula.setForeground(new java.awt.Color(187, 187, 198));
-        txtMatricula.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtMatricula);
-        txtMatricula.setBounds(20, 330, 310, 30);
+        jPanel1.add(txtNombre);
+        txtNombre.setBounds(20, 90, 160, 23);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel5.setText("Matricula");
+        jLabel5.setText("Apellido");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 310, 120, 17);
+        jLabel5.setBounds(280, 70, 120, 20);
 
-        txtAnio.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtAnio.setForeground(new java.awt.Color(187, 187, 198));
-        txtAnio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtAnio);
-        txtAnio.setBounds(570, 330, 90, 30);
+        txtApellido.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtApellido.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtApellido);
+        txtApellido.setBounds(200, 90, 240, 23);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel6.setText("Año");
+        jLabel6.setText("Telefono");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(570, 310, 120, 17);
+        jLabel6.setBounds(20, 120, 120, 17);
 
-        checkBoxUsado.setText("Usado?");
-        checkBoxUsado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        checkBoxUsado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                checkBoxUsadoMouseClicked(evt);
-            }
-        });
-        checkBoxUsado.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBoxUsadoActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
-        jPanel1.add(checkBoxUsado);
-        checkBoxUsado.setBounds(20, 280, 120, 20);
+        jPanel1.add(txtEmail);
+        txtEmail.setBounds(20, 190, 460, 23);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel7.setText("Modelo");
+        jLabel7.setText("Direccion");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(350, 90, 120, 17);
+        jLabel7.setBounds(20, 220, 120, 17);
 
-        cmbModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
-        cmbModelo.addActionListener(new java.awt.event.ActionListener() {
+        txtDni.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtDni.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbModeloActionPerformed(evt);
+                txtDniActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbModelo);
-        cmbModelo.setBounds(350, 110, 230, 30);
-
-        txtModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtModelo.setForeground(new java.awt.Color(187, 187, 198));
-        txtModelo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtModelo);
-        txtModelo.setBounds(350, 110, 230, 30);
-
-        txtColor.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtColor.setForeground(new java.awt.Color(187, 187, 198));
-        txtColor.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtColor);
-        txtColor.setBounds(20, 170, 310, 30);
+        jPanel1.add(txtDni);
+        txtDni.setBounds(260, 310, 220, 23);
+        jPanel1.add(txtFecha);
+        txtFecha.setBounds(20, 310, 190, 22);
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel8.setText("Color");
+        jLabel8.setText("Fecha de Nacimiento");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 150, 120, 17);
+        jLabel8.setBounds(20, 290, 130, 20);
 
-        txtPrecio.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtPrecio.setForeground(new java.awt.Color(187, 187, 198));
-        txtPrecio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtPrecio);
-        txtPrecio.setBounds(350, 230, 310, 30);
+        txtDireccion.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtDireccion.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtDireccion);
+        txtDireccion.setBounds(20, 240, 460, 23);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel9.setText("Precio");
+        jLabel9.setText("DNI");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(350, 210, 120, 17);
-
-        btnAgregarMarca.setText("Agregar");
-        btnAgregarMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarMarcaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregarMarca);
-        btnAgregarMarca.setBounds(250, 110, 80, 30);
-
-        btnAgregarModelo.setText("Agregar");
-        btnAgregarModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarModeloActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregarModelo);
-        btnAgregarModelo.setBounds(580, 110, 80, 30);
-
-        txtCosto.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtCosto.setForeground(new java.awt.Color(187, 187, 198));
-        txtCosto.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtCosto);
-        txtCosto.setBounds(20, 230, 310, 30);
+        jLabel9.setBounds(350, 290, 130, 17);
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel10.setText("Costo");
+        jLabel10.setText("Email");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(20, 210, 120, 17);
+        jLabel10.setBounds(20, 170, 120, 17);
 
-        txtKilometraje.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        txtKilometraje.setForeground(new java.awt.Color(187, 187, 198));
-        txtKilometraje.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtKilometraje);
-        txtKilometraje.setBounds(350, 330, 210, 30);
-
-        jLabel11.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel11.setText("Kilometraje");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(350, 310, 120, 17);
+        txtTelefono.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtTelefono.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtTelefono);
+        txtTelefono.setBounds(20, 140, 460, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(390, 10, 740, 440);
+        jPanel1.setBounds(380, 20, 740, 440);
+        jPanel1.getAccessibleContext().setAccessibleDescription("");
 
         jPanel4.setLayout(null);
 
@@ -854,7 +741,7 @@ public class FrmAuto extends FrmGenerica {
         txtBusquedaNombre.setBounds(20, 50, 240, 23);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Lista de Autos disponibles");
+        jLabel4.setText("Personal");
         jPanel4.add(jLabel4);
         jLabel4.setBounds(20, 20, 190, 20);
 
@@ -862,16 +749,28 @@ public class FrmAuto extends FrmGenerica {
         jPanel4.setBounds(0, 10, 380, 430);
 
         getAccessibleContext().setAccessibleName("Carg");
+        getAccessibleContext().setAccessibleDescription("Personal");
 
         setBounds(150, 0, 1129, 481);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        this.viewBuscarComboEnter();
+}//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
+        if (evt.getKeyCode()==10) {
+            this.viewBuscarComboEnter();
+        }
+}//GEN-LAST:event_btnBuscarKeyPressed
+
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
-            if (this.gestorVistaAuto.getModelXCodigo(txtCodigo.getText())) {
+        if (evt.getKeyCode()==10) {
+            if (this.gestorVista.getModelXCodigo(txtCodigo.getText())) {
                 this.viewActualizar();
-            } else {
-                JOptionPane.showMessageDialog(null, "Código no existe");
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Código no existe");
             }
         }
 }//GEN-LAST:event_txtCodigoKeyPressed
@@ -885,7 +784,7 @@ public class FrmAuto extends FrmGenerica {
 }//GEN-LAST:event_btnBuscarCodigoActionPerformed
 
     private void btnBuscarCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if(evt.getKeyCode()==10) {
             this.viewBuscarCodigoEnter();
         }
 }//GEN-LAST:event_btnBuscarCodigoKeyPressed
@@ -895,8 +794,8 @@ public class FrmAuto extends FrmGenerica {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNuevoKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.viewNuevoEnter();
+       if (evt.getKeyCode()==10)
+          this.viewNuevoEnter();
     }//GEN-LAST:event_btnNuevoKeyPressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -904,8 +803,8 @@ public class FrmAuto extends FrmGenerica {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditarKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.viewEditarEnter();
+        if (evt.getKeyCode()==10)
+        this.viewEditarEnter();
     }//GEN-LAST:event_btnEditarKeyPressed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -913,67 +812,61 @@ public class FrmAuto extends FrmGenerica {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
-        if (evt.getKeyCode() == 10)
-            this.saveView();
+        if (evt.getKeyCode()==10)
+        this.saveView();
     }//GEN-LAST:event_btnGuardarKeyPressed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0)
-            this.deleteView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
+           this.deleteView();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyPressed
-        if (evt.getKeyCode() == 10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0) {
-                this.deleteView();
-            }
+        if(evt.getKeyCode()==10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
+            this.deleteView();
         }
     }//GEN-LAST:event_btnEliminarKeyPressed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         int n = 0;
-        if (this.getGestorVistaAuto().isNuevo() || this.getGestorVistaAuto().isOnlyRead()) {
-            this.dispose();
-        } else {
-            n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
-        }
-        if (n == 1) {
+        if (this.getGestorVista().isNuevo() || this.getGestorVista().isOnlyRead())
+        this.dispose();
+        else
+        n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
+        if  (n == 1 ){
             this.cancelarView();
-            this.dispose();
-        }
+            this.dispose();}
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalirKeyPressed
-        if (evt.getKeyCode() == 10) {
+        if(evt.getKeyCode()==10) {
             int n = 0;
-            if (this.getGestorVistaAuto().isNuevo()) {
-                this.dispose();
-            } else {
-                n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
-            }
-            if (n == 1) {
+            if (this.getGestorVista().isNuevo())
+                 this.dispose();
+            else
+            n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
+            if  (n == 1 ){
                 this.cancelarView();
-                this.dispose();
-            }
+                this.dispose();}
         }
 
     }//GEN-LAST:event_btnSalirKeyPressed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0)
-            this.cancelarView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
+        this.cancelarView();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCancelarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCancelarKeyPressed
-        if (evt.getKeyCode() == 10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0) {
-                this.cancelarView();
-            }
+        if(evt.getKeyCode()==10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
+            this.cancelarView();
         }
     }//GEN-LAST:event_btnCancelarKeyPressed
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
-        this.clearView();
+         this.clearView();
         this.setBusqueda();
         this.viewCamposEnabled(false);
 //        botonesComandoView.viewAllDisabled();
@@ -989,56 +882,40 @@ public class FrmAuto extends FrmGenerica {
     }//GEN-LAST:event_btnImprimir1ActionPerformed
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
-        this.getGestorVistaAuto().setDatos();
+             this.getGestorVista().setDatos();
     }//GEN-LAST:event_tblDatosMouseClicked
 
-    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbMarcaActionPerformed
+    }//GEN-LAST:event_txtCodigoActionPerformed
 
-    private void checkBoxUsadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxUsadoActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_checkBoxUsadoActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void cmbModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModeloActionPerformed
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbModeloActionPerformed
+    }//GEN-LAST:event_txtApellidoActionPerformed
 
-    private void checkBoxUsadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxUsadoMouseClicked
-        // si check = true se habilita el resto de campos else se deshabilitan
-        if (checkBoxUsado.isEnabled()) {
-            txtMatricula.setEnabled(checkBoxUsado.isSelected());
-            txtAnio.setEnabled(checkBoxUsado.isSelected());
-            txtKilometraje.setEnabled(checkBoxUsado.isSelected());
-        }
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
 
-    }//GEN-LAST:event_checkBoxUsadoMouseClicked
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
 
-    private void cmbMarcaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMarcaItemStateChanged
-        this.gestorVistaAuto.setModelModelo(cmbModelo);
-    }//GEN-LAST:event_cmbMarcaItemStateChanged
-
-    private void cmbMarcaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbMarcaMouseClicked
-
-    }//GEN-LAST:event_cmbMarcaMouseClicked
-
-    private void cmbMarcaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cmbMarcaPropertyChange
-
-    }//GEN-LAST:event_cmbMarcaPropertyChange
-
-    private void btnAgregarModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarModeloActionPerformed
-        this.getGestorVistaAuto().openFormularioModelo((DefaultComboBoxModel) cmbModelo.getModel(), cmbMarca);
-    }//GEN-LAST:event_btnAgregarModeloActionPerformed
-
-    private void btnAgregarMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMarcaActionPerformed
-        this.getGestorVistaAuto().openFormularioMarca((DefaultComboBoxModel) cmbMarca.getModel());
-    }//GEN-LAST:event_btnAgregarMarcaActionPerformed
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarMarca;
-    private javax.swing.JButton btnAgregarModelo;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscarCodigo;
     public javax.swing.JButton btnCancelar;
@@ -1048,12 +925,10 @@ public class FrmAuto extends FrmGenerica {
     private javax.swing.JButton btnImprimir1;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
-    private javax.swing.JCheckBox checkBoxUsado;
-    private javax.swing.JComboBox<String> cmbMarca;
-    private javax.swing.JComboBox<String> cmbModelo;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1067,16 +942,15 @@ public class FrmAuto extends FrmGenerica {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtAnio;
+    private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBusquedaNombre;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtColor;
-    private javax.swing.JTextField txtCosto;
-    private javax.swing.JTextField txtKilometraje;
-    private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtMatricula;
-    private javax.swing.JTextField txtModelo;
-    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtDni;
+    private javax.swing.JTextField txtEmail;
+    private com.toedter.calendar.JDateChooser txtFecha;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 
 }

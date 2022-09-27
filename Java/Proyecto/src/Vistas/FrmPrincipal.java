@@ -37,7 +37,6 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnConfiguracion = new javax.swing.JMenu();
         mnuProyecto = new javax.swing.JMenuItem();
         mnuTipoProyecto = new javax.swing.JMenuItem();
-        mnuTipoeoyecto2 = new javax.swing.JMenuItem();
         mnuMarca = new javax.swing.JMenuItem();
         mnuModelo = new javax.swing.JMenuItem();
         mnuAuto = new javax.swing.JMenuItem();
@@ -51,7 +50,7 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnConfiguracion.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
         mnuProyecto.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        mnuProyecto.setText("Proyecto");
+        mnuProyecto.setText("Cliente");
         mnuProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuProyectoActionPerformed(evt);
@@ -60,22 +59,13 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnConfiguracion.add(mnuProyecto);
 
         mnuTipoProyecto.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        mnuTipoProyecto.setText("Tipo Proyecto");
+        mnuTipoProyecto.setText("Personal");
         mnuTipoProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuTipoProyectoActionPerformed(evt);
             }
         });
         mnConfiguracion.add(mnuTipoProyecto);
-
-        mnuTipoeoyecto2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        mnuTipoeoyecto2.setText("Tipo Proyecto 2");
-        mnuTipoeoyecto2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuTipoeoyecto2ActionPerformed(evt);
-            }
-        });
-        mnConfiguracion.add(mnuTipoeoyecto2);
 
         mnuMarca.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         mnuMarca.setText("Marca");
@@ -123,16 +113,12 @@ public class FrmPrincipal extends  javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProyectoActionPerformed
-        this.gestorVista.abrirProyecto(getEscritorio());
+        this.gestorVista.abrirCliente(getEscritorio());
     }//GEN-LAST:event_mnuProyectoActionPerformed
 
     private void mnuTipoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTipoProyectoActionPerformed
-        this.gestorVista.abrirTipoProyecto(getEscritorio());
+        this.gestorVista.abrirPersonal(getEscritorio());
     }//GEN-LAST:event_mnuTipoProyectoActionPerformed
-
-    private void mnuTipoeoyecto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTipoeoyecto2ActionPerformed
-         this.gestorVista.abrirTipoProyecto2(getEscritorio());
-    }//GEN-LAST:event_mnuTipoeoyecto2ActionPerformed
 
     private void mnuMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMarcaActionPerformed
         this.gestorVista.abrirMarca(getEscritorio());
@@ -163,7 +149,6 @@ public static void main(String args[]) {
     private javax.swing.JMenuItem mnuModelo;
     private javax.swing.JMenuItem mnuProyecto;
     private javax.swing.JMenuItem mnuTipoProyecto;
-    private javax.swing.JMenuItem mnuTipoeoyecto2;
     // End of variables declaration//GEN-END:variables
 
 }

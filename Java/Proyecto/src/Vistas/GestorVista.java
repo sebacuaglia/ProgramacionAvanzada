@@ -3,6 +3,7 @@ package Vistas;
 import GUtilr.mdi.MDIForm;
 import Hibernate.GestorHibernate;
 import Util.UtilJtable;
+import com.toedter.calendar.JDateChooser;
 import ireport.GestorDeReportes;
 import java.util.*;
 import javax.swing.*;
@@ -146,6 +147,11 @@ public class GestorVista  extends GestorHibernate {
         return txt.getText().equals("");
 
     }
+     public boolean isEmpty(JDateChooser txt) {
+        return txt.getCalendar().equals("");
+
+    }
+    
     
     public boolean isEmpty(JComboBox cmb) {
         return  cmb.getSelectedItem().equals("");

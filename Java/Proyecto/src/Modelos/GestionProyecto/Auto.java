@@ -36,6 +36,10 @@ public class Auto {
     
     private boolean usado;
     
+    private String kilometro;
+    
+    private String costo;
+    
     //modela si esta disponible en la agencia
     private boolean habilitado;
 
@@ -111,6 +115,23 @@ public class Auto {
         this.habilitado = habilitado;
     }
 
+    public String getKilometro() {
+        return kilometro;
+    }
+
+    public void setKilometro(String kilometro) {
+        this.kilometro = kilometro;
+    }
+
+    public String getCosto() {
+        return costo;
+    }
+
+    public void setCosto(String costo) {
+        this.costo = costo;
+    }
+    
+
     public Auto() {
     }
 
@@ -123,6 +144,20 @@ public class Auto {
         this.matricula = matricula;
         this.anio = anio;
         this.usado = usado;
+        this.habilitado = habilitado;
+    }
+
+    public Auto(long id, int codigo, Modelo modelo, String color, String precio, String matricula, String anio, boolean usado, String kilometro, String costo, boolean habilitado) {
+        this.id = id;
+        this.codigo = codigo;
+        this.modelo = modelo;
+        this.color = color;
+        this.precio = precio;
+        this.matricula = matricula;
+        this.anio = anio;
+        this.usado = usado;
+        this.kilometro = kilometro;
+        this.costo = costo;
         this.habilitado = habilitado;
     }
 

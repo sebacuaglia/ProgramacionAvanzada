@@ -83,14 +83,6 @@ public class FrmVenta extends FrmGenerica {
         this.txtMarca = txtPais;
     }
 
-    public JCheckBox getCheckBoxUsado() {
-        return checkBoxUsado;
-    }
-
-    public void setCheckBoxUsado(JCheckBox checkBoxUsado) {
-        this.checkBoxUsado = checkBoxUsado;
-    }
-
     public JTextField getTxtAnio() {
         return txtAnio;
     }
@@ -113,14 +105,6 @@ public class FrmVenta extends FrmGenerica {
 
     public void setTxtMarca(JTextField txtMarca) {
         this.txtMarca = txtMarca;
-    }
-
-    public JTextField getTxtMatricula() {
-        return txtMatricula;
-    }
-
-    public void setTxtMatricula(JTextField txtMatricula) {
-        this.txtMatricula = txtMatricula;
     }
 
     public JTextField getTxtModelo() {
@@ -239,10 +223,6 @@ public class FrmVenta extends FrmGenerica {
         this.cargarCombos();
         this.getGestorVistaAuto().initializeTablaBusqueda(this.getTblDatos());
         this.isExtra();
-        checkBoxUsado.setEnabled(false);
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
 
     }
 
@@ -264,9 +244,7 @@ public class FrmVenta extends FrmGenerica {
         txtModelo.setEnabled(false);
         txtColor.setEnabled(tipo);
         txtPrecio.setEnabled(tipo);
-        checkBoxUsado.setEnabled(tipo);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
+        
     }
 
     private void viewBasic() {
@@ -309,7 +287,6 @@ public class FrmVenta extends FrmGenerica {
     public void viewGuardar() {
         this.viewGuardarBotones();
         this.viewCamposEnabled(false);
-        txtMatricula.setEnabled(false);
         txtAnio.setEnabled(false);
     }
 
@@ -324,7 +301,6 @@ public class FrmVenta extends FrmGenerica {
     public void viewActualizar() {
         this.setView();
         this.viewCamposEnabled(false);
-        txtMatricula.setEnabled(false);
         txtAnio.setEnabled(false);
         this.viewBuscarBotones();
     }
@@ -332,9 +308,6 @@ public class FrmVenta extends FrmGenerica {
     private void viewNueva() {
         this.clearView();
         this.getGestorVistaAuto().newModel();
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setEnabled(checkBoxUsado.isSelected());
-        txtAnio.setEnabled(checkBoxUsado.isSelected());
         //txtNombre.grabFocus();
         cmbMarca.grabFocus();
     }
@@ -347,8 +320,6 @@ public class FrmVenta extends FrmGenerica {
         cmbModelo.setSelectedItem(null);
         txtColor.setText("");
         txtPrecio.setText("");
-        checkBoxUsado.setSelected(false);
-        txtMatricula.setText("");
         txtAnio.setText("");
     }
 
@@ -446,8 +417,8 @@ public class FrmVenta extends FrmGenerica {
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Auto");
-        setToolTipText("Auto");
+        setTitle("Venta");
+        setToolTipText("Venta");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
         getContentPane().setLayout(null);
@@ -589,7 +560,7 @@ public class FrmVenta extends FrmGenerica {
             }
         });
         jPanel3.add(btnSalir);
-        btnSalir.setBounds(100, 10, 75, 23);
+        btnSalir.setBounds(100, 10, 75, 21);
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCancelar.setText("Cancelar");
@@ -819,7 +790,7 @@ public class FrmVenta extends FrmGenerica {
         txtBusquedaNombre.setBounds(20, 50, 240, 23);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Autos disponibles");
+        jLabel4.setText("Venta");
         jPanel4.add(jLabel4);
         jLabel4.setBounds(20, 20, 190, 20);
 

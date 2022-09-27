@@ -117,10 +117,13 @@ public class GestorVistaAuto extends GestorVista {
             this.getModel().setModelo((Modelo) this.getForm().getCmbModelo().getModel().getSelectedItem());
             this.getModel().setColor(this.getForm().getTxtColor().getText());
             this.getModel().setPrecio(this.getForm().getTxtPrecio().getText());
+            this.getModel().setCosto(this.getForm().getTxtCosto().getText());
             if (this.getForm().getCheckBoxUsado().isSelected()) {
                 this.getModel().setUsado(this.getForm().getCheckBoxUsado().isSelected());
                 this.getModel().setMatricula(this.getForm().getTxtMatricula().getText());
                 this.getModel().setAnio(this.getForm().getTxtAnio().getText());
+
+                this.getModel().setKilometro(this.getForm().getTxtKilometraje().getText());
             }
 
             return 0;
@@ -149,11 +152,18 @@ public class GestorVistaAuto extends GestorVista {
             return false;
         }
 
-        if (this.isEmpty(this.getForm().getTxtPrecio())) {
+        if (this.isEmpty(this.getForm().getTxtPrecio()) /*&& this.getForm().getTxtPrecio().getText().matches("[0-9]+")*/ ) {
             JOptionPane.showMessageDialog(null, "Falta ingresar el precio de venta.");
             this.getForm().getTxtPrecio().grabFocus();
             return false;
         }
+        
+        if (this.isEmpty(this.getForm().getTxtCosto())) {
+            JOptionPane.showMessageDialog(null, "Falta ingresar el precio de costo.");
+            this.getForm().getTxtCosto().grabFocus();
+            return false;
+        }
+
 
         if (this.getForm().getCheckBoxUsado().isSelected()) {
 
@@ -163,6 +173,12 @@ public class GestorVistaAuto extends GestorVista {
                 return false;
             }
 
+            if (this.isEmpty(this.getForm().getTxtKilometraje())) {
+                JOptionPane.showMessageDialog(null, "Falta ingresar el kilometraje.");
+                this.getForm().getTxtKilometraje().grabFocus();
+                return false;
+            }
+            
             if (this.isEmpty(this.getForm().getTxtAnio())) {
                 JOptionPane.showMessageDialog(null, "Falta ingresar el año.");
                 this.getForm().getTxtAnio().grabFocus();
@@ -351,11 +367,13 @@ public class GestorVistaAuto extends GestorVista {
 
         this.getForm().getTxtColor().setText(this.getModel().getColor());
         this.getForm().getTxtPrecio().setText(this.getModel().getPrecio());
+        this.getForm().getTxtCosto().setText(this.getModel().getCosto());
 
         if (this.getModel().isUsado()) {
             this.getForm().getCheckBoxUsado().setSelected(this.getModel().isUsado());
             this.getForm().getTxtMatricula().setText(this.getModel().getMatricula());
             this.getForm().getTxtAnio().setText(this.getModel().getAnio());
+            this.getForm().getTxtKilometraje().setText(this.getModel().getKilometro());
         }
 
     }
