@@ -390,4 +390,15 @@ public class GestorVistaAuto extends GestorVista {
     public List<Auto> listarAutos() {
         return this.listarClase(Auto.class, "modelo");
     }
+    
+    
+    public void keyPressedNotNumber(){
+        String txt = form.getTxtCosto().getText();
+        String txtValida = txt.substring(0,txt.length()-1);
+        form.getTxtCosto().setText(txtValida);
+    }
+    
+    
+    
+    
 }
