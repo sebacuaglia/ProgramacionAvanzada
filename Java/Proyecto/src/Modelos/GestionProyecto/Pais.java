@@ -23,6 +23,8 @@ public class Pais {
     private String codigopais;
 
     private String nombrepais;
+    
+    private int porcImpuesto;
 
     public long getId() {
         return id;
@@ -47,6 +49,14 @@ public class Pais {
     public void setNombrepais(String nombrepais) {
         this.nombrepais = nombrepais;
     }
+    
+    public int getPorcImpuesto() {
+        return porcImpuesto;
+    }
+
+    public void setPorcImpuesto(int porcImpuesto) {
+        this.porcImpuesto = porcImpuesto;
+    }
 
     @Override
     public String toString() {
@@ -56,9 +66,11 @@ public class Pais {
     public Pais() {
     }
 
-    public Pais(long id, String codigopais, String nombrepais) {
+    public Pais(long id, String codigopais, String nombrepais, int porcImpuesto) {
         this.id = id;
         this.codigopais = codigopais;
         this.nombrepais = nombrepais;
+        this.porcImpuesto = porcImpuesto;
     }
+
 }

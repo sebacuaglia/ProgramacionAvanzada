@@ -22,48 +22,59 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author sebac
  */
-public class GestorVistaAuto extends GestorVista {
+public class GestorVistaVenta extends GestorVista {
 
-    private FrmAuto form;
-    private Auto model;
-    private GestorVistaMarca gestorMarca = new GestorVistaMarca();
-    private GestorVistaModelo gestorModelo = new GestorVistaModelo();
+    private FrmVenta1 form;
+    private Venta model;
+    private GestorVistaAuto gestorAuto = new GestorVistaAuto();
+    private GestorVistaCliente gestorCliente = new GestorVistaCliente();
+    private GestorVistaPersonal gestorPersonal = new GestorVistaPersonal();
 
-    public FrmAuto getForm() {
+    public FrmVenta1 getForm() {
         return form;
     }
 
-    public void setForm(FrmAuto form) {
+    public void setForm(FrmVenta1 form) {
         this.form = form;
     }
 
-    public Auto getModel() {
+    public Venta getModel() {
         return model;
     }
 
-    public void setModel(Auto model) {
+    public void setModel(Venta model) {
         this.model = model;
     }
 
-    public GestorVistaMarca getGestorMarca() {
-        return gestorMarca;
+    public GestorVistaAuto getGestorAuto() {
+        return gestorAuto;
     }
 
-    public void setGestorPais(GestorVistaMarca gestorMarca) {
-        this.gestorMarca = gestorMarca;
+    public void setGestorAuto(GestorVistaAuto gestorAuto) {
+        this.gestorAuto = gestorAuto;
     }
 
-    public GestorVistaModelo getGestorModelo() {
-        return gestorModelo;
+    public GestorVistaCliente getGestorCliente() {
+        return gestorCliente;
     }
 
-    public void setGestorModelo(GestorVistaModelo gestorModelo) {
-        this.gestorModelo = gestorModelo;
+    public void setGestorCliente(GestorVistaCliente gestorCliente) {
+        this.gestorCliente = gestorCliente;
     }
+
+    public GestorVistaPersonal getGestorPersonal() {
+        return gestorPersonal;
+    }
+
+    public void setGestorPersonal(GestorVistaPersonal gestorPersonal) {
+        this.gestorPersonal = gestorPersonal;
+    }
+
+    
 
     @Override
     public void newModel() {
-        this.setModel(new Auto());
+        this.setModel(new Venta());
         this.setModoNuevo();
     }
 
@@ -214,6 +225,8 @@ public class GestorVistaAuto extends GestorVista {
         this.newCodigo();
         this.getModel().setHabilitado(true);
         this.guardarObjeto(this.getModel());
+        
+        // para cada detalle guardar
     }
 
     public void actualizarObjeto() {
@@ -387,20 +400,7 @@ public class GestorVistaAuto extends GestorVista {
         return auxModel;
     }
 
-    public DefaultComboBoxModel getComboModelAutoDisponibles() {
-        DefaultComboBoxModel auxModel = new DefaultComboBoxModel();
-        auxModel.addElement("");
-        for (Auto auxTipo : this.listarAutosDisponibles()) {
-            auxModel.addElement(auxTipo);
-        }
-        return auxModel;
-    }
-    
     public List<Auto> listarAutos() {
-        return this.listarClase(Auto.class, "modelo");
-    }
-    
-    public List<Auto> listarAutosDisponibles() {
         return this.listarClase(Auto.class, "modelo");
     }
     
