@@ -142,7 +142,10 @@ public class GestorVistaPersonal extends GestorVista {
                 break;
 
             case 2:
-                this.eliminar();
+                /*this.eliminar();
+                break;
+                 */
+                this.guardarObjeto();
                 break;
 
         }
@@ -288,16 +291,16 @@ public class GestorVistaPersonal extends GestorVista {
         this.getForm().getTxtEmail().setText(this.getModel().getEmail());
     }
 
-    public DefaultComboBoxModel getComboModelMarca() {
+    public DefaultComboBoxModel getComboModelPersonal() {
         DefaultComboBoxModel auxModel = new DefaultComboBoxModel();
         auxModel.addElement("");
-        for (Marca auxTipo : this.listarMarcas()) {
+        for (Personal auxTipo : this.listarPersonal()) {
             auxModel.addElement(auxTipo);
         }
         return auxModel;
     }
-
-    public List<Marca> listarMarcas() {
-        return this.listarClase(Marca.class, "nombre");
-    }
+    
+    public List<Personal> listarPersonal() {
+        return this.listarClase(Personal.class, "nombre");
+    } 
 }

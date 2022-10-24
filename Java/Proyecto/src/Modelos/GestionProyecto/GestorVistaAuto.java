@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -283,8 +284,8 @@ public class GestorVistaAuto extends GestorVista {
     }
 
     public void initializeTablaBusqueda(JTable tbl) {
-        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Color", "Precio", "Usado", "Patente", "Año"};
-        String[] ancho = {"0", "43", "100", "100", "100", "100", "100", "100", "100"};
+        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio",};
+        String[] ancho = {"0", "43", "100", "100", "100"};
         this.newModelTable(tbl, titulo, ancho);
     }
 
@@ -319,8 +320,11 @@ public class GestorVistaAuto extends GestorVista {
         Iterator it2 = (Iterator) list.iterator();
         while (it2.hasNext()) {
             auxModel = (Auto) it2.next();
-            Object[] fila = {auxModel, auxModel.getCodigo(), auxModel.getModelo().getMarca().getNombre(), auxModel.getModelo().getNombre(),
-                auxModel.getColor(), auxModel.getPrecio(), auxModel.isUsado(), auxModel.getMatricula(), auxModel.getAnio()};
+            Object[] fila = {auxModel,
+                auxModel.getCodigo(), 
+                auxModel.getModelo().getMarca().getNombre(),
+                auxModel.getModelo().getNombre(),
+                auxModel.getPrecio()};
             auxModelTabla.addRow(fila);
         }
         return auxModelTabla;
@@ -386,24 +390,10 @@ public class GestorVistaAuto extends GestorVista {
         }
         return auxModel;
     }
-
-    public DefaultComboBoxModel getComboModelAutoDisponibles() {
-        DefaultComboBoxModel auxModel = new DefaultComboBoxModel();
-        auxModel.addElement("");
-        for (Auto auxTipo : this.listarAutosDisponibles()) {
-            auxModel.addElement(auxTipo);
-        }
-        return auxModel;
-    }
     
     public List<Auto> listarAutos() {
         return this.listarClase(Auto.class, "modelo");
-    }
-    
-    public List<Auto> listarAutosDisponibles() {
-        return this.listarClase(Auto.class, "modelo");
-    }
-    
+    }    
     
     public void keyPressedNotNumber(){
         String txt = form.getTxtCosto().getText();

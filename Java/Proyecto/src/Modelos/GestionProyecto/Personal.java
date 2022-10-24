@@ -142,7 +142,7 @@ public class Personal {
 
     @Override
     public String toString() {
-        return nombre;
+        return nombre + " " + apellido;
     }
 
      public String getCodigoS() {

@@ -5,8 +5,9 @@ import javax.swing.*;
 
 public class FrmVenta1 extends FrmGenerica {
 
-    private GestorVistaMarca gestorVistaMarca;
-    private GestorVistaModelo gestorVistaModelo;
+    private GestorVistaVenta gestorVistaVenta;
+    private GestorVistaCliente gestorVistaCliente;
+    private GestorVistaPersonal gestorVistaPersonal;
     private GestorVistaAuto gestorVistaAuto;
     private int YES_NO_OPTION;
 
@@ -18,27 +19,35 @@ public class FrmVenta1 extends FrmGenerica {
         this.gestorVistaAuto = gestorVistaAuto;
     }
 
-    public GestorVistaMarca getGestorVistaMarca() {
-        return gestorVistaMarca;
+    public GestorVistaVenta getGestorVistaVenta() {
+        return gestorVistaVenta;
     }
 
-    public void setGestorVistaMarca(GestorVistaMarca gestorVistaMarca) {
-        this.gestorVistaMarca = gestorVistaMarca;
+    public void setGestorVistaVenta(GestorVistaVenta gestorVistaVenta) {
+        this.gestorVistaVenta = gestorVistaVenta;
     }
 
-    public GestorVistaModelo getGestorVistaModelo() {
-        return gestorVistaModelo;
+    public GestorVistaCliente getGestorVistaCliente() {
+        return gestorVistaCliente;
     }
 
-    public void setGestorVistaModelo(GestorVistaModelo gestorVistaModelo) {
-        this.gestorVistaModelo = gestorVistaModelo;
+    public void setGestorVistaCliente(GestorVistaCliente gestorVistaCliente) {
+        this.gestorVistaCliente = gestorVistaCliente;
     }
 
-    public JTable getTblDatos() {
+    public GestorVistaPersonal getGestorVistaPersonal() {
+        return gestorVistaPersonal;
+    }
+
+    public void setGestorVistaPersonal(GestorVistaPersonal gestorVistaPersonal) {
+        this.gestorVistaPersonal = gestorVistaPersonal;
+    }
+
+    public JTable getTblDatosAutos() {
         return tblDatosAutos;
     }
 
-    public void setTblDatos(JTable tblDatos) {
+    public void setTblDatosAutos(JTable tblDatos) {
         this.tblDatosAutos = tblDatos;
     }
 
@@ -107,26 +116,68 @@ public class FrmVenta1 extends FrmGenerica {
         this.txtSubtotal = txtPrecio;
     }
 
+    public JButton getBtnBuscar1() {
+        return btnBuscar1;
+    }
+
+    public void setBtnBuscar1(JButton btnBuscar1) {
+        this.btnBuscar1 = btnBuscar1;
+    }
+
+    public JTable getTblDatosDetalleVenta() {
+        return tblDatosDetalleVenta;
+    }
+
+    public void setTblDatosDetalleVenta(JTable tblDatosDetalleVenta) {
+        this.tblDatosDetalleVenta = tblDatosDetalleVenta;
+    }
+    public JTextField getTxtImpuestos() {
+        return txtImpuestos;
+    }
+
+    public void setTxtImpuestos(JTextField txtImpuestos) {
+        this.txtImpuestos = txtImpuestos;
+    }
+
+    public JTextField getTxtSubtotal() {
+        return txtSubtotal;
+    }
+
+    public void setTxtSubtotal(JTextField txtSubtotal) {
+        this.txtSubtotal = txtSubtotal;
+    }
+
+    public JTextField getTxtTotal() {
+        return txtTotal;
+    }
+
+    public void setTxtTotal(JTextField txtTotal) {
+        this.txtTotal = txtTotal;
+    }
+
 // Constructores del formulario 
-    public FrmVenta1(GestorVistaAuto gestorVista) {
+    public FrmVenta1(GestorVistaVenta gestorVista) {
         try {
             initComponents();
         } catch (Exception e) {
 
         }
-        this.setGestorVistaAuto(gestorVista);
+        this.setGestorVistaVenta(gestorVista);
         this.onViewOpened();
     }
 
-    public FrmVenta1(GestorVistaAuto gestorVistaAuto, GestorVistaMarca gestorVistaMarca, GestorVistaModelo gestorVistaModelo) {
+    public FrmVenta1(GestorVistaVenta gestorVistaVenta, GestorVistaCliente gestorVistaCliente,
+            GestorVistaPersonal gestorVistaPersonal, GestorVistaAuto gestorVistaAuto) {
         try {
             initComponents();
         } catch (Exception e) {
 
         }
+        this.setGestorVistaVenta(gestorVistaVenta);
+        this.setGestorVistaCliente(gestorVistaCliente);
+        this.setGestorVistaPersonal(gestorVistaPersonal);
         this.setGestorVistaAuto(gestorVistaAuto);
-        this.setGestorVistaMarca(gestorVistaMarca);
-        this.setGestorVistaModelo(gestorVistaModelo);
+        
         this.onViewOpened();
     }
 
@@ -141,7 +192,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
-        btnEliminarDetalleVenta.setEnabled(false);
+        btnEliminar.setEnabled(false);
 
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
@@ -152,7 +203,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(true);
-        btnEliminarDetalleVenta.setEnabled(false);
+        btnEliminar.setEnabled(false);
 
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
@@ -166,7 +217,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
-        btnEliminarDetalleVenta.setEnabled(true);
+        btnEliminar.setEnabled(true);
 
         btnCancelar.setEnabled(false);
         btnSalir.setEnabled(true);
@@ -177,7 +228,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
-        btnEliminarDetalleVenta.setEnabled(true);
+        btnEliminar.setEnabled(true);
 
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
@@ -193,7 +244,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
-        btnEliminarDetalleVenta.setEnabled(false);
+        btnEliminar.setEnabled(false);
 
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
@@ -205,15 +256,20 @@ public class FrmVenta1 extends FrmGenerica {
         this.viewOpenedBotones();
         this.viewCamposEnabled(false);
         this.cargarCombos();
-        this.getGestorVistaAuto().initializeTablaBusqueda(this.getTblDatos());
+        this.getGestorVistaVenta().initializeTablaBusqueda(this.getTblDatosAutos());
+        this.getGestorVistaVenta().initializeTabladetalle(this.getTblDatosDetalleVenta());
         this.isExtra();
 
     }
 
     @Override
     public void cargarCombos() {
-        this.gestorVistaAuto.setModelMarca(cmbCliente);
+        this.gestorVistaVenta.setModelCliente(cmbCliente);
+        this.gestorVistaVenta.setModelPersonal(cmbPersonal);
         cmbCliente.setSelectedItem("");
+        cmbPersonal.setSelectedItem("");
+        tblDatosDetalleVenta.enable();
+        
 
     }
 
@@ -223,12 +279,15 @@ public class FrmVenta1 extends FrmGenerica {
         cmbCliente.setEnabled(tipo);
         btnAgregarCliente.setEnabled(tipo);
         txtMarca.setEnabled(false);
-        btnAgregarPersonal.setEnabled(tipo);
+        btnAgregarPersonal.setEnabled(!tipo);
         cmbPersonal.setEnabled(tipo);
         txtModelo.setEnabled(false);
         txtSubtotal.setEnabled(tipo);
-        
+        tblDatosDetalleVenta.setEnabled(true);
+
     }
+
+    
 
     private void viewBasic() {
         this.viewNuevoEditarBotones();
@@ -335,15 +394,15 @@ public class FrmVenta1 extends FrmGenerica {
     }
 
     private void isExtra() {
-        if (this.getGestorVistaAuto().isExtra()) {
+        if (this.getGestorVistaVenta().isExtra()) {
             this.extraView();
         }
     }
 
     //llenado de tablas
     public void setBusqueda() {
-        this.getGestorVistaAuto().initializeTablaBusqueda(this.getTblDatos());
-        this.getGestorVistaAuto().setBusqueda();
+        this.getGestorVistaVenta().initializeTablaBusqueda(this.getTblDatosAutos());
+        this.getGestorVistaVenta().setBusqueda();
     }
 
     /**
@@ -364,7 +423,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnEliminar1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -374,7 +433,6 @@ public class FrmVenta1 extends FrmGenerica {
         txtModelo = new javax.swing.JTextField();
         txtSubtotal = new javax.swing.JTextField();
         btnAgregarCliente = new javax.swing.JButton();
-        btnAgregarPersonal = new javax.swing.JButton();
         cmbModelo1 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         cmbModelo2 = new javax.swing.JComboBox<>();
@@ -387,9 +445,10 @@ public class FrmVenta1 extends FrmGenerica {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblDatosDetalleVenta = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        btnEliminarDetalleVenta = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnAgregarPersonal = new javax.swing.JButton();
+        btnEliminarDetalleVenta = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatosAutos = new javax.swing.JTable();
@@ -397,6 +456,7 @@ public class FrmVenta1 extends FrmGenerica {
         btnImprimir1 = new javax.swing.JButton();
         txtBusquedaNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        btnAgregarAutoDetalle = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setTitle("Venta");
@@ -507,21 +567,21 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel2.add(btnEditar);
         btnEditar.setBounds(90, 10, 75, 23);
 
-        btnEliminar1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnEliminar1.setText("Eliminar");
-        btnEliminar1.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar1ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        btnEliminar1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnEliminar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnEliminar1KeyPressed(evt);
+                btnEliminarKeyPressed(evt);
             }
         });
-        jPanel2.add(btnEliminar1);
-        btnEliminar1.setBounds(250, 10, 75, 23);
+        jPanel2.add(btnEliminar);
+        btnEliminar.setBounds(250, 10, 80, 20);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 380, 340, 40);
@@ -626,15 +686,6 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel1.add(btnAgregarCliente);
         btnAgregarCliente.setBounds(250, 90, 80, 30);
 
-        btnAgregarPersonal.setText("Agregar");
-        btnAgregarPersonal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarPersonalActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregarPersonal);
-        btnAgregarPersonal.setBounds(580, 90, 80, 30);
-
         cmbModelo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {  }));
         cmbModelo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -708,6 +759,15 @@ public class FrmVenta1 extends FrmGenerica {
             }
         ));
         tblDatosDetalleVenta.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblDatosDetalleVenta.setCellSelectionEnabled(true);
+        tblDatosDetalleVenta.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                tblDatosDetalleVentaComponentAdded(evt);
+            }
+            public void componentRemoved(java.awt.event.ContainerEvent evt) {
+                tblDatosDetalleVentaComponentRemoved(evt);
+            }
+        });
         tblDatosDetalleVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDatosDetalleVentaMouseClicked(evt);
@@ -723,6 +783,25 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 70, 120, 19);
 
+        jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel6.setText("Detalle de venta");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(20, 130, 120, 19);
+
+        jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel7.setText("   +");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(200, 300, 30, 30);
+
+        btnAgregarPersonal.setText("Agregar");
+        btnAgregarPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPersonalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregarPersonal);
+        btnAgregarPersonal.setBounds(580, 90, 80, 30);
+
         btnEliminarDetalleVenta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnEliminarDetalleVenta.setText("Eliminar");
         btnEliminarDetalleVenta.setMargin(new java.awt.Insets(1, 1, 1, 1));
@@ -737,20 +816,10 @@ public class FrmVenta1 extends FrmGenerica {
             }
         });
         jPanel1.add(btnEliminarDetalleVenta);
-        btnEliminarDetalleVenta.setBounds(580, 190, 80, 40);
-
-        jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel6.setText("Detalle de venta");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 130, 120, 19);
-
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel7.setText("   +");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(200, 300, 30, 30);
+        btnEliminarDetalleVenta.setBounds(590, 180, 75, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(370, 10, 730, 430);
+        jPanel1.setBounds(380, 10, 730, 430);
 
         jPanel4.setLayout(null);
 
@@ -818,6 +887,15 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel4.add(jLabel4);
         jLabel4.setBounds(20, 20, 190, 20);
 
+        btnAgregarAutoDetalle.setText("Agregar");
+        btnAgregarAutoDetalle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAutoDetalleActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnAgregarAutoDetalle);
+        btnAgregarAutoDetalle.setBounds(130, 380, 80, 30);
+
         getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 10, 380, 430);
 
@@ -828,7 +906,7 @@ public class FrmVenta1 extends FrmGenerica {
 
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
         if (evt.getKeyCode() == 10) {
-            if (this.gestorVistaAuto.getModelXCodigo(txtCodigo.getText())) {
+            if (this.gestorVistaVenta.getModelXCodigo(txtCodigo.getText())) {
                 this.viewActualizar();
             } else {
                 JOptionPane.showMessageDialog(null, "Código no existe");
@@ -877,22 +955,22 @@ public class FrmVenta1 extends FrmGenerica {
             this.saveView();
     }//GEN-LAST:event_btnGuardarKeyPressed
 
-    private void btnEliminarDetalleVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDetalleVentaActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0)
             this.deleteView();
-    }//GEN-LAST:event_btnEliminarDetalleVentaActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnEliminarDetalleVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarDetalleVentaKeyPressed
+    private void btnEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyPressed
         if (evt.getKeyCode() == 10) {
             if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0) {
                 this.deleteView();
             }
         }
-    }//GEN-LAST:event_btnEliminarDetalleVentaKeyPressed
+    }//GEN-LAST:event_btnEliminarKeyPressed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         int n = 0;
-        if (this.getGestorVistaAuto().isNuevo() || this.getGestorVistaAuto().isOnlyRead()) {
+        if (this.getGestorVistaVenta().isNuevo() || this.getGestorVistaVenta().isOnlyRead()) {
             this.dispose();
         } else {
             n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
@@ -961,7 +1039,7 @@ public class FrmVenta1 extends FrmGenerica {
     }//GEN-LAST:event_cmbPersonalActionPerformed
 
     private void cmbClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbClienteItemStateChanged
-        this.gestorVistaAuto.setModelModelo(cmbPersonal);
+        
     }//GEN-LAST:event_cmbClienteItemStateChanged
 
     private void cmbClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbClienteMouseClicked
@@ -973,11 +1051,11 @@ public class FrmVenta1 extends FrmGenerica {
     }//GEN-LAST:event_cmbClientePropertyChange
 
     private void btnAgregarPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonalActionPerformed
-        this.getGestorVistaAuto().openFormularioModelo((DefaultComboBoxModel) cmbPersonal.getModel(), cmbCliente);
+        this.getGestorVistaVenta().openFormularioPersonal((DefaultComboBoxModel) cmbPersonal.getModel());
     }//GEN-LAST:event_btnAgregarPersonalActionPerformed
 
     private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
-        this.getGestorVistaAuto().openFormularioMarca((DefaultComboBoxModel) cmbCliente.getModel());
+        this.getGestorVistaVenta().openFormularioCliente((DefaultComboBoxModel) cmbCliente.getModel());
     }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
     private void cmbModelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbModelo1ActionPerformed
@@ -992,27 +1070,41 @@ public class FrmVenta1 extends FrmGenerica {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblDatosDetalleVentaMouseClicked
 
-    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminar1ActionPerformed
+    private void btnEliminarDetalleVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDetalleVentaActionPerformed
+        this.getGestorVistaVenta().EliminarDetalle(this.getTblDatosDetalleVenta());
+    }//GEN-LAST:event_btnEliminarDetalleVentaActionPerformed
 
-    private void btnEliminar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminar1KeyPressed
+    private void btnEliminarDetalleVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarDetalleVentaKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminar1KeyPressed
+    }//GEN-LAST:event_btnEliminarDetalleVentaKeyPressed
 
     private void txtImpuestosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImpuestosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtImpuestosActionPerformed
 
+    private void btnAgregarAutoDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAutoDetalleActionPerformed
+        int numero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad a Vender"));
+        this.getGestorVistaVenta().agregarDetalle(this.getTblDatosAutos(), numero);
+    }//GEN-LAST:event_btnAgregarAutoDetalleActionPerformed
+
+    private void tblDatosDetalleVentaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_tblDatosDetalleVentaComponentAdded
+       
+    }//GEN-LAST:event_tblDatosDetalleVentaComponentAdded
+
+    private void tblDatosDetalleVentaComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_tblDatosDetalleVentaComponentRemoved
+        
+    }//GEN-LAST:event_tblDatosDetalleVentaComponentRemoved
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarAutoDetalle;
     private javax.swing.JButton btnAgregarCliente;
     private javax.swing.JButton btnAgregarPersonal;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscarCodigo;
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
-    public javax.swing.JButton btnEliminar1;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnEliminarDetalleVenta;
     public javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnImprimir1;

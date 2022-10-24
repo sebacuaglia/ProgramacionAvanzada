@@ -149,9 +149,11 @@ public class GestorVistaCliente extends GestorVista {
                 break;
 
             case 2:
-                this.eliminar();
+                /*this.eliminar();
                 break;
-
+                 */
+                this.guardarObjeto();
+                break;
         }
     }
 
@@ -296,16 +298,17 @@ public class GestorVistaCliente extends GestorVista {
         this.getForm().getTxtEmail().setText(this.getModel().getEmail());
     }
 
-    public DefaultComboBoxModel getComboModelMarca() {
+    public DefaultComboBoxModel getComboModelCliente() {
         DefaultComboBoxModel auxModel = new DefaultComboBoxModel();
         auxModel.addElement("");
-        for (Marca auxTipo : this.listarMarcas()) {
+        for (Cliente auxTipo : this.listarClientes()) {
             auxModel.addElement(auxTipo);
         }
         return auxModel;
     }
 
-    public List<Marca> listarMarcas() {
-        return this.listarClase(Marca.class, "nombre");
+    public List<Cliente> listarClientes() {
+        return this.listarClase(Cliente.class, "nombre");
     }
+
 }

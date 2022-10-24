@@ -4,6 +4,7 @@
  */
 package Modelos.GestionProyecto;
 
+import Hibernate.GestorHibernate;
 import static Hibernate.HibernateUtil.getSession;
 import Vistas.GestorVista;
 import java.util.Iterator;
@@ -78,22 +79,20 @@ public class GestorVistaVenta extends GestorVista {
         this.setModoNuevo();
     }
 
-    public void setModelMarca(JComboBox cmb) {
-        cmb.setModel(getComboModelMarca());
+    public void setModelCliente(JComboBox cmb) {
+        cmb.setModel(getComboModelCliente());
     }
 
-    public void setModelModelo(JComboBox cmb) {
-        cmb.setModel(getComboModelModelo((Marca) this.getForm().getCmbMarca().getModel().getSelectedItem()));
+    public void setModelPersonal(JComboBox cmb) {
+        cmb.setModel(getComboModelPersonal());
     }
 
-    public DefaultComboBoxModel getComboModelMarca() {
-        return this.getGestorMarca().getComboModelMarca();
+    public DefaultComboBoxModel getComboModelCliente() {
+        return this.getGestorCliente().getComboModelCliente();
     }
 
-    public DefaultComboBoxModel getComboModelModelo(Marca marca) {
-
-        return this.getGestorModelo().getComboModelModelo(marca);
-
+    public DefaultComboBoxModel getComboModelPersonal() {
+        return this.getGestorPersonal().getComboModelPersonal();
     }
 
     @Override
@@ -125,17 +124,7 @@ public class GestorVistaVenta extends GestorVista {
     public int setModel() {
         if (this.isDatosValidos()) {
             //this.getModel().setNombre(this.getForm().getTxtNombre().getText());
-            this.getModel().setModelo((Modelo) this.getForm().getCmbModelo().getModel().getSelectedItem());
-            this.getModel().setColor(this.getForm().getTxtColor().getText());
-            this.getModel().setPrecio(this.getForm().getTxtPrecio().getText());
-            this.getModel().setCosto(this.getForm().getTxtCosto().getText());
-            if (this.getForm().getCheckBoxUsado().isSelected()) {
-                this.getModel().setUsado(this.getForm().getCheckBoxUsado().isSelected());
-                this.getModel().setMatricula(this.getForm().getTxtMatricula().getText());
-                this.getModel().setAnio(this.getForm().getTxtAnio().getText());
-
-                this.getModel().setKilometro(this.getForm().getTxtKilometraje().getText());
-            }
+            
 
             return 0;
         } else {
@@ -145,7 +134,7 @@ public class GestorVistaVenta extends GestorVista {
 
     @Override
     public boolean isDatosValidos() {
-        if (this.isEmpty(this.getForm().getCmbMarca())) {
+        /*if (this.isEmpty(this.getForm().getCmbMarca())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar la marca.");
             this.getForm().getCmbMarca().grabFocus();
             return false;
@@ -161,14 +150,14 @@ public class GestorVistaVenta extends GestorVista {
             JOptionPane.showMessageDialog(null, "Falta ingresar un color.");
             this.getForm().getTxtColor().grabFocus();
             return false;
-        }
+        }*/
 
         if (this.isEmpty(this.getForm().getTxtPrecio()) /*&& this.getForm().getTxtPrecio().getText().matches("[0-9]+")*/ ) {
             JOptionPane.showMessageDialog(null, "Falta ingresar el precio de venta.");
             this.getForm().getTxtPrecio().grabFocus();
             return false;
         }
-        
+        /*
         if (this.isEmpty(this.getForm().getTxtCosto())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar el precio de costo.");
             this.getForm().getTxtCosto().grabFocus();
@@ -195,7 +184,7 @@ public class GestorVistaVenta extends GestorVista {
                 this.getForm().getTxtAnio().grabFocus();
                 return false;
             }
-        }
+        }*/
 
         return true;
     }
@@ -223,7 +212,6 @@ public class GestorVistaVenta extends GestorVista {
 
     public void guardarObjeto() {
         this.newCodigo();
-        this.getModel().setHabilitado(true);
         this.guardarObjeto(this.getModel());
         
         // para cada detalle guardar
@@ -235,8 +223,7 @@ public class GestorVistaVenta extends GestorVista {
 
     public void eliminar() {
         //solo deshabilitamos
-        this.getModel().setHabilitado(false);
-        this.actualizarObjeto(this.getModel());
+       this.actualizarObjeto(this.getModel());
 
         //eliminar objeto
         //this.eliminarObjeto(this.getModel());
@@ -262,7 +249,7 @@ public class GestorVistaVenta extends GestorVista {
     @Override
     public void openFormulario(JDesktopPane pantalla) {
         this.setEscritorio(pantalla);
-        this.setForm(new FrmAuto(this, gestorMarca, gestorModelo));
+        this.setForm(new FrmVenta1(this, gestorCliente, gestorPersonal, gestorAuto));
         this.setTitulo(this.getForm().getTitle());
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
@@ -272,22 +259,22 @@ public class GestorVistaVenta extends GestorVista {
         this.setEscritorio(pantalla);
         this.setModelCombo(model);
         this.setOpcABM(2);
-        this.setForm(new FrmAuto(this, gestorMarca, gestorModelo));
+        this.setForm(new FrmVenta1(this));
         this.setTitulo(this.getForm().getTitle());
         this.getEscritorio().add(this.getForm());
         this.getForm().setVisible(true);
         this.setOpcABM(2);
     }
 
-    void openFormularioMarca(DefaultComboBoxModel model) {
-        GestorVistaMarca gestorVistaMarca = new GestorVistaMarca();
-        gestorVistaMarca.openFormulario(model, this.getEscritorio());
+    void openFormularioCliente(DefaultComboBoxModel model) {
+        GestorVistaCliente gestorVistaCliente = new GestorVistaCliente();
+        gestorVistaCliente.openFormulario(model, this.getEscritorio());
 
     }
 
-    void openFormularioModelo(DefaultComboBoxModel model) {
-        GestorVistaModelo gestorVistaModelo = new GestorVistaModelo();
-        gestorVistaModelo.openFormulario(model, this.getEscritorio());
+    void openFormularioPersonal(DefaultComboBoxModel model) {
+        GestorVistaPersonal gestorVistaPersonal = new GestorVistaPersonal();
+        gestorVistaPersonal.openFormulario(model, this.getEscritorio());
     }
 
     void openFormularioModelo(DefaultComboBoxModel model, JComboBox<String> marca) {
@@ -296,22 +283,18 @@ public class GestorVistaVenta extends GestorVista {
     }
 
     public void initializeTablaBusqueda(JTable tbl) {
-        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Color", "Precio", "Usado", "Patente", "Año"};
-        String[] ancho = {"0", "43", "100", "100", "100", "100", "100", "100", "100"};
+        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio",};
+        String[] ancho = {"0", "43", "100", "100", "100"};
+        this.newModelTable(tbl, titulo, ancho);
+    }
+    
+    public void initializeTabladetalle(JTable tbl) {
+        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
+        String[] ancho = {"0", "43", "100", "100", "100", "100", "100"};
         this.newModelTable(tbl, titulo, ancho);
     }
 
-    public void setBusqueda() {
-        Boolean error = false;
-        this.initializeTablaBusqueda(this.getForm().getTblDatos());
-
-        if (!error) {
-
-            this.getForm().getTblDatos().setModel(this.listarDatos((DefaultTableModel) this.getForm().getTblDatos().getModel(), this.getOrdenamiento(), ""));
-        } else {
-            JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
-        }
-    }
+    
 
     private int getOrdenamiento() {
         int ord = 0;
@@ -319,77 +302,7 @@ public class GestorVistaVenta extends GestorVista {
         return ord;
     }
 
-    public DefaultTableModel listarDatos(DefaultTableModel auxModelTabla, int ordenamiento, String text) {
-        //TreeSet<Marca> lista= new TreeSet();
-        List<Auto> list = this.listar(text, ordenamiento);
-        Auto auxModel;
-        /*Iterator it = (Iterator) list.iterator();
-        while (it.hasNext())  {
-            auxModel =(Marca) it.next(); 
-            lista.add(auxModel);
-         }*/
-
-        Iterator it2 = (Iterator) list.iterator();
-        while (it2.hasNext()) {
-            auxModel = (Auto) it2.next();
-            Object[] fila = {auxModel, auxModel.getCodigo(), auxModel.getModelo().getMarca().getNombre(), auxModel.getModelo().getNombre(),
-                auxModel.getColor(), auxModel.getPrecio(), auxModel.isUsado(), auxModel.getMatricula(), auxModel.getAnio()};
-            auxModelTabla.addRow(fila);
-        }
-        return auxModelTabla;
-    }
-
-    public List<Auto> listar(String text, int ord) {
-        Criteria crit = getSession().createCriteria(Auto.class);
-        crit.add(Restrictions.eq("habilitado", true));
-        return crit.list();
-    }
-
-    public void setDatos() {
-        if (this.getOpcABM() == 1) {
-            int resp = JOptionPane.showConfirmDialog(null, "Usted va a perder los cambios realizados en el producto, porque no ha grabado.\nDesea continuar?", "Modificar Producto", JOptionPane.YES_NO_OPTION);
-            if (resp == JOptionPane.YES_OPTION) {
-                this.setOpcABM(-1);
-                if (this.isItemTablaSelected(this.getForm().getTblDatos())) {
-                    this.setModel((Auto) this.getItemTablaSelected(this.getForm().getTblDatos()));
-                    this.getForm().clearView();
-                    this.getForm().viewActualizar();
-                }
-            }
-        } else {
-            if (this.isItemTablaSelected(this.getForm().getTblDatos())) {
-                this.setModel((Auto) this.getItemTablaSelected(this.getForm().getTblDatos()));
-                this.getForm().clearView();
-                this.getForm().viewActualizar();
-            }
-        }
-    }
-
-    public Object getItemTablaSelected(JTable tbl) {
-        DefaultTableModel model = (DefaultTableModel) tbl.getModel();
-        return model.getValueAt(tbl.getSelectedRow(), 0);
-    }
-
-    @Override
-    public void getView() {
-        this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
-        //this.getForm().getTxtNombre().setText(this.getModel().getNombre());
-        //this.getForm().getCmbPais().setSelectedItem(this.getModel().getPais());
-        this.getForm().getCmbMarca().setSelectedItem(this.getModel().getModelo().getMarca());
-        this.getForm().getCmbModelo().setSelectedItem(this.getModel().getModelo());
-
-        this.getForm().getTxtColor().setText(this.getModel().getColor());
-        this.getForm().getTxtPrecio().setText(this.getModel().getPrecio());
-        this.getForm().getTxtCosto().setText(this.getModel().getCosto());
-
-        if (this.getModel().isUsado()) {
-            this.getForm().getCheckBoxUsado().setSelected(this.getModel().isUsado());
-            this.getForm().getTxtMatricula().setText(this.getModel().getMatricula());
-            this.getForm().getTxtAnio().setText(this.getModel().getAnio());
-            this.getForm().getTxtKilometraje().setText(this.getModel().getKilometro());
-        }
-
-    }
+    
 
     public DefaultComboBoxModel getComboModelAuto() {
         DefaultComboBoxModel auxModel = new DefaultComboBoxModel();
@@ -405,13 +318,66 @@ public class GestorVistaVenta extends GestorVista {
     }
     
     
-    public void keyPressedNotNumber(){
-        String txt = form.getTxtCosto().getText();
-        String txtValida = txt.substring(0,txt.length()-1);
-        form.getTxtCosto().setText(txtValida);
+    public void setBusqueda() {
+        Boolean error = false;
+        this.initializeTablaBusqueda(this.getForm().getTblDatosAutos());
+
+        if (!error) {
+
+            this.getForm().getTblDatosAutos().setModel(this.getGestorAuto().listarDatos((DefaultTableModel) this.getForm().getTblDatosAutos().getModel(), this.getOrdenamiento(), ""));
+        } else {
+            JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
+        }
     }
     
     
+    public void agregarDetalle(JTable datosAuto, int cantidad){
+        DefaultTableModel auxModelTabla = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
+        Auto auxModel = (Auto) this.getItemTablaSelected(datosAuto);
+        
+        Object[] fila = {auxModel,
+                auxModel.getCodigo(), 
+                auxModel.getModelo().getMarca().getNombre(),
+                auxModel.getModelo().getNombre(),
+                auxModel.getPrecio(),
+                cantidad,
+                auxModel.getModelo().getMarca().getPais().getPorcImpuesto()};
+        
+        auxModelTabla.addRow(fila);
+        
+        this.getForm().getTblDatosDetalleVenta().setModel(auxModelTabla);
+        this.getForm().getTblDatosDetalleVenta().setEditingColumn(6);
+        this.ejecutarCalculos();
+    }
     
+    public void EliminarDetalle(JTable datosDetalle){
+       DefaultTableModel model = (DefaultTableModel) datosDetalle.getModel();
+       model.removeRow(datosDetalle.getSelectedRow());
+       this.ejecutarCalculos();
+    }
+    
+    public Object getItemTablaSelected(JTable tbl) {
+        DefaultTableModel model = (DefaultTableModel) tbl.getModel();
+        return model.getValueAt(tbl.getSelectedRow(), 0);
+    }
+    
+    public void ejecutarCalculos(){
+        DefaultTableModel auxModelTabla = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
+        JTable tabla = this.getForm().getTblDatosDetalleVenta();
+        double subtotal = 0,impuesto = 0,total = 0;
+        for (int i = 0; i < auxModelTabla.getRowCount(); i++) {
+            Auto auxModel = (Auto) auxModelTabla.getValueAt(i, 0);
+        
+            subtotal += Double.parseDouble(auxModel.getPrecio()) * Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString() );
+            impuesto += Double.parseDouble(auxModel.getPrecio())/100 *  auxModel.getModelo().getMarca().getPais().getPorcImpuesto() * Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString() );
+            total = subtotal + impuesto;
+            
+        }
+        
+        this.getForm().getTxtSubtotal().setText(subtotal+"");
+        this.getForm().getTxtImpuestos().setText(impuesto+"");
+        this.getForm().getTxtTotal().setText(total+"");
+ 
+    }
     
 }

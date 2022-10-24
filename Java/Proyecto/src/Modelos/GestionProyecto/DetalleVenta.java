@@ -5,16 +5,20 @@
 package Modelos.GestionProyecto;
 
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author sebac
  */
-class DetalleVenta {
+@Entity
+public class DetalleVenta {
     
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
