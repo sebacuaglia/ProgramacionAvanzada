@@ -28,6 +28,8 @@ class DetalleVenta {
     @ManyToOne(targetEntity = Venta.class,  fetch = FetchType.LAZY)
     private Venta venta;
     
+    private int precioAuto;
+    
     private int porcImpuesto;
     
     private double montoImpuesto;
@@ -62,6 +64,14 @@ class DetalleVenta {
 
     public void setVenta(Venta venta) {
         this.venta = venta;
+    }
+
+    public int getPrecioAuto() {
+        return precioAuto;
+    }
+
+    public void setPrecioAuto(int precioAuto) {
+        this.precioAuto = precioAuto;
     }
 
     public int getPorcImpuesto() {
