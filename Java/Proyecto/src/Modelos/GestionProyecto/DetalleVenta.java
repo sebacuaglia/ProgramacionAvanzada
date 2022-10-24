@@ -93,14 +93,17 @@ class DetalleVenta {
     public DetalleVenta() {
     }
 
-    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int porcImpuesto, double montoImpuesto) {
+    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int precioAuto, int porcImpuesto, double montoImpuesto) {
         this.id = id;
         this.codigo = codigo;
         this.auto = auto;
         this.venta = venta;
+        this.precioAuto = precioAuto;
         this.porcImpuesto = porcImpuesto;
         this.montoImpuesto = montoImpuesto;
     }
+    
+    
     
     public String getCodigoS() {
         return this.getCodigo() + "";
