@@ -291,4 +291,9 @@ public class GestorVista  extends GestorHibernate {
         model.removeRow(tbl.getSelectedRow());
     }
 
+    public void keyPressedNotNumber(JTextField jtf){
+        String txt = jtf.getText();
+        String txtValida = txt.substring(0,txt.length()-1);
+        jtf.setText(txtValida);
+    }
 }

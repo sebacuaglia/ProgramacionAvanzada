@@ -1,6 +1,7 @@
 package Modelos.GestionProyecto;
 import Vistas.FrmGenerica;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.KeyEvent;
 import java.util.Set;
 import javax.swing.*;
 
@@ -294,7 +295,6 @@ public class FrmPersonal extends FrmGenerica {
         txtEmail.setText("");
         txtDireccion.setText("");
         txtDni.setText("");
-        txtFecha.setDateFormatString("");
         txtTelefono.setText("");
         
        
@@ -429,7 +429,7 @@ public class FrmPersonal extends FrmGenerica {
         jLabel3.setText("Código");
         jLabel3.setRequestFocusEnabled(false);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 20, 90, 17);
+        jLabel3.setBounds(20, 20, 90, 19);
 
         txtCodigo.setBackground(new java.awt.Color(204, 255, 204));
         txtCodigo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
@@ -450,7 +450,7 @@ public class FrmPersonal extends FrmGenerica {
             }
         });
         jPanel1.add(txtCodigo);
-        txtCodigo.setBounds(20, 40, 90, 23);
+        txtCodigo.setBounds(20, 40, 90, 25);
 
         btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
@@ -591,7 +591,7 @@ public class FrmPersonal extends FrmGenerica {
             }
         });
         jPanel1.add(txtNombre);
-        txtNombre.setBounds(20, 90, 160, 23);
+        txtNombre.setBounds(20, 90, 160, 25);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel5.setText("Apellido");
@@ -606,12 +606,12 @@ public class FrmPersonal extends FrmGenerica {
             }
         });
         jPanel1.add(txtApellido);
-        txtApellido.setBounds(200, 90, 240, 23);
+        txtApellido.setBounds(200, 90, 240, 25);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel6.setText("Telefono");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 120, 120, 17);
+        jLabel6.setBounds(20, 120, 120, 19);
 
         txtEmail.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -621,12 +621,12 @@ public class FrmPersonal extends FrmGenerica {
             }
         });
         jPanel1.add(txtEmail);
-        txtEmail.setBounds(20, 190, 460, 23);
+        txtEmail.setBounds(20, 190, 460, 25);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel7.setText("Direccion");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 220, 120, 17);
+        jLabel7.setBounds(20, 220, 120, 19);
 
         txtDni.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtDni.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -635,8 +635,13 @@ public class FrmPersonal extends FrmGenerica {
                 txtDniActionPerformed(evt);
             }
         });
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDniKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtDni);
-        txtDni.setBounds(260, 310, 220, 23);
+        txtDni.setBounds(260, 310, 220, 25);
         jPanel1.add(txtFecha);
         txtFecha.setBounds(20, 310, 190, 22);
 
@@ -653,17 +658,17 @@ public class FrmPersonal extends FrmGenerica {
             }
         });
         jPanel1.add(txtDireccion);
-        txtDireccion.setBounds(20, 240, 460, 23);
+        txtDireccion.setBounds(20, 240, 460, 25);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel9.setText("DNI");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(350, 290, 130, 17);
+        jLabel9.setBounds(350, 290, 130, 19);
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel10.setText("Email");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(20, 170, 120, 17);
+        jLabel10.setBounds(20, 170, 120, 19);
 
         txtTelefono.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtTelefono.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -672,11 +677,16 @@ public class FrmPersonal extends FrmGenerica {
                 txtTelefonoActionPerformed(evt);
             }
         });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtTelefono);
-        txtTelefono.setBounds(20, 140, 460, 23);
+        txtTelefono.setBounds(20, 140, 460, 25);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(380, 20, 740, 440);
+        jPanel1.setBounds(380, 0, 740, 440);
         jPanel1.getAccessibleContext().setAccessibleDescription("");
 
         jPanel4.setLayout(null);
@@ -738,7 +748,7 @@ public class FrmPersonal extends FrmGenerica {
         txtBusquedaNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtBusquedaNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel4.add(txtBusquedaNombre);
-        txtBusquedaNombre.setBounds(20, 50, 240, 23);
+        txtBusquedaNombre.setBounds(20, 50, 240, 25);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Personal");
@@ -746,12 +756,12 @@ public class FrmPersonal extends FrmGenerica {
         jLabel4.setBounds(20, 20, 190, 20);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(0, 10, 380, 430);
+        jPanel4.setBounds(0, 0, 380, 440);
 
         getAccessibleContext().setAccessibleName("Carg");
         getAccessibleContext().setAccessibleDescription("Personal");
 
-        setBounds(150, 0, 1129, 481);
+        setBounds(150, 0, 1129, 475);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -912,6 +922,26 @@ public class FrmPersonal extends FrmGenerica {
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
+
+    private void txtDniKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyPressed
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
+            evt.consume();
+            this.getGestorVista().keyPressedNotNumber(txtDni);
+        } 
+    }//GEN-LAST:event_txtDniKeyPressed
+
+    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
+            evt.consume();
+            this.getGestorVista().keyPressedNotNumber(txtTelefono);
+        } 
+    }//GEN-LAST:event_txtTelefonoKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

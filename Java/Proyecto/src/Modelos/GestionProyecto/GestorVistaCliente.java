@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import javax.swing.*;
 
 /**
  *
@@ -129,11 +130,11 @@ public class GestorVistaCliente extends GestorVista {
             this.getForm().getTxtRazon().grabFocus();
             return false;
         }
-        /*if (this.isEmpty(this.getForm().getTxtFechaNacimiento())) {
+        if (this.isEmpty(this.getForm().getTxtFechaNacimiento())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar la razon social del cliente.");
             this.getForm().getTxtFechaNacimiento().grabFocus();
             return false;
-        }*/
+        }
 
         return true;
     }

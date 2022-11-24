@@ -123,11 +123,11 @@ public class GestorVistaPersonal extends GestorVista {
             return false;
         }
 
-        /* if (this.isEmpty(this.getForm().getTxtFechaNacimiento())) {
+         if (this.isEmpty(this.getForm().getTxtFechaNacimiento())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar la razon social del empleado.");
             this.getForm().getTxtFechaNacimiento().grabFocus();
             return false;
-        }*/
+        }
         return true;
     }
 

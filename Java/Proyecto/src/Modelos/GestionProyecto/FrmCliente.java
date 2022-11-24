@@ -1,10 +1,18 @@
 package Modelos.GestionProyecto;
+
 import Vistas.FrmGenerica;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.KeyEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Set;
 import javax.swing.*;
 
 public class FrmCliente extends FrmGenerica {
+
     private GestorVistaCliente gestorVista;
     private int YES_NO_OPTION;
     Object getTxtRazon;
@@ -12,7 +20,7 @@ public class FrmCliente extends FrmGenerica {
     public GestorVistaCliente getGestorVista() {
         return gestorVista;
     }
-    
+
     public void setGestorVista(GestorVistaCliente gestorVista) {
         this.gestorVista = gestorVista;
     }
@@ -41,7 +49,7 @@ public class FrmCliente extends FrmGenerica {
     public void setTxtNombre(JTextField txtNombre) {
         this.txtNombre = txtNombre;
     }
-    
+
     public JTextField getTxtCodigo() {
         return txtCodigo;
     }
@@ -49,7 +57,8 @@ public class FrmCliente extends FrmGenerica {
     public void setTxtCodigo(JTextField txtCodigo) {
         this.txtCodigo = txtCodigo;
     }
-/*
+
+    /*
     public JComboBox<String> getCmbPais() {
         return cmbPais;
     }
@@ -58,58 +67,56 @@ public class FrmCliente extends FrmGenerica {
     public void setCmbPais(JComboBox<String> cmbPais) {
         this.cmbPais = cmbPais;
     }
-    */
+     */
 
     public JTextField getTxtApellido() {
         return txtApellido;
     }
 
-        public void setTxtApellido(JTextField txtApellido) {
+    public void setTxtApellido(JTextField txtApellido) {
         this.txtApellido = txtApellido;
     }
-        
+
     public JTextField getTxtEmail() {
         return txtEmail;
     }
 
-        public void setTxtEmail(JTextField txtEmail) {
+    public void setTxtEmail(JTextField txtEmail) {
         this.txtEmail = txtEmail;
     }
-    
+
     public JTextField getTxtDireccion() {
         return txtDireccion;
     }
 
-        public void setTxtDireccion(JTextField txtDireccion) {
+    public void setTxtDireccion(JTextField txtDireccion) {
         this.txtApellido = txtDireccion;
     }
-        
-        
+
     public JTextField getTxtRazon() {
         return txtRazon;
-   }
+    }
 
     public void setTxtRazon(JTextField txtRazon) {
         this.txtRazon = txtRazon;
     }
-        
-       public JDateChooser getTxtFechaNacimiento() {
+
+    public JDateChooser getTxtFechaNacimiento() {
         return txtFecha;
     }
 
-        public void setTxtFechaNacimiento(JDateChooser txtFecha) {
+    public void setTxtFechaNacimiento(JDateChooser txtFecha) {
         this.txtFecha = txtFecha;
     }
-        
+
     public JTextField getTxtDni() {
         return txtDni;
     }
 
-        public void setTxtDni(JTextField txtDni) {
+    public void setTxtDni(JTextField txtDni) {
         this.txtDni = txtDni;
     }
-        
-        
+
     public JTextField getTxtTelefono() {
         return txtTelefono;
     }
@@ -117,16 +124,14 @@ public class FrmCliente extends FrmGenerica {
     public void setTxtTelefono(JTextField txtTelefono) {
         this.txtTelefono = txtTelefono;
     }
-    
 
 // Constructores del formulario 
     public FrmCliente(GestorVistaCliente gestorVista) {
-        try{
-           initComponents();
-           }
-        catch(Exception e){
-            
-        }  
+        try {
+            initComponents();
+        } catch (Exception e) {
+
+        }
         this.setGestorVista(gestorVista);
         this.onViewOpened();
     }
@@ -134,40 +139,39 @@ public class FrmCliente extends FrmGenerica {
     public FrmCliente() {
         initComponents();
     }
-    
-      // Metodos que gestionan los botones de la barra comando 
+
+    // Metodos que gestionan los botones de la barra comando 
     public void viewOpenedBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-        
+
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
     }
 
-    public void viewNuevoEditarBotones(){
+    public void viewNuevoEditarBotones() {
         btnNuevo.setEnabled(false);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(true);
         btnEliminar.setEnabled(false);
-        
+
         btnCancelar.setEnabled(true);
         btnSalir.setEnabled(true);
     }
-  
+
     public void viewEliminarBotones() {
         this.viewOpenedBotones();
     }
-  
+
     public void viewGuardarBotones() {
         btnNuevo.setEnabled(true);
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-        
-        
+
         btnCancelar.setEnabled(false);
         btnSalir.setEnabled(true);
         btnNuevo.grabFocus();
@@ -178,29 +182,28 @@ public class FrmCliente extends FrmGenerica {
         btnEditar.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(true);
-        
+
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
-        
-    } 
-    
+
+    }
+
     /*
     private void viewDenominacionVisible(Boolean tipo){
         txtPais.setVisible(!tipo);
         cmbPais.setVisible(tipo);
     }
-    */
-    
+     */
     public void viewBuscar() {
-        btnNuevo.setEnabled(true); 
+        btnNuevo.setEnabled(true);
         btnEditar.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnEliminar.setEnabled(false);
-     
+
         btnSalir.setEnabled(true);
         btnCancelar.setEnabled(true);
     }
-    
+
     @Override
     public void onViewOpened() {
         this.viewOpenedBotones();
@@ -209,15 +212,14 @@ public class FrmCliente extends FrmGenerica {
         this.cargarCombos();
         this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
         this.isExtra();
-     }
-    
+    }
+
     /*
     @Override
     public void cargarCombos() {
         this.gestorVista.setModelPais(cmbPais);
     }
-    */
-
+     */
     @Override
     public void viewCamposEnabled(Boolean tipo) {
         txtCodigo.setEnabled(false);
@@ -232,19 +234,19 @@ public class FrmCliente extends FrmGenerica {
         txtTelefono.setEnabled(tipo);
     }
 
-    private void viewBasic(){
+    private void viewBasic() {
         this.viewNuevoEditarBotones();
         this.viewCamposEnabled(true);
     }
 
     @Override
-    public void viewNuevoEnter( ) {
+    public void viewNuevoEnter() {
         this.viewBasic();
         this.viewNueva();
     }
 
     @Override
-    public void viewEditarEnter( ) {
+    public void viewEditarEnter() {
         this.viewBasic();
         txtNombre.grabFocus();
         this.getGestorVista().setModoEditar();
@@ -288,7 +290,7 @@ public class FrmCliente extends FrmGenerica {
         this.viewBuscarBotones();
     }
 
-    private void viewNueva(){
+    private void viewNueva() {
         this.clearView();
         this.getGestorVista().newModel();
         txtNombre.grabFocus();
@@ -303,19 +305,16 @@ public class FrmCliente extends FrmGenerica {
         txtDireccion.setText("");
         txtRazon.setText("");
         txtDni.setText("");
-        txtFecha.setDateFormatString("");
         txtTelefono.setText("");
-        
-       
-        
+
     }
 
     @Override
-    public void grabFocus(){
+    public void grabFocus() {
         txtNombre.grabFocus();
     }
 
-   @Override
+    @Override
     public void cancelarView() {
         this.getGestorVista().cancelarView();
         this.onViewOpened();
@@ -324,40 +323,40 @@ public class FrmCliente extends FrmGenerica {
 
     @Override
     public void deleteView() {
-         this.getGestorVista().deleteView();
+        this.getGestorVista().deleteView();
     }
 
     @Override
-    public void saveView(){
+    public void saveView() {
         this.getGestorVista().saveView();
     }
 
     @Override
-    public void setView(){
-       this.getGestorVista().getView();
-    }  
+    public void setView() {
+        this.getGestorVista().getView();
+    }
 
     public void extraView() {
         btnBuscar.setEnabled(false);
         this.viewNuevoEnter();
     }
- 
+
     private void isExtra() {
         if (this.getGestorVista().isExtra()) {
             this.extraView();
         }
     }
-      
-    
+
     //llenado de tablas
     public void setBusqueda() {
         this.getGestorVista().initializeTablaBusqueda(this.getTblDatos());
         this.getGestorVista().setBusqueda();
     }
-    /** This method is called from within the constructor to
-     * initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is
-     * always regenerated by the Form Editor.
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -387,13 +386,13 @@ public class FrmCliente extends FrmGenerica {
         txtEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtDni = new javax.swing.JTextField();
-        txtFecha = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtRazon = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
+        txtFecha = new com.toedter.calendar.JDateChooser();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
@@ -440,7 +439,7 @@ public class FrmCliente extends FrmGenerica {
         jLabel3.setText("Código");
         jLabel3.setRequestFocusEnabled(false);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 20, 90, 17);
+        jLabel3.setBounds(20, 20, 90, 19);
 
         txtCodigo.setBackground(new java.awt.Color(204, 255, 204));
         txtCodigo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
@@ -461,7 +460,7 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtCodigo);
-        txtCodigo.setBounds(20, 40, 90, 23);
+        txtCodigo.setBounds(20, 40, 90, 25);
 
         btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
@@ -484,7 +483,7 @@ public class FrmCliente extends FrmGenerica {
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel2.setText("Razon Social");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 270, 130, 17);
+        jLabel2.setBounds(20, 270, 130, 19);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -607,7 +606,7 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtNombre);
-        txtNombre.setBounds(20, 90, 160, 23);
+        txtNombre.setBounds(20, 90, 160, 25);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel5.setText("Apellido");
@@ -622,12 +621,12 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtApellido);
-        txtApellido.setBounds(200, 90, 240, 23);
+        txtApellido.setBounds(200, 90, 240, 25);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel6.setText("Telefono");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 120, 120, 17);
+        jLabel6.setBounds(20, 120, 120, 19);
 
         txtEmail.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -637,12 +636,12 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtEmail);
-        txtEmail.setBounds(20, 190, 460, 23);
+        txtEmail.setBounds(20, 190, 460, 25);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel7.setText("Direccion");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 220, 120, 17);
+        jLabel7.setBounds(20, 220, 120, 19);
 
         txtDni.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtDni.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -651,10 +650,13 @@ public class FrmCliente extends FrmGenerica {
                 txtDniActionPerformed(evt);
             }
         });
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDniKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtDni);
-        txtDni.setBounds(260, 340, 220, 23);
-        jPanel1.add(txtFecha);
-        txtFecha.setBounds(20, 340, 190, 22);
+        txtDni.setBounds(260, 340, 220, 25);
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel8.setText("Fecha de Nacimiento");
@@ -669,12 +671,12 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtDireccion);
-        txtDireccion.setBounds(20, 240, 460, 23);
+        txtDireccion.setBounds(20, 240, 460, 25);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel9.setText("DNI");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(350, 320, 130, 17);
+        jLabel9.setBounds(350, 320, 130, 19);
 
         txtRazon.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtRazon.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -684,12 +686,12 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel1.add(txtRazon);
-        txtRazon.setBounds(20, 290, 460, 23);
+        txtRazon.setBounds(20, 290, 460, 25);
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel10.setText("Email");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(20, 170, 120, 17);
+        jLabel10.setBounds(20, 170, 120, 19);
 
         txtTelefono.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtTelefono.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -698,11 +700,21 @@ public class FrmCliente extends FrmGenerica {
                 txtTelefonoActionPerformed(evt);
             }
         });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtTelefono);
-        txtTelefono.setBounds(20, 140, 460, 23);
+        txtTelefono.setBounds(20, 140, 460, 25);
+
+        txtFecha.setForeground(new java.awt.Color(255, 51, 51));
+        txtFecha.setDateFormatString("dd-MM-yyyy");
+        jPanel1.add(txtFecha);
+        txtFecha.setBounds(20, 340, 220, 22);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(380, 20, 740, 440);
+        jPanel1.setBounds(380, 0, 740, 440);
         jPanel1.getAccessibleContext().setAccessibleDescription("");
 
         jPanel4.setLayout(null);
@@ -769,7 +781,7 @@ public class FrmCliente extends FrmGenerica {
             }
         });
         jPanel4.add(txtBusquedaNombre);
-        txtBusquedaNombre.setBounds(20, 50, 240, 23);
+        txtBusquedaNombre.setBounds(20, 50, 240, 25);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Cliente");
@@ -777,12 +789,12 @@ public class FrmCliente extends FrmGenerica {
         jLabel4.setBounds(20, 20, 190, 20);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(0, 10, 380, 430);
+        jPanel4.setBounds(0, 0, 380, 440);
 
         getAccessibleContext().setAccessibleName("Carg");
         getAccessibleContext().setAccessibleDescription("Cliente");
 
-        setBounds(150, 0, 1129, 481);
+        setBounds(150, 0, 1129, 476);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -790,18 +802,17 @@ public class FrmCliente extends FrmGenerica {
 }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-        if (evt.getKeyCode()==10) {
+        if (evt.getKeyCode() == 10) {
             this.viewBuscarComboEnter();
         }
 }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
-        if (evt.getKeyCode()==10) {
+        if (evt.getKeyCode() == 10) {
             if (this.gestorVista.getModelXCodigo(txtCodigo.getText())) {
                 this.viewActualizar();
-            }
-            else {
-                JOptionPane.showMessageDialog(null,"Código no existe");
+            } else {
+                JOptionPane.showMessageDialog(null, "Código no existe");
             }
         }
 }//GEN-LAST:event_txtCodigoKeyPressed
@@ -815,7 +826,7 @@ public class FrmCliente extends FrmGenerica {
 }//GEN-LAST:event_btnBuscarCodigoActionPerformed
 
     private void btnBuscarCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarCodigoKeyPressed
-        if(evt.getKeyCode()==10) {
+        if (evt.getKeyCode() == 10) {
             this.viewBuscarCodigoEnter();
         }
 }//GEN-LAST:event_btnBuscarCodigoKeyPressed
@@ -825,8 +836,8 @@ public class FrmCliente extends FrmGenerica {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNuevoKeyPressed
-       if (evt.getKeyCode()==10)
-          this.viewNuevoEnter();
+        if (evt.getKeyCode() == 10)
+            this.viewNuevoEnter();
     }//GEN-LAST:event_btnNuevoKeyPressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -834,72 +845,78 @@ public class FrmCliente extends FrmGenerica {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditarKeyPressed
-        if (evt.getKeyCode()==10)
-        this.viewEditarEnter();
+        if (evt.getKeyCode() == 10)
+            this.viewEditarEnter();
     }//GEN-LAST:event_btnEditarKeyPressed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         System.out.print("ingreso");
         this.saveView();
-        
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
-        if (evt.getKeyCode()==10)
-        this.saveView();
+        if (evt.getKeyCode() == 10)
+            this.saveView();
     }//GEN-LAST:event_btnGuardarKeyPressed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
-           this.deleteView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0)
+            this.deleteView();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyPressed
-        if(evt.getKeyCode()==10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado","Advertencia", YES_NO_OPTION) == 0 )
-            this.deleteView();
+        if (evt.getKeyCode() == 10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0) {
+                this.deleteView();
+            }
         }
     }//GEN-LAST:event_btnEliminarKeyPressed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         int n = 0;
-        if (this.getGestorVista().isNuevo() || this.getGestorVista().isOnlyRead())
-        this.dispose();
-        else
-        n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
-        if  (n == 1 ){
+        if (this.getGestorVista().isNuevo() || this.getGestorVista().isOnlyRead()) {
+            this.dispose();
+        } else {
+            n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
+        }
+        if (n == 1) {
             this.cancelarView();
-            this.dispose();}
+            this.dispose();
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalirKeyPressed
-        if(evt.getKeyCode()==10) {
+        if (evt.getKeyCode() == 10) {
             int n = 0;
-            if (this.getGestorVista().isNuevo())
-                 this.dispose();
-            else
-            n=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?","Advertencia", YES_NO_OPTION);
-            if  (n == 1 ){
+            if (this.getGestorVista().isNuevo()) {
+                this.dispose();
+            } else {
+                n = JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios antes de salir?", "Advertencia", YES_NO_OPTION);
+            }
+            if (n == 1) {
                 this.cancelarView();
-                this.dispose();}
+                this.dispose();
+            }
         }
 
     }//GEN-LAST:event_btnSalirKeyPressed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
-        this.cancelarView();
+        if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0)
+            this.cancelarView();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCancelarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCancelarKeyPressed
-        if(evt.getKeyCode()==10) {
-            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados","Advertencia", YES_NO_OPTION) == 0 )
-            this.cancelarView();
+        if (evt.getKeyCode() == 10) {
+            if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0) {
+                this.cancelarView();
+            }
         }
     }//GEN-LAST:event_btnCancelarKeyPressed
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
-         this.clearView();
+        this.clearView();
         this.setBusqueda();
         this.viewCamposEnabled(false);
 //        botonesComandoView.viewAllDisabled();
@@ -915,7 +932,7 @@ public class FrmCliente extends FrmGenerica {
     }//GEN-LAST:event_btnImprimir1ActionPerformed
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
-             this.getGestorVista().setDatos();
+        this.getGestorVista().setDatos();
     }//GEN-LAST:event_tblDatosMouseClicked
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
@@ -953,6 +970,26 @@ public class FrmCliente extends FrmGenerica {
     private void txtBusquedaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaNombreActionPerformed
+
+    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
+            evt.consume();
+            this.getGestorVista().keyPressedNotNumber(txtTelefono);
+        } 
+    }//GEN-LAST:event_txtTelefonoKeyPressed
+
+    private void txtDniKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyPressed
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
+            evt.consume();
+            this.getGestorVista().keyPressedNotNumber(txtDni);
+        }
+    }//GEN-LAST:event_txtDniKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
