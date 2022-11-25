@@ -134,7 +134,7 @@ public class GestorVistaVenta extends GestorVista {
 
     @Override
     public boolean isDatosValidos() {
-        /*if (this.isEmpty(this.getForm().getCmbMarca())) {
+        if (this.isEmpty(this.getForm().getCmbMarca())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar la marca.");
             this.getForm().getCmbMarca().grabFocus();
             return false;
@@ -146,45 +146,11 @@ public class GestorVistaVenta extends GestorVista {
             return false;
         }
 
-        if (this.isEmpty(this.getForm().getTxtColor())) {
-            JOptionPane.showMessageDialog(null, "Falta ingresar un color.");
-            this.getForm().getTxtColor().grabFocus();
-            return false;
-        }*/
-
         if (this.isEmpty(this.getForm().getTxtPrecio()) /*&& this.getForm().getTxtPrecio().getText().matches("[0-9]+")*/ ) {
             JOptionPane.showMessageDialog(null, "Falta ingresar el precio de venta.");
             this.getForm().getTxtPrecio().grabFocus();
             return false;
         }
-        /*
-        if (this.isEmpty(this.getForm().getTxtCosto())) {
-            JOptionPane.showMessageDialog(null, "Falta ingresar el precio de costo.");
-            this.getForm().getTxtCosto().grabFocus();
-            return false;
-        }
-
-
-        if (this.getForm().getCheckBoxUsado().isSelected()) {
-
-            if (this.isEmpty(this.getForm().getTxtMatricula())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar la matricula.");
-                this.getForm().getTxtMatricula().grabFocus();
-                return false;
-            }
-
-            if (this.isEmpty(this.getForm().getTxtKilometraje())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar el kilometraje.");
-                this.getForm().getTxtKilometraje().grabFocus();
-                return false;
-            }
-            
-            if (this.isEmpty(this.getForm().getTxtAnio())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar el año.");
-                this.getForm().getTxtAnio().grabFocus();
-                return false;
-            }
-        }*/
 
         return true;
     }
@@ -293,6 +259,12 @@ public class GestorVistaVenta extends GestorVista {
         String[] ancho = {"0", "43", "100", "100", "100", "100", "100"};
         this.newModelTable(tbl, titulo, ancho);
     }
+    public void initializeTablaventa(JTable tbl) {
+        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
+        String[] ancho = {"0", "43", "100", "100", "100", "100", "100"};
+        this.newModelTable(tbl, titulo, ancho);
+    }
+    
 
     
 
@@ -325,6 +297,18 @@ public class GestorVistaVenta extends GestorVista {
         if (!error) {
 
             this.getForm().getTblDatosAutos().setModel(this.getGestorAuto().listarDatos((DefaultTableModel) this.getForm().getTblDatosAutos().getModel(), this.getOrdenamiento(), ""));
+        } else {
+            JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    public void setBusquedaVenta() {
+        Boolean error = false;
+        this.initializeTablaventa(this.getForm().getTblVentas());
+
+        if (!error) {
+
+            this.getForm().getTblVentas().setModel(this.getGestor().listarDatos((DefaultTableModel) this.getForm().getTblDatosAutos().getModel(), this.getOrdenamiento(), ""));
         } else {
             JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
         }

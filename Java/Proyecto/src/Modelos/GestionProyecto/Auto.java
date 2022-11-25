@@ -30,14 +30,6 @@ public class Auto {
     
     private String precio;
     
-    private String matricula;
-    
-    private String anio;
-    
-    private boolean usado;
-    
-    private String kilometro;
-    
     private String costo;
     
     //modela si esta disponible en la agencia
@@ -83,44 +75,12 @@ public class Auto {
         this.precio = precio;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getAnio() {
-        return anio;
-    }
-
-    public void setAnio(String anio) {
-        this.anio = anio;
-    }
-
-    public boolean isUsado() {
-        return usado;
-    }
-
-    public void setUsado(boolean usado) {
-        this.usado = usado;
-    }
-
     public boolean isHabilitado() {
         return habilitado;
     }
 
     public void setHabilitado(boolean habilitado) {
         this.habilitado = habilitado;
-    }
-
-    public String getKilometro() {
-        return kilometro;
-    }
-
-    public void setKilometro(String kilometro) {
-        this.kilometro = kilometro;
     }
 
     public String getCosto() {
@@ -135,35 +95,28 @@ public class Auto {
     public Auto() {
     }
 
-    public Auto(long id, int codigo, Modelo modelo, String color, String precio, String matricula, String anio, boolean usado, boolean habilitado) {
+    public Auto(long id, int codigo, Modelo modelo, String color, String precio, boolean habilitado) {
         this.id = id;
         this.codigo = codigo;
         this.modelo = modelo;
         this.color = color;
         this.precio = precio;
-        this.matricula = matricula;
-        this.anio = anio;
-        this.usado = usado;
         this.habilitado = habilitado;
     }
 
-    public Auto(long id, int codigo, Modelo modelo, String color, String precio, String matricula, String anio, boolean usado, String kilometro, String costo, boolean habilitado) {
+    public Auto(long id, int codigo, Modelo modelo, String color, String precio, String costo, boolean habilitado) {
         this.id = id;
         this.codigo = codigo;
         this.modelo = modelo;
         this.color = color;
         this.precio = precio;
-        this.matricula = matricula;
-        this.anio = anio;
-        this.usado = usado;
-        this.kilometro = kilometro;
         this.costo = costo;
         this.habilitado = habilitado;
     }
 
     @Override
     public String toString() {
-        return modelo.getMarca().getNombre() + " " + modelo.getNombre() + " - Año: " + anio ;
+        return modelo.getMarca().getNombre() + " " + modelo.getNombre();
     }
     
     public String getCodigoS() {

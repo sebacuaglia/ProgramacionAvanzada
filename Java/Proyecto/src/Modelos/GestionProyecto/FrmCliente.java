@@ -974,6 +974,7 @@ public class FrmCliente extends FrmGenerica {
     private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
         char c = evt.getKeyChar();
         if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            //sonido de error
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
             evt.consume();
@@ -984,6 +985,7 @@ public class FrmCliente extends FrmGenerica {
     private void txtDniKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyPressed
         char c = evt.getKeyChar();
         if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            //sonido de error
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
             evt.consume();

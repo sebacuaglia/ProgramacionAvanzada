@@ -119,13 +119,7 @@ public class GestorVistaAuto extends GestorVista {
             this.getModel().setColor(this.getForm().getTxtColor().getText());
             this.getModel().setPrecio(this.getForm().getTxtPrecio().getText());
             this.getModel().setCosto(this.getForm().getTxtCosto().getText());
-            if (this.getForm().getCheckBoxUsado().isSelected()) {
-                this.getModel().setUsado(this.getForm().getCheckBoxUsado().isSelected());
-                this.getModel().setMatricula(this.getForm().getTxtMatricula().getText());
-                this.getModel().setAnio(this.getForm().getTxtAnio().getText());
-
-                this.getModel().setKilometro(this.getForm().getTxtKilometraje().getText());
-            }
+            
 
             return 0;
         } else {
@@ -166,26 +160,7 @@ public class GestorVistaAuto extends GestorVista {
         }
 
 
-        if (this.getForm().getCheckBoxUsado().isSelected()) {
-
-            if (this.isEmpty(this.getForm().getTxtMatricula())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar la matricula.");
-                this.getForm().getTxtMatricula().grabFocus();
-                return false;
-            }
-
-            if (this.isEmpty(this.getForm().getTxtKilometraje())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar el kilometraje.");
-                this.getForm().getTxtKilometraje().grabFocus();
-                return false;
-            }
-            
-            if (this.isEmpty(this.getForm().getTxtAnio())) {
-                JOptionPane.showMessageDialog(null, "Falta ingresar el año.");
-                this.getForm().getTxtAnio().grabFocus();
-                return false;
-            }
-        }
+        
 
         return true;
     }
@@ -373,12 +348,7 @@ public class GestorVistaAuto extends GestorVista {
         this.getForm().getTxtPrecio().setText(this.getModel().getPrecio());
         this.getForm().getTxtCosto().setText(this.getModel().getCosto());
 
-        if (this.getModel().isUsado()) {
-            this.getForm().getCheckBoxUsado().setSelected(this.getModel().isUsado());
-            this.getForm().getTxtMatricula().setText(this.getModel().getMatricula());
-            this.getForm().getTxtAnio().setText(this.getModel().getAnio());
-            this.getForm().getTxtKilometraje().setText(this.getModel().getKilometro());
-        }
+        
 
     }
 
