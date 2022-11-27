@@ -37,6 +37,8 @@ public class DetalleVenta {
     private int porcImpuesto;
     
     private double montoImpuesto;
+    
+    private int cantidad;
 
     public long getId() {
         return id;
@@ -94,10 +96,19 @@ public class DetalleVenta {
         this.montoImpuesto = montoImpuesto;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+
     public DetalleVenta() {
     }
 
-    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int precioAuto, int porcImpuesto, double montoImpuesto) {
+    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int precioAuto, int porcImpuesto, double montoImpuesto, int cantidad) {
         this.id = id;
         this.codigo = codigo;
         this.auto = auto;
@@ -105,7 +116,10 @@ public class DetalleVenta {
         this.precioAuto = precioAuto;
         this.porcImpuesto = porcImpuesto;
         this.montoImpuesto = montoImpuesto;
+        this.cantidad = cantidad;
     }
+
+    
     
     
     
