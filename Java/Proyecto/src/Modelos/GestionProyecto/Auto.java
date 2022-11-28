@@ -114,6 +114,17 @@ public class Auto {
         this.habilitado = habilitado;
     }
 
+    public Auto(long id, Modelo modelo, String color, String precio, String costo, boolean habilitado) {
+        this.id = id;
+        this.modelo = modelo;
+        this.color = color;
+        this.precio = precio;
+        this.costo = costo;
+        this.habilitado = habilitado;
+    }
+    
+    
+
     @Override
     public String toString() {
         return modelo.getMarca().getNombre() + " " + modelo.getNombre();

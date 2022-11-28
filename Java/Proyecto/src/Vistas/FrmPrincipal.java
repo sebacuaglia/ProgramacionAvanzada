@@ -41,6 +41,9 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         mnuModelo = new javax.swing.JMenuItem();
         mnuAuto = new javax.swing.JMenuItem();
         mnuVenta = new javax.swing.JMenuItem();
+        mnuTop10VentasMarcas = new javax.swing.JMenuItem();
+        mnuTop10VentasModelo = new javax.swing.JMenuItem();
+        mnuVentasPorVendedor = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ejemplo");
@@ -104,6 +107,33 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         });
         mnConfiguracion.add(mnuVenta);
 
+        mnuTop10VentasMarcas.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        mnuTop10VentasMarcas.setText("Top10VentasMarcas");
+        mnuTop10VentasMarcas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuTop10VentasMarcasActionPerformed(evt);
+            }
+        });
+        mnConfiguracion.add(mnuTop10VentasMarcas);
+
+        mnuTop10VentasModelo.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        mnuTop10VentasModelo.setText("Top10VentasModelo");
+        mnuTop10VentasModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuTop10VentasModeloActionPerformed(evt);
+            }
+        });
+        mnConfiguracion.add(mnuTop10VentasModelo);
+
+        mnuVentasPorVendedor.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        mnuVentasPorVendedor.setText("VentasPorVendedor");
+        mnuVentasPorVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuVentasPorVendedorActionPerformed(evt);
+            }
+        });
+        mnConfiguracion.add(mnuVentasPorVendedor);
+
         jmenu.add(mnConfiguracion);
 
         setJMenuBar(jmenu);
@@ -146,6 +176,18 @@ public class FrmPrincipal extends  javax.swing.JFrame {
         this.gestorVista.abrirVenta(getEscritorio());
     }//GEN-LAST:event_mnuVentaActionPerformed
 
+    private void mnuTop10VentasMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTop10VentasMarcasActionPerformed
+        this.gestorVista.abrirTop10VentasMarca(getEscritorio());
+    }//GEN-LAST:event_mnuTop10VentasMarcasActionPerformed
+
+    private void mnuTop10VentasModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTop10VentasModeloActionPerformed
+        this.gestorVista.abrirTop10VentasModelo(escritorio);
+    }//GEN-LAST:event_mnuTop10VentasModeloActionPerformed
+
+    private void mnuVentasPorVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuVentasPorVendedorActionPerformed
+        this.gestorVista.abrirVentaPorVendedor(escritorio);
+    }//GEN-LAST:event_mnuVentasPorVendedorActionPerformed
+
 public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -163,7 +205,10 @@ public static void main(String args[]) {
     private javax.swing.JMenuItem mnuModelo;
     private javax.swing.JMenuItem mnuProyecto;
     private javax.swing.JMenuItem mnuTipoProyecto;
+    private javax.swing.JMenuItem mnuTop10VentasMarcas;
+    private javax.swing.JMenuItem mnuTop10VentasModelo;
     private javax.swing.JMenuItem mnuVenta;
+    private javax.swing.JMenuItem mnuVentasPorVendedor;
     // End of variables declaration//GEN-END:variables
 
 }

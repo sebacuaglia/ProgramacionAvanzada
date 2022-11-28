@@ -56,5 +56,20 @@ public class GestorVistaPrincipal extends GestorVista {
         GestorVistaVenta gestor = new GestorVistaVenta();
         gestor.openFormulario(escritorio);
     }
+    
+    public void abrirTop10VentasMarca(JDesktopPane escritorio) {
+        GestorVistaTop10VentasMarca gestor = new GestorVistaTop10VentasMarca();
+        gestor.openFormulario(escritorio);
+    }
+    
+    public void abrirTop10VentasModelo(JDesktopPane escritorio) {
+        GestorVistaTop10VentasModelo gestor = new GestorVistaTop10VentasModelo();
+        gestor.openFormulario(escritorio);
+    }
+    
+     public void abrirVentaPorVendedor(JDesktopPane escritorio) {
+        GestorVistaVentaPorVendedor gestor = new GestorVistaVentaPorVendedor();
+        gestor.openFormulario(escritorio);
+    }
 
 }
