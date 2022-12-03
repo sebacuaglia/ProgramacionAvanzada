@@ -68,20 +68,20 @@ public class FrmVenta1 extends FrmGenerica {
         this.txtCodigo = txtCodigo;
     }
 
-    public JComboBox<String> getCmbMarca() {
+    public JComboBox<String> getcmbCliente() {
         return cmbCliente;
     }
 
-    public void setCmbMarca(JComboBox<String> cmbMarca) {
-        this.cmbCliente = cmbMarca;
+    public void setCmbCliente(JComboBox<String> cmbCliente) {
+        this.cmbCliente = cmbCliente;
     }
 
-    public JComboBox<String> getCmbModelo() {
+    public JComboBox<String> getCmbPersonal() {
         return cmbPersonal;
     }
 
-    public void setCmbModelo(JComboBox<String> cmbModelo) {
-        this.cmbPersonal = cmbModelo;
+    public void setCmbPersonal(JComboBox<String> cmbPersonal) {
+        this.cmbPersonal = cmbPersonal;
     }
 
     public JTextField getTxtPais() {
@@ -352,10 +352,15 @@ public class FrmVenta1 extends FrmGenerica {
         this.viewCamposEnabled(false);
         this.viewBuscarBotones();
     }
+    public void viewActualizar2() {
+        this.setView();
+        this.viewCamposEnabled(false);
+        //this.viewBuscarBotones();
+    }
 
     private void viewNueva() {
         this.clearView();
-        this.getGestorVistaAuto().newModel();
+        this.getGestorVistaVenta().newModel();
         //txtNombre.grabFocus();
         cmbCliente.grabFocus();
     }
@@ -390,12 +395,13 @@ public class FrmVenta1 extends FrmGenerica {
 
     @Override
     public void saveView() {
-        this.getGestorVistaAuto().saveView();
+        this.getGestorVistaVenta().saveView();
     }
 
     @Override
     public void setView() {
-        this.getGestorVistaAuto().getView();
+        this.getGestorVistaVenta().getView();
+        
     }
 
     public void extraView() {
@@ -418,7 +424,7 @@ public class FrmVenta1 extends FrmGenerica {
     //llenado de tablas ventas realizadas
     public void setBusquedaVentas() {
         this.getGestorVistaVenta().initializeTablaventa(this.getTblVentas());
-        this.getGestorVistaVenta().setBusqueda();
+        this.getGestorVistaVenta().setBusquedaVenta();
     }
     
     /**
@@ -433,7 +439,6 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        btnBuscarCodigo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -466,7 +471,6 @@ public class FrmVenta1 extends FrmGenerica {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatosAutos = new javax.swing.JTable();
         btnBuscarAutosVenta = new javax.swing.JButton();
-        btnImprimir1 = new javax.swing.JButton();
         txtBusquedaNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         btnAgregarAutoDetalle = new javax.swing.JButton();
@@ -474,7 +478,6 @@ public class FrmVenta1 extends FrmGenerica {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblVentas = new javax.swing.JTable();
         btnBuscarVentas = new javax.swing.JButton();
-        btnImprimir2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -508,24 +511,6 @@ public class FrmVenta1 extends FrmGenerica {
         });
         jPanel1.add(txtCodigo);
         txtCodigo.setBounds(20, 40, 90, 25);
-
-        btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
-        btnBuscarCodigo.setToolTipText("Buscar Tipo Servicio por código");
-        btnBuscarCodigo.setBorderPainted(false);
-        btnBuscarCodigo.setContentAreaFilled(false);
-        btnBuscarCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarCodigoActionPerformed(evt);
-            }
-        });
-        btnBuscarCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnBuscarCodigoKeyPressed(evt);
-            }
-        });
-        jPanel1.add(btnBuscarCodigo);
-        btnBuscarCodigo.setBounds(110, 40, 30, 30);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.setLayout(null);
@@ -865,20 +850,6 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel4.add(btnBuscarAutosVenta);
         btnBuscarAutosVenta.setBounds(260, 50, 80, 30);
 
-        btnImprimir1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        btnImprimir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PrinterChica.png"))); // NOI18N
-        btnImprimir1.setText("Imprir");
-        btnImprimir1.setToolTipText("Impreme el documento");
-        btnImprimir1.setBorderPainted(false);
-        btnImprimir1.setContentAreaFilled(false);
-        btnImprimir1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimir1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnImprimir1);
-        btnImprimir1.setBounds(250, 380, 110, 40);
-
         txtBusquedaNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtBusquedaNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel4.add(txtBusquedaNombre);
@@ -924,7 +895,7 @@ public class FrmVenta1 extends FrmGenerica {
         jScrollPane4.setViewportView(tblVentas);
 
         jPanel5.add(jScrollPane4);
-        jScrollPane4.setBounds(20, 50, 930, 210);
+        jScrollPane4.setBounds(20, 50, 930, 150);
 
         btnBuscarVentas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Search.png"))); // NOI18N
@@ -944,31 +915,17 @@ public class FrmVenta1 extends FrmGenerica {
         jPanel5.add(btnBuscarVentas);
         btnBuscarVentas.setBounds(980, 110, 80, 30);
 
-        btnImprimir2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        btnImprimir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PrinterChica.png"))); // NOI18N
-        btnImprimir2.setText("Imprir");
-        btnImprimir2.setToolTipText("Impreme el documento");
-        btnImprimir2.setBorderPainted(false);
-        btnImprimir2.setContentAreaFilled(false);
-        btnImprimir2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimir2ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(btnImprimir2);
-        btnImprimir2.setBounds(960, 170, 110, 40);
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Venta Realizadas");
         jPanel5.add(jLabel8);
         jLabel8.setBounds(470, 20, 190, 20);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(0, 430, 1080, 280);
+        jPanel5.setBounds(0, 430, 1080, 220);
 
         getAccessibleContext().setAccessibleName("Carg");
 
-        setBounds(150, 0, 1092, 746);
+        setBounds(150, 0, 1092, 682);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
@@ -984,16 +941,6 @@ public class FrmVenta1 extends FrmGenerica {
     private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
 
 }//GEN-LAST:event_txtCodigoKeyTyped
-
-    private void btnBuscarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCodigoActionPerformed
-        this.viewBuscarCodigoEnter();
-}//GEN-LAST:event_btnBuscarCodigoActionPerformed
-
-    private void btnBuscarCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
-            this.viewBuscarCodigoEnter();
-        }
-}//GEN-LAST:event_btnBuscarCodigoKeyPressed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         this.viewNuevoEnter();
@@ -1078,9 +1025,9 @@ public class FrmVenta1 extends FrmGenerica {
     }//GEN-LAST:event_btnCancelarKeyPressed
 
     private void btnBuscarAutosVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAutosVentaActionPerformed
-        this.clearView();
+        //this.clearView();
         this.setBusqueda();
-        this.viewCamposEnabled(false);
+        //this.viewCamposEnabled(false);
 //        botonesComandoView.viewAllDisabled();
 //        botonesComandoView.viewOpenedBotones();
     }//GEN-LAST:event_btnBuscarAutosVentaActionPerformed
@@ -1088,10 +1035,6 @@ public class FrmVenta1 extends FrmGenerica {
     private void btnBuscarAutosVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarAutosVentaKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarAutosVentaKeyPressed
-
-    private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImprimir1ActionPerformed
 
     private void tblDatosAutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosAutosMouseClicked
         this.getGestorVistaAuto().setDatos();
@@ -1160,11 +1103,13 @@ public class FrmVenta1 extends FrmGenerica {
 
     private void tblVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVentasMouseClicked
         // TODO add your handling code here:
+        this.getGestorVistaVenta().setDatos();
+        
     }//GEN-LAST:event_tblVentasMouseClicked
 
     private void btnBuscarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVentasActionPerformed
         this.clearView();
-        this.setBusqueda();
+        this.setBusquedaVentas();
         this.viewCamposEnabled(false);
     }//GEN-LAST:event_btnBuscarVentasActionPerformed
 
@@ -1172,24 +1117,17 @@ public class FrmVenta1 extends FrmGenerica {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarVentasKeyPressed
 
-    private void btnImprimir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImprimir2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarAutoDetalle;
     private javax.swing.JButton btnAgregarCliente;
     private javax.swing.JButton btnBuscarAutosVenta;
-    private javax.swing.JButton btnBuscarCodigo;
     private javax.swing.JButton btnBuscarVentas;
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEditar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnEliminarDetalleVenta;
     public javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnImprimir1;
-    private javax.swing.JButton btnImprimir2;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbCliente;

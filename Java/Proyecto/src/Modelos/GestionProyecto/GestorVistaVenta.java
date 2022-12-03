@@ -7,6 +7,7 @@ package Modelos.GestionProyecto;
 import Hibernate.GestorHibernate;
 import static Hibernate.HibernateUtil.getSession;
 import Vistas.GestorVista;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
@@ -27,6 +28,7 @@ public class GestorVistaVenta extends GestorVista {
 
     private FrmVenta1 form;
     private Venta model;
+    private DetalleVenta modelDetalle;
     private GestorVistaAuto gestorAuto = new GestorVistaAuto();
     private GestorVistaCliente gestorCliente = new GestorVistaCliente();
     private GestorVistaPersonal gestorPersonal = new GestorVistaPersonal();
@@ -70,9 +72,50 @@ public class GestorVistaVenta extends GestorVista {
     public void setGestorPersonal(GestorVistaPersonal gestorPersonal) {
         this.gestorPersonal = gestorPersonal;
     }
-
     
+    public DetalleVenta getModelDetalle() {
+        return modelDetalle;
+    }
 
+    public void setModelDetalle(DetalleVenta modelDetalle) {
+        this.modelDetalle = modelDetalle;
+    }
+
+     public void getViewDetalle() {
+         
+        this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
+        this.getForm().getcmbCliente().setSelectedItem(this.getModel().getCliente());
+        this.getForm().getCmbPersonal().setSelectedItem(this.getModel().getPersonal());
+      
+    }
+      public void getView() {
+        this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
+        this.getForm().getcmbCliente().setSelectedItem(this.getModel().getCliente());
+        this.getForm().getCmbPersonal().setSelectedItem(this.getModel().getPersonal());
+      
+    }
+  public void setDatos() {
+        if (this.getOpcABM() == 1) {
+            int resp = JOptionPane.showConfirmDialog(null, "Usted va a perder los cambios realizados en el producto, porque no ha grabado.\nDesea continuar?", "Modificar Producto", JOptionPane.YES_NO_OPTION);
+            if (resp == JOptionPane.YES_OPTION) {
+                this.setOpcABM(-1);
+                if (this.isItemTablaSelected(this.getForm().getTblVentas())) {
+                    this.setModel((Venta) this.getItemTablaSelected(this.getForm().getTblVentas()));
+                    //this.getForm().clearView();
+                    this.getForm().viewActualizar2();
+                    this.setBusquedaDetalle(this.getModel());  
+                }
+            }
+        } else {
+            if (this.isItemTablaSelected(this.getForm().getTblVentas())) {
+                this.setModel((Venta) this.getItemTablaSelected(this.getForm().getTblVentas()));
+                //this.getForm().clearView();
+                this.getForm().viewActualizar2();
+                this.setBusquedaDetalle(this.getModel());    
+            }
+        }
+    }
+  
     @Override
     public void newModel() {
         this.setModel(new Venta());
@@ -101,10 +144,41 @@ public class GestorVistaVenta extends GestorVista {
         err = this.setModel();
         if (err == 0) {
             this.saveModel(this.getOpcABM());
+            for (int i = 0; i < this.getForm().getTblDatosDetalleVenta().getRowCount(); i++) {
+                this.setModelDetalle(new DetalleVenta());
+                DefaultTableModel model = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
+                err = this.setModelDetalle(model,i);
+                if (err == 0) {
+                    this.guardarObjeto(this.getModelDetalle());
+                }
+
+            }
+            {
+
+            }
+
             this.actualizarView();
         }
     }
+    
+    public void guardarObjeto() {
+        this.newCodigo();
+        this.guardarObjeto(this.getModel());
 
+        // para cada detalle guardar
+    }
+
+    //String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
+    public int setModelDetalle(DefaultTableModel model, int i) {
+        this.getModelDetalle().setAuto((Auto) model.getValueAt(i, 0));
+        this.getModelDetalle().setPrecioAuto(Integer.parseInt((String) model.getValueAt(i, 4)) );
+        this.getModelDetalle().setCantidad((int) model.getValueAt(i, 5));
+        this.getModelDetalle().setPorcImpuesto((int) model.getValueAt(i, 6) );
+        this.getModelDetalle().setVenta(this.getModel());
+        return 0;
+
+    }
+    
     @Override
     public void actualizarView() {
         this.getForm().viewGuardar();
@@ -121,11 +195,12 @@ public class GestorVistaVenta extends GestorVista {
     }
 
     @Override
-    public int setModel() {
+      public int setModel() {
         if (this.isDatosValidos()) {
-            //this.getModel().setNombre(this.getForm().getTxtNombre().getText());
-            
-
+            this.getModel().setCliente((Cliente) this.getForm().getcmbCliente().getSelectedItem());
+            this.getModel().setPersonal((Personal) this.getForm().getCmbPersonal().getSelectedItem());
+            this.getModel().setFecha(new Date(System.currentTimeMillis()));
+            this.getModel().setCodigo(this.getUltimoCodigo()+1);
             return 0;
         } else {
             return 1;
@@ -134,15 +209,15 @@ public class GestorVistaVenta extends GestorVista {
 
     @Override
     public boolean isDatosValidos() {
-        if (this.isEmpty(this.getForm().getCmbMarca())) {
+        if (this.isEmpty(this.getForm().getcmbCliente())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar la marca.");
-            this.getForm().getCmbMarca().grabFocus();
+            this.getForm().getcmbCliente().grabFocus();
             return false;
         }
 
-        if (this.isEmpty(this.getForm().getCmbModelo())) {
+        if (this.isEmpty(this.getForm().getCmbPersonal())) {
             JOptionPane.showMessageDialog(null, "Falta ingresar el modelo.");
-            this.getForm().getCmbModelo().grabFocus();
+            this.getForm().getCmbPersonal().grabFocus();
             return false;
         }
 
@@ -176,13 +251,6 @@ public class GestorVistaVenta extends GestorVista {
         this.getModel().setCodigo(this.getUltimoCodigo() + 1);
     }
 
-    public void guardarObjeto() {
-        this.newCodigo();
-        this.guardarObjeto(this.getModel());
-        
-        // para cada detalle guardar
-    }
-
     public void actualizarObjeto() {
         this.actualizarObjeto(this.getModel());
     }
@@ -204,7 +272,7 @@ public class GestorVistaVenta extends GestorVista {
 
     public int getUltimoCodigo() {
         try {
-            Auto auxModel = (Auto) this.listarUltimo(Auto.class).get(0);
+            Venta auxModel = (Venta) this.listarUltimo(Venta.class).get(0);
             return auxModel.getCodigo();
         } catch (Exception e) {
             return 0;
@@ -259,11 +327,12 @@ public class GestorVistaVenta extends GestorVista {
         String[] ancho = {"0", "43", "100", "100", "100", "100", "100"};
         this.newModelTable(tbl, titulo, ancho);
     }
-    public void initializeTablaventa(JTable tbl) {
-        String[] titulo = {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
-        String[] ancho = {"0", "43", "100", "100", "100", "100", "100"};
+     public void initializeTablaventa(JTable tbl) {
+        String[] titulo = {"", "Id.", "codigo", "fecha", "cliente", "personal"};
+        String[] ancho = {"0", "43", "100", "100", "100", "100"};
         this.newModelTable(tbl, titulo, ancho);
     }
+
     
 
     
@@ -302,18 +371,76 @@ public class GestorVistaVenta extends GestorVista {
         }
     }
     
-    public void setBusquedaVenta() {
+     public void setBusquedaVenta() {
         Boolean error = false;
         this.initializeTablaventa(this.getForm().getTblVentas());
 
         if (!error) {
 
-            this.getForm().getTblVentas().setModel(this.getGestor().listarDatos((DefaultTableModel) this.getForm().getTblDatosAutos().getModel(), this.getOrdenamiento(), ""));
+            this.getForm().getTblVentas().setModel(this.listarDatos((DefaultTableModel) this.getForm().getTblVentas().getModel(), this.getOrdenamiento(), ""));
+        } else {
+            JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+     
+     public void setBusquedaDetalle(Venta venta) {
+        Boolean error = false;
+        this.initializeTabladetalle(this.getForm().getTblDatosDetalleVenta());
+
+        if (!error) {
+
+            this.getForm().getTblDatosDetalleVenta().setModel(
+                    this.listarDatosDetalle((DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel(), this.getOrdenamiento(), "",venta));
         } else {
             JOptionPane.showMessageDialog(null, "Falta ingresar datos para la búsqueda", "Validación de Datos", JOptionPane.WARNING_MESSAGE);
         }
     }
     
+    public DefaultTableModel listarDatos(DefaultTableModel auxModelTabla, int ordenamiento, String text) {
+        
+        List<Venta> list = this.listar(text, ordenamiento);
+        Venta auxModel;
+        
+        Iterator it2 = (Iterator) list.iterator();
+        while (it2.hasNext()) {
+            auxModel = (Venta) it2.next();
+            Object[] fila = {auxModel,auxModel.getId(),auxModel.getCodigo(),auxModel.getFecha(),auxModel.getCliente(),auxModel.getPersonal()};
+            auxModelTabla.addRow(fila);
+        }
+        return auxModelTabla;
+    }
+    
+    public DefaultTableModel listarDatosDetalle(DefaultTableModel auxModelTabla, int ordenamiento, String text, Venta venta) {
+        
+        List<DetalleVenta> list = this.listarDetalle(text, ordenamiento, venta);
+        DetalleVenta auxModel;
+        // {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
+        Iterator it2 = (Iterator) list.iterator();
+        while (it2.hasNext()) {
+            auxModel = (DetalleVenta) it2.next();
+            Object[] fila = {auxModel,auxModel.getCodigo(),
+                auxModel.getAuto().getModelo().getMarca().getNombre(),
+                auxModel.getAuto().getModelo().getNombre(),
+                auxModel.getPrecioAuto(),
+                auxModel.getCantidad(),
+                auxModel.getPorcImpuesto()
+            };
+            auxModelTabla.addRow(fila);
+        }
+        return auxModelTabla;
+    }
+
+    public List<Venta> listar(String text, int ord) {
+        Criteria crit = getSession().createCriteria(Venta.class);
+        crit.add(Restrictions.isNotNull("codigo"));
+        return crit.list();
+    }
+    
+    public List<DetalleVenta> listarDetalle(String text, int ord, Venta venta) {
+        Criteria crit = getSession().createCriteria(DetalleVenta.class);
+        crit.add(Restrictions.eq("venta",venta));
+        return crit.list();
+    }
     
     public void agregarDetalle(JTable datosAuto, int cantidad){
         DefaultTableModel auxModelTabla = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
@@ -345,23 +472,31 @@ public class GestorVistaVenta extends GestorVista {
         return model.getValueAt(tbl.getSelectedRow(), 0);
     }
     
-    public void ejecutarCalculos(){
+        public void ejecutarCalculos() {
         DefaultTableModel auxModelTabla = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
         JTable tabla = this.getForm().getTblDatosDetalleVenta();
-        double subtotal = 0,impuesto = 0,total = 0;
+        double subtotal = 0, impuesto = 0, total = 0;
         for (int i = 0; i < auxModelTabla.getRowCount(); i++) {
             Auto auxModel = (Auto) auxModelTabla.getValueAt(i, 0);
-        
-            subtotal += Double.parseDouble(auxModel.getPrecio()) * Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString() );
-            impuesto += Double.parseDouble(auxModel.getPrecio())/100 *  auxModel.getModelo().getMarca().getPais().getPorcImpuesto() * Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString() );
+
+            subtotal += this.subtotal(Integer.parseInt(auxModel.getPrecio()), Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString()));
+            impuesto += this.calcularImpuesto(Double.parseDouble(auxModel.getPrecio()), Integer.parseInt((String) auxModelTabla.getValueAt(i, 5).toString()), auxModel.getModelo().getMarca().getPais().getPorcImpuesto());
             total = subtotal + impuesto;
-            
+
         }
-        
-        this.getForm().getTxtSubtotal().setText(subtotal+"");
-        this.getForm().getTxtImpuestos().setText(impuesto+"");
-        this.getForm().getTxtTotal().setText(total+"");
- 
+
+        this.getForm().getTxtSubtotal().setText(subtotal + "");
+        this.getForm().getTxtImpuestos().setText(impuesto + "");
+        this.getForm().getTxtTotal().setText(total + "");
+
+    }
+
+    public Double subtotal(int monto, int cantidad){
+        return Double.valueOf(monto*cantidad);
+    }
+    
+    public Double calcularImpuesto(double monto, int cantidad, int impuesto){
+        return Double.valueOf((monto/100 * impuesto) * cantidad); 
     }
     
 }

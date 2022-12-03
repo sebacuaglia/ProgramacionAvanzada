@@ -378,7 +378,6 @@ public class FrmAuto extends FrmGenerica {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        btnBuscarCodigo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
@@ -405,7 +404,6 @@ public class FrmAuto extends FrmGenerica {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
         btnBuscar1 = new javax.swing.JButton();
-        btnImprimir1 = new javax.swing.JButton();
         txtBusquedaNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -440,24 +438,6 @@ public class FrmAuto extends FrmGenerica {
         });
         jPanel1.add(txtCodigo);
         txtCodigo.setBounds(20, 40, 90, 25);
-
-        btnBuscarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnBuscarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
-        btnBuscarCodigo.setToolTipText("Buscar Tipo Servicio por código");
-        btnBuscarCodigo.setBorderPainted(false);
-        btnBuscarCodigo.setContentAreaFilled(false);
-        btnBuscarCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarCodigoActionPerformed(evt);
-            }
-        });
-        btnBuscarCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnBuscarCodigoKeyPressed(evt);
-            }
-        });
-        jPanel1.add(btnBuscarCodigo);
-        btnBuscarCodigo.setBounds(110, 40, 30, 30);
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel2.setText("Marca");
@@ -641,6 +621,11 @@ public class FrmAuto extends FrmGenerica {
         txtPrecio.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtPrecio.setForeground(new java.awt.Color(187, 187, 198));
         txtPrecio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtPrecio);
         txtPrecio.setBounds(20, 310, 310, 30);
 
@@ -728,20 +713,6 @@ public class FrmAuto extends FrmGenerica {
         jPanel4.add(btnBuscar1);
         btnBuscar1.setBounds(260, 50, 80, 30);
 
-        btnImprimir1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        btnImprimir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PrinterChica.png"))); // NOI18N
-        btnImprimir1.setText("Imprir");
-        btnImprimir1.setToolTipText("Impreme el documento");
-        btnImprimir1.setBorderPainted(false);
-        btnImprimir1.setContentAreaFilled(false);
-        btnImprimir1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimir1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnImprimir1);
-        btnImprimir1.setBounds(250, 380, 110, 40);
-
         txtBusquedaNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtBusquedaNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel4.add(txtBusquedaNombre);
@@ -771,10 +742,6 @@ public class FrmAuto extends FrmGenerica {
     private void btnBuscar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscar1KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscar1KeyPressed
-
-    private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnImprimir1ActionPerformed
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         this.getGestorVistaAuto().setDatos();
@@ -827,7 +794,7 @@ public class FrmAuto extends FrmGenerica {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Desea Cancelar los datos ingresados", "Advertencia", YES_NO_OPTION) == 0)
-        this.cancelarView();
+            this.cancelarView();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalirKeyPressed
@@ -860,7 +827,7 @@ public class FrmAuto extends FrmGenerica {
 
     private void btnEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditarKeyPressed
         if (evt.getKeyCode() == 10)
-        this.viewEditarEnter();
+            this.viewEditarEnter();
     }//GEN-LAST:event_btnEditarKeyPressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -877,12 +844,12 @@ public class FrmAuto extends FrmGenerica {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Desea Eliminar el registro seleccionado", "Advertencia", YES_NO_OPTION) == 0)
-        this.deleteView();
+            this.deleteView();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
         if (evt.getKeyCode() == 10)
-        this.saveView();
+            this.saveView();
     }//GEN-LAST:event_btnGuardarKeyPressed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -891,22 +858,12 @@ public class FrmAuto extends FrmGenerica {
 
     private void btnNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNuevoKeyPressed
         if (evt.getKeyCode() == 10)
-        this.viewNuevoEnter();
+            this.viewNuevoEnter();
     }//GEN-LAST:event_btnNuevoKeyPressed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         this.viewNuevoEnter();
     }//GEN-LAST:event_btnNuevoActionPerformed
-
-    private void btnBuscarCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarCodigoKeyPressed
-        if (evt.getKeyCode() == 10) {
-            this.viewBuscarCodigoEnter();
-        }
-    }//GEN-LAST:event_btnBuscarCodigoKeyPressed
-
-    private void btnBuscarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCodigoActionPerformed
-        this.viewBuscarCodigoEnter();
-    }//GEN-LAST:event_btnBuscarCodigoActionPerformed
 
     private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
 
@@ -922,19 +879,26 @@ public class FrmAuto extends FrmGenerica {
         }
     }//GEN-LAST:event_txtCodigoKeyPressed
 
+    private void txtPrecioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyPressed
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9')) && !(c == KeyEvent.VK_BACK_SPACE) && !(c == KeyEvent.VK_DELETE)) {
+            JOptionPane.showMessageDialog(null, "SOLO SE PUEDEN INGRESAR NUMEROS");
+            evt.consume();
+            this.getGestorVistaAuto().keyPressedNotNumber();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarMarca;
     private javax.swing.JButton btnAgregarModelo;
     private javax.swing.JButton btnBuscar1;
-    private javax.swing.JButton btnBuscarCodigo;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnImprimir1;
-    private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnNuevo;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JComboBox<String> cmbModelo;
     private javax.swing.JLabel jLabel10;
