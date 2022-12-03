@@ -36,8 +36,6 @@ public class DetalleVenta {
     
     private int porcImpuesto;
     
-    private double montoImpuesto;
-    
     private int cantidad;
 
     public long getId() {
@@ -88,14 +86,6 @@ public class DetalleVenta {
         this.porcImpuesto = porcImpuesto;
     }
 
-    public double getMontoImpuesto() {
-        return montoImpuesto;
-    }
-
-    public void setMontoImpuesto(double montoImpuesto) {
-        this.montoImpuesto = montoImpuesto;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
@@ -108,14 +98,13 @@ public class DetalleVenta {
     public DetalleVenta() {
     }
 
-    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int precioAuto, int porcImpuesto, double montoImpuesto, int cantidad) {
+    public DetalleVenta(long id, int codigo, Auto auto, Venta venta, int precioAuto, int porcImpuesto, int cantidad) {
         this.id = id;
         this.codigo = codigo;
         this.auto = auto;
         this.venta = venta;
         this.precioAuto = precioAuto;
         this.porcImpuesto = porcImpuesto;
-        this.montoImpuesto = montoImpuesto;
         this.cantidad = cantidad;
     }
 
