@@ -1,1437 +1,1439 @@
-INSERT INTO "pais" ("codigopais", "nombrepais")
+-- insert de paises con un porcentage de impuesto random para cada pais.
+
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AD','ANDORRA');
+  ('AD','ANDORRA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AE','EMIRATOS ÁRABES UNIDOS');
+  ('AE','EMIRATOS ÁRABES UNIDOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AF','AFGANISTáN');
+  ('AF','AFGANISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AG','ANTIGUA Y BARBUDA');
+  ('AG','ANTIGUA Y BARBUDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AI','ANGUILLA');
+  ('AI','ANGUILLA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AL','ALBANIA');
+  ('AL','ALBANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AM','ARMENIA');
+  ('AM','ARMENIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AN','ANTILLAS HOLANDESAS');
+  ('AN','ANTILLAS HOLANDESAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AO','ANGOLA');
+  ('AO','ANGOLA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AQ','ANTáRTIDA');
+  ('AQ','ANTáRTIDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AR','ARGENTINA');
+  ('AR','ARGENTINA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AS','SAMOA AMERICANA');
+  ('AS','SAMOA AMERICANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AT','AUSTRIA');
+  ('AT','AUSTRIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AU','AUSTRALIA');
+  ('AU','AUSTRALIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AW','ARUBA');
+  ('AW','ARUBA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AX','ISLAS GLAND');
+  ('AX','ISLAS GLAND',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('AZ','AZERBAIYáN');
+  ('AZ','AZERBAIYáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BA','BOSNIA Y HERZEGOVINA');
+  ('BA','BOSNIA Y HERZEGOVINA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BB','BARBADOS');
+  ('BB','BARBADOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BD','BANGLADESH');
+  ('BD','BANGLADESH',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BE','BéLGICA');
+  ('BE','BéLGICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BF','BURKINA FASO');
+  ('BF','BURKINA FASO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BG','BULGARIA');
+  ('BG','BULGARIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BH','BAHRéIN');
+  ('BH','BAHRéIN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BI','BURUNDI');
+  ('BI','BURUNDI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BJ','BENIN');
+  ('BJ','BENIN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BM','BERMUDAS');
+  ('BM','BERMUDAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BN','BRUNéI');
+  ('BN','BRUNéI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BO','BOLIVIA');
+  ('BO','BOLIVIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BR','BRASIL');
+  ('BR','BRASIL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BS','BAHAMAS');
+  ('BS','BAHAMAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BT','BHUTáN');
+  ('BT','BHUTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BV','ISLA BOUVET');
+  ('BV','ISLA BOUVET',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BW','BOTSUANA');
+  ('BW','BOTSUANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BY','BIELORRUSIA');
+  ('BY','BIELORRUSIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('BZ','BELICE');
+  ('BZ','BELICE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CA','CANADá');
+  ('CA','CANADá',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CC','ISLAS COCOS');
+  ('CC','ISLAS COCOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CD','REPúBLICA DEMOCRáTICA DEL CONGO');
+  ('CD','REPúBLICA DEMOCRáTICA DEL CONGO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CF','REPúBLICA CENTROAFRICANA');
+  ('CF','REPúBLICA CENTROAFRICANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CG','CONGO');
+  ('CG','CONGO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CH','SUIZA');
+  ('CH','SUIZA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CI','COSTA DE MARFIL');
+  ('CI','COSTA DE MARFIL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CK','ISLAS COOK');
+  ('CK','ISLAS COOK',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CL','CHILE');
+  ('CL','CHILE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CM','CAMERúN');
+  ('CM','CAMERúN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CN','CHINA');
+  ('CN','CHINA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CO','COLOMBIA');
+  ('CO','COLOMBIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CR','COSTA RICA');
+  ('CR','COSTA RICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CS','SERBIA Y MONTENEGRO');
+  ('CS','SERBIA Y MONTENEGRO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CU','CUBA');
+  ('CU','CUBA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CV','CABO VERDE');
+  ('CV','CABO VERDE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CX','ISLA DE NAVIDAD');
+  ('CX','ISLA DE NAVIDAD',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CY','CHIPRE');
+  ('CY','CHIPRE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('CZ','REPúBLICA CHECA');
+  ('CZ','REPúBLICA CHECA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DE','ALEMANIA');
+  ('DE','ALEMANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DJ','YIBUTI');
+  ('DJ','YIBUTI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DK','DINAMARCA');
+  ('DK','DINAMARCA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DM','DOMINICA');
+  ('DM','DOMINICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DO','REPúBLICA DOMINICANA');
+  ('DO','REPúBLICA DOMINICANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('DZ','ARGELIA');
+  ('DZ','ARGELIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('EC','ECUADOR');
+  ('EC','ECUADOR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('EE','ESTONIA');
+  ('EE','ESTONIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('EG','EGIPTO');
+  ('EG','EGIPTO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('EH','SAHARA OCCIDENTAL');
+  ('EH','SAHARA OCCIDENTAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ER','ERITREA');
+  ('ER','ERITREA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ES','ESPAñA');
+  ('ES','ESPAñA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ET','ETIOPíA');
+  ('ET','ETIOPíA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FI','FINLANDIA');
+  ('FI','FINLANDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FJ','FIYI');
+  ('FJ','FIYI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FK','ISLAS MALVINAS');
+  ('FK','ISLAS MALVINAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FM','MICRONESIA');
+  ('FM','MICRONESIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FO','ISLAS FEROE');
+  ('FO','ISLAS FEROE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('FR','FRANCIA');
+  ('FR','FRANCIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GA','GABóN');
+  ('GA','GABóN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GB','REINO UNIDO');
+  ('GB','REINO UNIDO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GD','GRANADA');
+  ('GD','GRANADA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GE','GEORGIA');
+  ('GE','GEORGIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GF','GUAYANA FRANCESA');
+  ('GF','GUAYANA FRANCESA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GH','GHANA');
+  ('GH','GHANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GI','GIBRALTAR');
+  ('GI','GIBRALTAR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GL','GROENLANDIA');
+  ('GL','GROENLANDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GM','GAMBIA');
+  ('GM','GAMBIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GN','GUINEA');
+  ('GN','GUINEA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GP','GUADALUPE');
+  ('GP','GUADALUPE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GQ','GUINEA ECUATORIAL');
+  ('GQ','GUINEA ECUATORIAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GR','GRECIA');
+  ('GR','GRECIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GS','ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SUR');
+  ('GS','ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SUR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GT','GUATEMALA');
+  ('GT','GUATEMALA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GU','GUAM');
+  ('GU','GUAM',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GW','GUINEA-BISSAU');
+  ('GW','GUINEA-BISSAU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('GY','GUYANA');
+  ('GY','GUYANA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HK','HONG KONG');
+  ('HK','HONG KONG',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HM','ISLAS HEARD Y MCDONALD');
+  ('HM','ISLAS HEARD Y MCDONALD',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HN','HONDURAS');
+  ('HN','HONDURAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HR','CROACIA');
+  ('HR','CROACIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HT','HAITí');
+  ('HT','HAITí',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('HU','HUNGRíA');
+  ('HU','HUNGRíA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ID','INDONESIA');
+  ('ID','INDONESIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IE','IRLANDA');
+  ('IE','IRLANDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IL','ISRAEL');
+  ('IL','ISRAEL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IN','INDIA');
+  ('IN','INDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IO','TERRITORIO BRITáNICO DEL OCéANO ÍNDICO');
+  ('IO','TERRITORIO BRITáNICO DEL OCéANO ÍNDICO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IQ','IRAQ');
+  ('IQ','IRAQ',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IR','IRáN');
+  ('IR','IRáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IS','ISLANDIA');
+  ('IS','ISLANDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('IT','ITALIA');
+  ('IT','ITALIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('JM','JAMAICA');
+  ('JM','JAMAICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('JO','JORDANIA');
+  ('JO','JORDANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('JP','JAPóN');
+  ('JP','JAPóN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KE','KENIA');
+  ('KE','KENIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KG','KIRGUISTáN');
+  ('KG','KIRGUISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KH','CAMBOYA');
+  ('KH','CAMBOYA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KI','KIRIBATI');
+  ('KI','KIRIBATI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KM','COMORAS');
+  ('KM','COMORAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KN','SAN CRISTóBAL Y NEVIS');
+  ('KN','SAN CRISTóBAL Y NEVIS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KP','COREA DEL NORTE');
+  ('KP','COREA DEL NORTE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KR','COREA DEL SUR');
+  ('KR','COREA DEL SUR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KW','KUWAIT');
+  ('KW','KUWAIT',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KY','ISLAS CAIMáN');
+  ('KY','ISLAS CAIMáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('KZ','KAZAJSTáN');
+  ('KZ','KAZAJSTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LA','LAOS');
+  ('LA','LAOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LB','LíBANO');
+  ('LB','LíBANO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LC','SANTA LUCíA');
+  ('LC','SANTA LUCíA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LI','LIECHTENSTEIN');
+  ('LI','LIECHTENSTEIN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LK','SRI LANKA');
+  ('LK','SRI LANKA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LR','LIBERIA');
+  ('LR','LIBERIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LS','LESOTHO');
+  ('LS','LESOTHO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LT','LITUANIA');
+  ('LT','LITUANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LU','LUXEMBURGO');
+  ('LU','LUXEMBURGO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LV','LETONIA');
+  ('LV','LETONIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('LY','LIBIA');
+  ('LY','LIBIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MA','MARRUECOS');
+  ('MA','MARRUECOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MC','MóNACO');
+  ('MC','MóNACO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MD','MOLDAVIA');
+  ('MD','MOLDAVIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MG','MADAGASCAR');
+  ('MG','MADAGASCAR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MH','ISLAS MARSHALL');
+  ('MH','ISLAS MARSHALL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MK','ARY MACEDONIA');
+  ('MK','ARY MACEDONIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ML','MALí');
+  ('ML','MALí',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MM','MYANMAR');
+  ('MM','MYANMAR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MN','MONGOLIA');
+  ('MN','MONGOLIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MO','MACAO');
+  ('MO','MACAO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MP','ISLAS MARIANAS DEL NORTE');
+  ('MP','ISLAS MARIANAS DEL NORTE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MQ','MARTINICA');
+  ('MQ','MARTINICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MR','MAURITANIA');
+  ('MR','MAURITANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MS','MONTSERRAT');
+  ('MS','MONTSERRAT',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MT','MALTA');
+  ('MT','MALTA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MU','MAURICIO');
+  ('MU','MAURICIO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MV','MALDIVAS');
+  ('MV','MALDIVAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MW','MALAWI');
+  ('MW','MALAWI',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MX','MéXICO');
+  ('MX','MéXICO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MY','MALASIA');
+  ('MY','MALASIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('MZ','MOZAMBIQUE');
+  ('MZ','MOZAMBIQUE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NA','NAMIBIA');
+  ('NA','NAMIBIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NC','NUEVA CALEDONIA');
+  ('NC','NUEVA CALEDONIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NE','NíGER');
+  ('NE','NíGER',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NF','ISLA NORFOLK');
+  ('NF','ISLA NORFOLK',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NG','NIGERIA');
+  ('NG','NIGERIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NI','NICARAGUA');
+  ('NI','NICARAGUA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NL','PAíSES BAJOS');
+  ('NL','PAíSES BAJOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NO','NORUEGA');
+  ('NO','NORUEGA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NP','NEPAL');
+  ('NP','NEPAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NR','NAURU');
+  ('NR','NAURU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NU','NIUE');
+  ('NU','NIUE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('NZ','NUEVA ZELANDA');
+  ('NZ','NUEVA ZELANDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('OM','OMáN');
+  ('OM','OMáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PA','PANAMá');
+  ('PA','PANAMá',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PE','PERú');
+  ('PE','PERú',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PF','POLINESIA FRANCESA');
+  ('PF','POLINESIA FRANCESA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PG','PAPúA NUEVA GUINEA');
+  ('PG','PAPúA NUEVA GUINEA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PH','FILIPINAS');
+  ('PH','FILIPINAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PK','PAKISTáN');
+  ('PK','PAKISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PL','POLONIA');
+  ('PL','POLONIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PM','SAN PEDRO Y MIQUELóN');
+  ('PM','SAN PEDRO Y MIQUELóN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PN','ISLAS PITCAIRN');
+  ('PN','ISLAS PITCAIRN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PR','PUERTO RICO');
+  ('PR','PUERTO RICO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PS','PALESTINA');
+  ('PS','PALESTINA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PT','PORTUGAL');
+  ('PT','PORTUGAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PW','PALAU');
+  ('PW','PALAU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('PY','PARAGUAY');
+  ('PY','PARAGUAY',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('QA','QATAR');
+  ('QA','QATAR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('RE','REUNIóN');
+  ('RE','REUNIóN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('RO','RUMANIA');
+  ('RO','RUMANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('RU','RUSIA');
+  ('RU','RUSIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('RW','RUANDA');
+  ('RW','RUANDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SA','ARABIA SAUDí');
+  ('SA','ARABIA SAUDí',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SB','ISLAS SALOMóN');
+  ('SB','ISLAS SALOMóN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SC','SEYCHELLES');
+  ('SC','SEYCHELLES',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SD','SUDáN');
+  ('SD','SUDáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SE','SUECIA');
+  ('SE','SUECIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SG','SINGAPUR');
+  ('SG','SINGAPUR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SH','SANTA HELENA');
+  ('SH','SANTA HELENA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SI','ESLOVENIA');
+  ('SI','ESLOVENIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SJ','SVALBARD Y JAN MAYEN');
+  ('SJ','SVALBARD Y JAN MAYEN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SK','ESLOVAQUIA');
+  ('SK','ESLOVAQUIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SL','SIERRA LEONA');
+  ('SL','SIERRA LEONA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SM','SAN MARINO');
+  ('SM','SAN MARINO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SN','SENEGAL');
+  ('SN','SENEGAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SO','SOMALIA');
+  ('SO','SOMALIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SR','SURINAM');
+  ('SR','SURINAM',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ST','SANTO TOMé Y PRíNCIPE');
+  ('ST','SANTO TOMé Y PRíNCIPE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SV','EL SALVADOR');
+  ('SV','EL SALVADOR',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SY','SIRIA');
+  ('SY','SIRIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('SZ','SUAZILANDIA');
+  ('SZ','SUAZILANDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TC','ISLAS TURCAS Y CAICOS');
+  ('TC','ISLAS TURCAS Y CAICOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TD','CHAD');
+  ('TD','CHAD',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TF','TERRITORIOS AUSTRALES FRANCESES');
+  ('TF','TERRITORIOS AUSTRALES FRANCESES',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TG','TOGO');
+  ('TG','TOGO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TH','TAILANDIA');
+  ('TH','TAILANDIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TJ','TAYIKISTáN');
+  ('TJ','TAYIKISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TK','TOKELAU');
+  ('TK','TOKELAU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TL','TIMOR ORIENTAL');
+  ('TL','TIMOR ORIENTAL',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TM','TURKMENISTáN');
+  ('TM','TURKMENISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TN','TúNEZ');
+  ('TN','TúNEZ',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TO','TONGA');
+  ('TO','TONGA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TR','TURQUíA');
+  ('TR','TURQUíA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TT','TRINIDAD Y TOBAGO');
+  ('TT','TRINIDAD Y TOBAGO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TV','TUVALU');
+  ('TV','TUVALU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TW','TAIWáN');
+  ('TW','TAIWáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('TZ','TANZANIA');
+  ('TZ','TANZANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('UA','UCRANIA');
+  ('UA','UCRANIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('UG','UGANDA');
+  ('UG','UGANDA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('UM','ISLAS ULTRAMARINAS DE ESTADOS UNIDOS');
+  ('UM','ISLAS ULTRAMARINAS DE ESTADOS UNIDOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('US','ESTADOS UNIDOS');
+  ('US','ESTADOS UNIDOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('UY','URUGUAY');
+  ('UY','URUGUAY',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('UZ','UZBEKISTáN');
+  ('UZ','UZBEKISTáN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VA','CIUDAD DEL VATICANO');
+  ('VA','CIUDAD DEL VATICANO',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VC','SAN VICENTE Y LAS GRANADINAS');
+  ('VC','SAN VICENTE Y LAS GRANADINAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VE','VENEZUELA');
+  ('VE','VENEZUELA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VG','ISLAS VíRGENES BRITáNICAS');
+  ('VG','ISLAS VíRGENES BRITáNICAS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VI','ISLAS VíRGENES DE LOS ESTADOS UNIDOS');
+  ('VI','ISLAS VíRGENES DE LOS ESTADOS UNIDOS',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VN','VIETNAM');
+  ('VN','VIETNAM',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('VU','VANUATU');
+  ('VU','VANUATU',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('WF','WALLIS Y FUTUNA');
+  ('WF','WALLIS Y FUTUNA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('WS','SAMOA');
+  ('WS','SAMOA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('YE','YEMEN');
+  ('YE','YEMEN',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('YT','MAYOTTE');
+  ('YT','MAYOTTE',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ZA','SUDáFRICA');
+  ('ZA','SUDáFRICA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ZM','ZAMBIA');
+  ('ZM','ZAMBIA',random()*100);
 
 
 
-INSERT INTO "pais" ("codigopais", "nombrepais")
+INSERT INTO "pais" ("codigopais", "nombrepais", "porcimpuesto")
 VALUES
-  ('ZW','ZIMBABUE');
+  ('ZW','ZIMBABUE',random()*100);
