@@ -1104,6 +1104,7 @@ public class FrmVenta1 extends FrmGenerica {
     private void tblVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVentasMouseClicked
         // TODO add your handling code here:
         this.getGestorVistaVenta().setDatos();
+        this.getGestorVistaVenta().ejecutarCalculos();
         
     }//GEN-LAST:event_tblVentasMouseClicked
 

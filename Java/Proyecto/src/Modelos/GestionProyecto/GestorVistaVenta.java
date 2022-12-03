@@ -418,7 +418,8 @@ public class GestorVistaVenta extends GestorVista {
         Iterator it2 = (Iterator) list.iterator();
         while (it2.hasNext()) {
             auxModel = (DetalleVenta) it2.next();
-            Object[] fila = {auxModel,auxModel.getCodigo(),
+            Object[] fila = {auxModel.getAuto(),
+                auxModel.getCodigo(),
                 auxModel.getAuto().getModelo().getMarca().getNombre(),
                 auxModel.getAuto().getModelo().getNombre(),
                 auxModel.getPrecioAuto(),
