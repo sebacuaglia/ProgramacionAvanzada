@@ -70,6 +70,11 @@ public class GestorVistaCliente extends GestorVista {
             this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
 //            this..setItems(this.getForm().getTbl());
         }
+        if (this.getOpcABM()==2) {
+            this.getModelCombo().addElement(this.getModel());
+            this.getModelCombo().setSelectedItem(this.getModel());
+            this.getForm().dispose(); 
+        }
 
     }
 
