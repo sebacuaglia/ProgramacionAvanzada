@@ -6,6 +6,7 @@ package Modelos.GestionProyecto;
 
 import static Hibernate.HibernateUtil.getSession;
 import Vistas.GestorVista;
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
@@ -288,12 +289,14 @@ public class GestorVistaCliente extends GestorVista {
 
     @Override
     public void getView() {
+        NumberFormat formatoNumero = NumberFormat.getNumberInstance();
+        
         this.getForm().getTxtCodigo().setText(this.getModel().getCodigoS());
         this.getForm().getTxtNombre().setText(this.getModel().getNombre());
         this.getForm().getTxtApellido().setText(this.getModel().getApellido());
         this.getForm().getTxtDireccion().setText(this.getModel().getDireccion());
         this.getForm().getTxtTelefono().setText(this.getModel().getTelefono() + "");
-        this.getForm().getTxtDni().setText(this.getModel().getDni());
+        this.getForm().getTxtDni().setText(formatoNumero.format(Integer.parseInt(this.getModel().getDni())));
         this.getForm().getTxtRazon().setText(this.getModel().getRazon());
         this.getForm().getTxtFechaNacimiento().setDate(this.getModel().getFechaNacimiento());
         this.getForm().getTxtEmail().setText(this.getModel().getEmail());

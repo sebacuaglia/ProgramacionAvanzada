@@ -7,6 +7,7 @@ package Modelos.GestionProyecto;
 import Hibernate.GestorHibernate;
 import static Hibernate.HibernateUtil.getSession;
 import Vistas.GestorVista;
+import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -119,6 +120,7 @@ public class GestorVistaVenta extends GestorVista {
     @Override
     public void newModel() {
         this.setModel(new Venta());
+        this.setModelDetalle(new DetalleVenta());
         this.setModoNuevo();
     }
 
@@ -145,7 +147,7 @@ public class GestorVistaVenta extends GestorVista {
         if (err == 0) {
             this.saveModel(this.getOpcABM());
             for (int i = 0; i < this.getForm().getTblDatosDetalleVenta().getRowCount(); i++) {
-                this.setModelDetalle(new DetalleVenta());
+                
                 DefaultTableModel model = (DefaultTableModel) this.getForm().getTblDatosDetalleVenta().getModel();
                 err = this.setModelDetalle(model,i);
                 if (err == 0) {
@@ -175,6 +177,7 @@ public class GestorVistaVenta extends GestorVista {
         this.getModelDetalle().setCantidad((int) model.getValueAt(i, 5));
         this.getModelDetalle().setPorcImpuesto((int) model.getValueAt(i, 6) );
         this.getModelDetalle().setVenta(this.getModel());
+        this.getModelDetalle().setCodigo(getUltimoCodigoDetalle()+1);
         return 0;
 
     }
@@ -273,6 +276,15 @@ public class GestorVistaVenta extends GestorVista {
     public int getUltimoCodigo() {
         try {
             Venta auxModel = (Venta) this.listarUltimo(Venta.class).get(0);
+            return auxModel.getCodigo();
+        } catch (Exception e) {
+            return 0;
+        }
+
+    }
+    public int getUltimoCodigoDetalle() {
+        try {
+            DetalleVenta auxModel = (DetalleVenta) this.listarUltimo(DetalleVenta.class).get(0);
             return auxModel.getCodigo();
         } catch (Exception e) {
             return 0;
@@ -416,13 +428,17 @@ public class GestorVistaVenta extends GestorVista {
         DetalleVenta auxModel;
         // {"", "Cód.", "Marca", "Modelo", "Precio", "cantidad", "impuesto"};
         Iterator it2 = (Iterator) list.iterator();
+        NumberFormat formatoNumero = NumberFormat.getNumberInstance();
+
+        formatoNumero.setMaximumFractionDigits(2);
+        formatoNumero.setMinimumFractionDigits(2);
         while (it2.hasNext()) {
             auxModel = (DetalleVenta) it2.next();
             Object[] fila = {auxModel.getAuto(),
                 auxModel.getCodigo(),
                 auxModel.getAuto().getModelo().getMarca().getNombre(),
                 auxModel.getAuto().getModelo().getNombre(),
-                auxModel.getPrecioAuto(),
+                formatoNumero.format(auxModel.getPrecioAuto()),
                 auxModel.getCantidad(),
                 auxModel.getPorcImpuesto()
             };
@@ -486,9 +502,13 @@ public class GestorVistaVenta extends GestorVista {
 
         }
 
-        this.getForm().getTxtSubtotal().setText(subtotal + "");
-        this.getForm().getTxtImpuestos().setText(impuesto + "");
-        this.getForm().getTxtTotal().setText(total + "");
+        NumberFormat formatoNumero = NumberFormat.getNumberInstance();
+
+        formatoNumero.setMaximumFractionDigits(2);
+        formatoNumero.setMinimumFractionDigits(2);
+        this.getForm().getTxtSubtotal().setText(formatoNumero.format(subtotal));
+        this.getForm().getTxtImpuestos().setText(formatoNumero.format(impuesto));
+        this.getForm().getTxtTotal().setText(formatoNumero.format(total));
 
     }
 

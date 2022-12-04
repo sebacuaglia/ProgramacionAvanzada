@@ -6,6 +6,7 @@ package Modelos.GestionProyecto;
 
 import static Hibernate.HibernateUtil.getSession;
 import Vistas.GestorVista;
+import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
@@ -345,8 +346,13 @@ public class GestorVistaAuto extends GestorVista {
         this.getForm().getCmbModelo().setSelectedItem(this.getModel().getModelo());
 
         this.getForm().getTxtColor().setText(this.getModel().getColor());
-        this.getForm().getTxtPrecio().setText(this.getModel().getPrecio());
-        this.getForm().getTxtCosto().setText(this.getModel().getCosto());
+        
+        NumberFormat formatoNumero = NumberFormat.getNumberInstance();
+
+        formatoNumero.setMaximumFractionDigits(2);
+        formatoNumero.setMinimumFractionDigits(2);
+        this.getForm().getTxtPrecio().setText(formatoNumero.format(Double.parseDouble(this.getModel().getPrecio())));
+        this.getForm().getTxtCosto().setText(formatoNumero.format(Double.parseDouble(this.getModel().getCosto())));
 
         
 

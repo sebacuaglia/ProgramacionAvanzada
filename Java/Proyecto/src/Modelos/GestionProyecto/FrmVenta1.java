@@ -287,12 +287,18 @@ public class FrmVenta1 extends FrmGenerica {
         txtCodigo.setEnabled(false);
         cmbCliente.setEnabled(tipo);
         btnAgregarCliente.setEnabled(tipo);
+        btnAgregarAutoDetalle.setEnabled(tipo);
         txtMarca.setEnabled(false);
         cmbPersonal.setEnabled(tipo);
         txtModelo.setEnabled(false);
         txtSubtotal.setEnabled(tipo);
+        txtImpuestos.setEnabled(tipo);
+        txtTotal.setEnabled(tipo);
         tblDatosDetalleVenta.setEnabled(true);
 
+        txtSubtotal.setEditable(false);
+        txtImpuestos.setEditable(false);
+        txtTotal.setEditable(false);
     }
 
     
@@ -300,6 +306,7 @@ public class FrmVenta1 extends FrmGenerica {
     private void viewBasic() {
         this.viewNuevoEditarBotones();
         this.viewCamposEnabled(true);
+        this.getGestorVistaVenta().initializeTabladetalle(tblDatosDetalleVenta);
     }
 
     @Override
@@ -361,7 +368,7 @@ public class FrmVenta1 extends FrmGenerica {
     private void viewNueva() {
         this.clearView();
         this.getGestorVistaVenta().newModel();
-        //txtNombre.grabFocus();
+        btnAgregarAutoDetalle.setEnabled(true);
         cmbCliente.grabFocus();
     }
 
@@ -675,6 +682,7 @@ public class FrmVenta1 extends FrmGenerica {
         txtSubtotal.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         txtSubtotal.setForeground(new java.awt.Color(187, 187, 198));
         txtSubtotal.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtSubtotal.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtSubtotal);
         txtSubtotal.setBounds(130, 280, 180, 20);
 
@@ -962,6 +970,7 @@ public class FrmVenta1 extends FrmGenerica {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         this.saveView();
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
