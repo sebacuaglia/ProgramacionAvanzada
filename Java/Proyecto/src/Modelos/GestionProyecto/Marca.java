@@ -4,6 +4,7 @@
  */
 package Modelos.GestionProyecto;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,16 +13,23 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author sebac
  */
 @Entity
-public class Marca {
+@SequenceGenerator(
+	name="marca_seq",
+	sequenceName="marca_id_seq",
+	allocationSize=1,
+        initialValue = 301
+)
+public class Marca implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "marca_id_seq")
     private long id;
 
     private int codigo;

@@ -101,10 +101,10 @@ public class FrmTop10VentasMarca extends FrmGenerica {
         txtFechaDesde = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Marca");
-        setToolTipText("Marca");
+        setTitle("Top 10 Ventas por Marca");
+        setToolTipText("Top 10 Ventas por Marca");
         setFrameIcon(null);
-        setName("TipoServicio"); // NOI18N
+        setName("Top 10 Ventas por Marca"); // NOI18N
         getContentPane().setLayout(null);
 
         jPanel4.setLayout(null);
@@ -186,6 +186,7 @@ public class FrmTop10VentasMarca extends FrmGenerica {
         jPanel4.setBounds(0, 0, 880, 430);
 
         getAccessibleContext().setAccessibleName("Carg");
+        getAccessibleContext().setAccessibleDescription("Top 10 Ventas por Marca");
 
         setBounds(150, 0, 890, 464);
     }// </editor-fold>//GEN-END:initComponents

@@ -1046,7 +1046,7 @@ public class FrmVenta1 extends FrmGenerica {
     }//GEN-LAST:event_btnBuscarAutosVentaKeyPressed
 
     private void tblDatosAutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosAutosMouseClicked
-        this.getGestorVistaAuto().setDatos();
+        //this.getGestorVistaAuto().setDatos();
     }//GEN-LAST:event_tblDatosAutosMouseClicked
 
     private void cmbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbClienteActionPerformed
@@ -1113,7 +1113,7 @@ public class FrmVenta1 extends FrmGenerica {
     private void tblVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVentasMouseClicked
         // TODO add your handling code here:
         this.getGestorVistaVenta().setDatos();
-        this.getGestorVistaVenta().ejecutarCalculos();
+        this.getGestorVistaVenta().ejecutarCalculosDetalle();
         
     }//GEN-LAST:event_tblVentasMouseClicked
 

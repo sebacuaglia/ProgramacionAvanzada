@@ -175,7 +175,7 @@ public class GestorVistaVentaPorVendedor extends GestorVista {
         SimpleDateFormat DateFor = new SimpleDateFormat("dd-MM-yyyy");
 
         List<Object[]> lista = getSession().createNativeQuery(
-                "       select v.fecha,ma.nombre||' '||mo.nombre,d.precioauto+d.montoimpuesto from detalleVenta d\n"
+                "       select v.fecha,ma.nombre||' '||mo.nombre as nombre,(d.precioauto*((100+d.porcImpuesto)/100)) as precio from detalleVenta d \n"
                 + "           inner join venta v on v.id=d.venta_id\n"
                 + "           inner join auto a on a.id=d.auto_id\n"
                 + "           inner join modelo mo on mo.id=a.modelo_id\n"

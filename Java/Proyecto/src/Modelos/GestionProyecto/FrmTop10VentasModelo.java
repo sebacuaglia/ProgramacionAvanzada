@@ -101,8 +101,8 @@ public class FrmTop10VentasModelo extends FrmGenerica {
         txtFechaDesde = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Marca");
-        setToolTipText("Marca");
+        setTitle("Top 10 Ventas por Modelo");
+        setToolTipText("Top 10 Ventas por Modelo");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
         getContentPane().setLayout(null);

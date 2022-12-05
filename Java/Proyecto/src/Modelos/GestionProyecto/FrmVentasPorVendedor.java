@@ -119,8 +119,8 @@ public class FrmVentasPorVendedor extends FrmGenerica {
         cmbPersonal = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Marca");
-        setToolTipText("Marca");
+        setTitle("Top 10 Ventas por Vendedor");
+        setToolTipText("Top 10 Ventas por Vendedor");
         setFrameIcon(null);
         setName("TipoServicio"); // NOI18N
         getContentPane().setLayout(null);

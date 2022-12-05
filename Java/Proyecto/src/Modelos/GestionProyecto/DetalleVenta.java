@@ -4,6 +4,7 @@
  */
 package Modelos.GestionProyecto;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,16 +13,23 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author sebac
  */
 @Entity
-public class DetalleVenta {
+@SequenceGenerator(
+	name="detalleventa_seq",
+	sequenceName="detalleventa_id_seq",
+	allocationSize=1,
+        initialValue = 609
+)
+public class DetalleVenta implements Serializable  {
     
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "detalleventa_id_seq")
     private long id;
     
     private int codigo;

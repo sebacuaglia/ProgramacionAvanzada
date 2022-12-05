@@ -4,21 +4,29 @@
  */
 package Modelos.GestionProyecto;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author sebac
  */
 @Entity
-public class Auto {
+@SequenceGenerator(
+	name="auto_seq",
+	sequenceName="auto_id_seq",
+	allocationSize=1,
+        initialValue = 301
+)
+public class Auto implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "auto_id_seq")
     private long id;
 
     private int codigo;
