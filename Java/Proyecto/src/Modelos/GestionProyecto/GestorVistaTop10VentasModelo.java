@@ -64,7 +64,7 @@ public class GestorVistaTop10VentasModelo extends GestorVista {
     }
 
     public void initializeTablaBusqueda(JTable tbl) {
-        String[] titulo = {"Marca", "Importe", "catidad"};
+        String[] titulo = {"Modelo", "Importe", "catidad"};
         String[] ancho = {"140", "140", "140"};
         this.newModelTable(tbl, titulo, ancho);
     }

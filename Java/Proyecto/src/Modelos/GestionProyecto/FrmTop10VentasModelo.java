@@ -155,7 +155,7 @@ public class FrmTop10VentasModelo extends FrmGenerica {
 
         jLabel6.setText("Hasta");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(340, 20, 30, 16);
+        jLabel6.setBounds(340, 20, 50, 16);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel3.setLayout(null);

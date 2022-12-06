@@ -155,7 +155,7 @@ public class FrmTop10VentasMarca extends FrmGenerica {
 
         jLabel6.setText("Hasta");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(340, 20, 30, 16);
+        jLabel6.setBounds(340, 20, 50, 16);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel3.setLayout(null);
@@ -186,7 +186,6 @@ public class FrmTop10VentasMarca extends FrmGenerica {
         jPanel4.setBounds(0, 0, 880, 430);
 
         getAccessibleContext().setAccessibleName("Carg");
-        getAccessibleContext().setAccessibleDescription("Top 10 Ventas por Marca");
 
         setBounds(150, 0, 890, 464);
     }// </editor-fold>//GEN-END:initComponents
