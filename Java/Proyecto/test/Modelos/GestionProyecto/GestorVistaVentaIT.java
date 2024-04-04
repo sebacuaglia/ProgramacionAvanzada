@@ -4,11 +4,6 @@
  */
 package Modelos.GestionProyecto;
 
-import java.util.List;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JDesktopPane;
-import javax.swing.JTable;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
